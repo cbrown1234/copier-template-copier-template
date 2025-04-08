@@ -1,0 +1,5 @@
+copier >= 9.6.0
+copier_templates_extensions
+pytest
+pytest-gitconfig
+plumbum
