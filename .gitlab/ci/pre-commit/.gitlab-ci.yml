@@ -1,0 +1,20 @@
+pre-commit:
+  stage: lint
+  needs: []
+  image: python:3.12-slim
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+    PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
+  before_script:
+    - apt-get update && apt-get install -y git
+    - pip install pre-commit
+  script:
+    - pre-commit install --install-hooks
+    - pre-commit run --all-files
+  cache:
+    - key: pip
+      paths:
+        - ${PIP_CACHE_DIR}
+    - key: pre-commit
+      paths:
+        - ${PRE_COMMIT_HOME}
