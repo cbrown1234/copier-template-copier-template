@@ -22,6 +22,10 @@ def test_copy_default(tmp_path: Path) -> None:
     assert (tmp_path / ANSWER_FILE_DEFAULT).exists()
 
 
+@pytest.mark.xfail(
+    strict=True,
+    reason="Test will fail until template has a version, then remove xfail mark",
+)
 def test_update_default(tmp_path: Path) -> None:
     run_copy(
         str(TEMPLATE_DIR),

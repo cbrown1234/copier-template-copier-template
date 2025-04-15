@@ -5,26 +5,30 @@ from __future__ import annotations
 from pathlib import Path
 
 from copier import run_copy, run_update
-from plumbum import local
-from plumbum.cmd import task
+import pytest
+from pytest_virtualenv import VirtualEnv
 
-from helpers import git, git_save
+from helpers import git_save
 
 TEMPLATE_DIR = Path(__file__).parent.parent.absolute()
-ANSWER_FILE_DEFAULT = '.copier-answers.copier-template.yml'
+ANSWER_FILE_DEFAULT = ".copier-answers.copier-template.yml"
 
 
 def test_copy_default(tmp_path: Path) -> None:
     run_copy(
         str(TEMPLATE_DIR),
         tmp_path,
-        vcs_ref='HEAD',
+        vcs_ref="HEAD",
         defaults=True,
         unsafe=True,
     )
     assert (tmp_path / ANSWER_FILE_DEFAULT).exists()
 
 
+@pytest.mark.xfail(
+    strict=True,
+    reason="Test will fail until template has a version, then remove xfail mark",
+)
 def test_update_default(tmp_path: Path) -> None:
     run_copy(
         str(TEMPLATE_DIR),
@@ -35,7 +39,7 @@ def test_update_default(tmp_path: Path) -> None:
     git_save(tmp_path)
     run_update(
         tmp_path,
-        vcs_ref='HEAD',
+        vcs_ref="HEAD",
         defaults=True,
         overwrite=True,  # The default when run via CLI
         answers_file=ANSWER_FILE_DEFAULT,
@@ -44,15 +48,15 @@ def test_update_default(tmp_path: Path) -> None:
     assert (tmp_path / ANSWER_FILE_DEFAULT).exists()
 
 
-def test_dev_setup(tmp_path: Path) -> None:
+def test_dev_setup(tmp_path: Path, virtualenv: VirtualEnv) -> None:
     run_copy(
         str(TEMPLATE_DIR),
         tmp_path,
-        vcs_ref='HEAD',
+        vcs_ref="HEAD",
         defaults=True,
         unsafe=True,
     )
-    with local.cwd(tmp_path):
-        git('init')
-        task('dev-setup')
     git_save(tmp_path)
+    virtualenv.run("pre-commit sample-config > .pre-commit-config.yaml", cd=tmp_path)
+    git_save(tmp_path)
+    virtualenv.run("task dev-setup", cd=tmp_path)
