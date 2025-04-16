@@ -1,6 +1,10 @@
 include:
   - local: '.gitlab/ci/**/.gitlab-ci.yml'
 
+stages:
+  - lint
+  - test
+
 tests:
   stage: test
   needs: []
