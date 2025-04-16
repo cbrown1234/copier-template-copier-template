@@ -16,8 +16,8 @@ tests:
     - apt-get update && apt-get install -y git
     - python -m venv venv
     - source venv/bin/activate
-    - pip install --upgrade pip pip-tools
-    - pip-sync requirements-dev.txt
+    - ./scripts/install-task.sh -b /usr/local/bin
+    - task dev-setup:virtualenv
   script:
     - python -m pytest
   cache:
