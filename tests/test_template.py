@@ -11,14 +11,14 @@ from pytest_virtualenv import VirtualEnv
 from helpers import git_save
 
 TEMPLATE_DIR = Path(__file__).parent.parent.absolute()
-ANSWER_FILE_DEFAULT = ".copier-answers.copier-template.yml"
+ANSWER_FILE_DEFAULT = '.copier-answers.copier-template.yml'
 
 
 def test_copy_default(tmp_path: Path) -> None:
     run_copy(
         str(TEMPLATE_DIR),
         tmp_path,
-        vcs_ref="HEAD",
+        vcs_ref='HEAD',
         defaults=True,
         unsafe=True,
     )
@@ -27,7 +27,7 @@ def test_copy_default(tmp_path: Path) -> None:
 
 @pytest.mark.xfail(
     strict=True,
-    reason="Test will fail until template has a version, then remove xfail mark",
+    reason='Test will fail until template has a version, then remove xfail mark',
 )
 def test_update_default(tmp_path: Path) -> None:
     run_copy(
@@ -39,7 +39,7 @@ def test_update_default(tmp_path: Path) -> None:
     git_save(tmp_path)
     run_update(
         tmp_path,
-        vcs_ref="HEAD",
+        vcs_ref='HEAD',
         defaults=True,
         overwrite=True,  # The default when run via CLI
         answers_file=ANSWER_FILE_DEFAULT,
@@ -52,11 +52,11 @@ def test_dev_setup(tmp_path: Path, virtualenv: VirtualEnv) -> None:
     run_copy(
         str(TEMPLATE_DIR),
         tmp_path,
-        vcs_ref="HEAD",
+        vcs_ref='HEAD',
         defaults=True,
         unsafe=True,
     )
     git_save(tmp_path)
-    virtualenv.run("pre-commit sample-config > .pre-commit-config.yaml", cd=tmp_path)
+    virtualenv.run('pre-commit sample-config > .pre-commit-config.yaml', cd=tmp_path)
     git_save(tmp_path)
-    virtualenv.run("task dev-setup", cd=tmp_path)
+    virtualenv.run('task dev-setup', cd=tmp_path)
