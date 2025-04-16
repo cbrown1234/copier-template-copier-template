@@ -1,2 +1,25 @@
 include:
   - local: '.gitlab/ci/**/.gitlab-ci.yml'
+
+tests:
+  stage: test
+  needs: []
+  image: python:3.12-slim
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+    PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
+  before_script:
+    - apt-get update && apt-get install -y git
+    - python -m venv venv
+    - source venv/bin/activate
+    - pip install --upgrade pip pip-tools
+    - pip-sync requirements-dev.txt
+  script:
+    - python -m pytest
+  cache:
+    - key: tests-pip
+      paths:
+        - ${PIP_CACHE_DIR}
+    - key: tests-pre-commit
+      paths:
+        - ${PRE_COMMIT_HOME}
