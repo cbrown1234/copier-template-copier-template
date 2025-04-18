@@ -13,7 +13,7 @@ tests:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
     PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
   before_script:
-    - apt-get update && apt-get install -y git
+    - apt-get update && apt-get install -y git curl
     - python -m venv venv
     - source venv/bin/activate
     - ./scripts/install-task.sh -b /usr/local/bin
