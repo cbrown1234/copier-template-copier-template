@@ -12,6 +12,7 @@ tests:
   variables:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
     PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
+    GIT_DEPTH: "0"
   before_script:
     - apt-get update && apt-get install -y git curl
     - python -m venv venv
