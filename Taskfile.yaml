@@ -45,7 +45,8 @@ tasks:
   test:
     desc: Run tests
     cmds:
-      - python -m pytest
+      - rm -rf ./tmp/tests
+      - pytest --basetemp=./tmp/tests/
 
   diff:
     desc: Compare last version to HEAD

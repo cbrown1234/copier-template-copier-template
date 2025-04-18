@@ -57,3 +57,14 @@ def test_dev_setup(tmp_path: Path, virtualenv: VirtualEnv) -> None:
     virtualenv.run('pre-commit sample-config > .pre-commit-config.yaml', cd=tmp_path)
     git_save(tmp_path)
     virtualenv.run('task dev-setup', cd=tmp_path)
+
+
+def test_docker_mounts(tmp_path: Path, virtualenv: VirtualEnv) -> None:
+    run_copy(
+        str(TEMPLATE_DIR),
+        tmp_path,
+        vcs_ref='HEAD',
+        defaults=True,
+        unsafe=True,
+    )
+    virtualenv.run('task example:docker-mount', cd=tmp_path)

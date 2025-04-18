@@ -45,7 +45,8 @@ tasks:
   test:
     desc: Run tests
     cmds:
-      - python -m pytest
+      - rm -rf ./tmp/tests
+      - pytest --basetemp=./tmp/tests/
 
   diff:
     desc: Compare last version to HEAD
@@ -55,3 +56,9 @@ tasks:
       - copier copy . tmp/before
       - copier copy --vcs-ref HEAD . tmp/after
       - diff tmp/before tmp/after
+
+  example:docker-mount:
+    desc: "Example using docker with volumes to test in CI"
+    cmds:
+      - docker info
+      - docker run -v $(pwd):/code/ --entrypoint=/bin/bash python:3.12-slim -c 'cat /code/semantic_release.toml'
