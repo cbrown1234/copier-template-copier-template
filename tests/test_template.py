@@ -8,7 +8,7 @@ from copier import run_copy, run_update
 import pytest
 from pytest_virtualenv import VirtualEnv
 
-from helpers import git_save
+from helpers import git_save, is_git_repo_dirty
 
 TEMPLATE_DIR = Path(__file__).parent.parent.absolute()
 ANSWER_FILE_DEFAULT = '.copier-answers.copier-template.yml'
@@ -25,10 +25,7 @@ def test_copy_default(tmp_path: Path) -> None:
     assert (tmp_path / ANSWER_FILE_DEFAULT).exists()
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason='Test will fail until template has a version, then remove xfail mark',
-)
+@pytest.mark.skipif(is_git_repo_dirty(), reason='Fail on dirty repo')
 def test_update_default(tmp_path: Path) -> None:
     run_copy(
         str(TEMPLATE_DIR),
