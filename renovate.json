@@ -1,6 +1,6 @@
 {
   "pip-compile": {
-    "fileMatch": ["(^|/)requirements*\\.txt$"]
+    "fileMatch": ["(^|/)requirements-dev\\.txt$"]
   },
   "extends": ["config:recommended", ":dependencyDashboard"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"
