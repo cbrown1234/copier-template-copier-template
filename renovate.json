@@ -2,6 +2,9 @@
   "pip-compile": {
     "fileMatch": ["(^|/)requirements-dev\\.txt$"]
   },
+  "pip_requirements": {
+    "fileMatch": []
+  },
   "extends": ["config:recommended", ":dependencyDashboard"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
