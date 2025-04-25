@@ -1,12 +1,12 @@
 {
   "pip-compile": {
-    "fileMatch": ["(^|/)requirements-dev\\.txt$"]
+    "fileMatch": ["(^|/)requirements.*\\.txt$"]
   },
   "pip_requirements": {
-    "enabled": false
+    "enabled": false // as project uses pip-compile
   },
   "pip_setup": {
-    "enabled": false
+    "enabled": false // as project uses pip-compile
   },
   "extends": ["config:recommended", ":dependencyDashboard"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"

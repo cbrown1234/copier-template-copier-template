@@ -51,6 +51,9 @@ repos:
         args: ["--verbose"]
       - id: check-taskfile
         args: ["--verbose"]
+      - id: check-renovate
+        args: ["--verbose"]
+        additional_dependencies: ['pyjson5']
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v4.0.0
     hooks:
