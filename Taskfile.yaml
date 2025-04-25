@@ -46,7 +46,8 @@ tasks:
     desc: Run tests
     cmds:
       - rm -rf ./tmp/tests
-      - pytest --basetemp=./tmp/tests/
+      - mkdir -p ./tmp/
+      - pytest --basetemp=./tmp/tests/ {{.CLI_ARGS}}
 
   diff:
     desc: Compare last version to HEAD

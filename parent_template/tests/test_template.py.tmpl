@@ -5,10 +5,12 @@ from __future__ import annotations
 from pathlib import Path
 
 from copier import run_copy, run_update
+import pytest
+
 from helpers import git_save, is_git_repo_dirty
 
 TEMPLATE_DIR = Path(__file__).parent.parent.absolute()
-ANSWER_FILE_DEFAULT = '.copier-answers.{{template_name}}.yml'
+ANSWER_FILE_DEFAULT = '.copier-answers.[[output_template_name]].yml'
 
 
 def test_copy_default(tmp_path: Path) -> None:

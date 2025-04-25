@@ -1,0 +1,10 @@
+_subdirectory: template
+_min_copier_version: "9.6.0"
+_answers_file: .copier-answers.{{ template_name }}.yml
+_skip_if_exists:
+  - requirements*.txt  # Don't update pip-compile lock files
+
+template_name:
+  type: str
+  default: '[[output_template_name]]'
+  when: false

@@ -1,4 +1,4 @@
-_subdirectory: template
+_subdirectory: parent_template
 _min_copier_version: "9.6.0"
 _answers_file: .copier-answers.[[ template_name ]].yml
 _envops:
@@ -9,6 +9,7 @@ _envops:
   variable_end_string: "]]"
   variable_start_string: "[["
   trim_blocks: true
+_templates_suffix: .tmpl
 _skip_if_exists:
   - requirements*.txt  # Don't update pip-compile lock files
 
@@ -20,3 +21,7 @@ template_name:
 vcs_platform:
   type: str
   default: gitlab
+
+output_template_name:
+  type: str
+  default: your-template-name

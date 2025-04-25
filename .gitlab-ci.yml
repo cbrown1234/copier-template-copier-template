@@ -30,7 +30,7 @@ tests:
     - ./scripts/install-task.sh -b /usr/local/bin
     - task dev-setup:virtualenv
   script:
-    - pytest --basetemp=./tmp/
+    - task test
   cache:
     - key: tests-pip
       paths:
