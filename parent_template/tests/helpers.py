@@ -1,8 +1,8 @@
 """Useful methods for testing copier templates."""
 
+from pathlib import Path
 import subprocess
 
-from copier.types import StrOrPath
 from plumbum import local
 from plumbum.cmd import git as _git
 from plumbum.machines import LocalCommand
@@ -18,7 +18,7 @@ git: LocalCommand = _git.with_env(
 
 # Adapted from the copier repo tests
 def git_save(
-    dst: StrOrPath,
+    dst: str | Path,
     message: str = 'Test commit',
     tag: str | None = None,
     allow_empty: bool = False,
