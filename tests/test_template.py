@@ -6,7 +6,6 @@ from pathlib import Path
 
 from copier import run_copy, run_update
 import pytest
-from pytest_virtualenv import VirtualEnv
 
 from helpers import git_save, is_git_repo_dirty
 
@@ -43,28 +42,3 @@ def test_update_default(tmp_path: Path) -> None:
         unsafe=True,
     )
     assert (tmp_path / ANSWER_FILE_DEFAULT).exists()
-
-
-def test_dev_setup(tmp_path: Path, virtualenv: VirtualEnv) -> None:
-    run_copy(
-        str(TEMPLATE_DIR),
-        tmp_path,
-        vcs_ref='HEAD',
-        defaults=True,
-        unsafe=True,
-    )
-    git_save(tmp_path)
-    virtualenv.run('pre-commit sample-config > .pre-commit-config.yaml', cd=tmp_path)
-    git_save(tmp_path)
-    virtualenv.run('task dev-setup', cd=tmp_path)
-
-
-def test_docker_mounts(tmp_path: Path, virtualenv: VirtualEnv) -> None:
-    run_copy(
-        str(TEMPLATE_DIR),
-        tmp_path,
-        vcs_ref='HEAD',
-        defaults=True,
-        unsafe=True,
-    )
-    virtualenv.run('task example:docker-mount', cd=tmp_path)

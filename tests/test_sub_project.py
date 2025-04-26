@@ -43,6 +43,16 @@ def test_sub_project_copy_default(
     assert (sub_sub_project / '.copier-answers.your-template-name.yml').exists()
 
 
+def test_dev_setup(sub_project: Path, virtualenv: VirtualEnv) -> None:
+    virtualenv.run('pre-commit sample-config > .pre-commit-config.yaml', cd=sub_project)
+    git_save(sub_project)
+    virtualenv.run('task dev-setup', cd=sub_project)
+
+
+def test_docker_mounts(sub_project: Path, virtualenv: VirtualEnv) -> None:
+    virtualenv.run('task example:docker-mount', cd=sub_project)
+
+
 def test_sub_project_tests(sub_project: Path, virtualenv: VirtualEnv) -> None:
     virtualenv.run(
         'task dev-setup:virtualenv && task test',
