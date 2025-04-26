@@ -8,6 +8,8 @@ from copier import run_copy
 import pytest
 from pytest_virtualenv import VirtualEnv
 
+from helpers import git_save
+
 TEMPLATE_DIR = Path(__file__).parent.parent.absolute()
 ANSWER_FILE_DEFAULT = '.copier-answers.copier-template.yml'
 
@@ -44,6 +46,7 @@ def test_sub_project_tests(tmp_path: Path, virtualenv: VirtualEnv) -> None:
         defaults=True,
         unsafe=True,
     )
+    git_save(sub_project_dir)
     virtualenv.run(
         'task dev-setup:virtualenv && task test',
         cd=sub_project_dir,
