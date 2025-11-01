@@ -21,7 +21,7 @@ tasks:
       - sh: '[ "{{.VIRTUAL_ENV | base }}" != "global" ]'
         msg: "Must be in a virtualenv not called global"
     cmds:
-      - pip install --upgrade pip pip-tools
+      - pip install --upgrade -r requirements-base.txt
 
   dev-setup:virtualenv:
     desc: Install dev requirements

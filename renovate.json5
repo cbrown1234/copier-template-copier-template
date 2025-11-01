@@ -3,7 +3,8 @@
     "fileMatch": ["(^|/)requirements.*\\.txt$"]
   },
   "pip_requirements": {
-    "enabled": false // as project uses pip-compile
+    "fileMatch": ["requirements-base\\.txt"],
+    "enabled": true
   },
   "pip_setup": {
     "enabled": false // as project uses pip-compile
