@@ -5,7 +5,6 @@
   "pip_requirements": {
     // Prefer pip-compile
     "includePaths": ["requirements-base.txt"],
-    "ignorePaths": ["**/*"],
     "enabled": true
   },
   "pip_setup": {
