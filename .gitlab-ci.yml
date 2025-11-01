@@ -24,7 +24,7 @@ tests:
     DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
   before_script:
     - apt-get update && apt-get install -y git curl
-    - apt-get install --no-install-recommends -y docker.io
+    - apt-get install --no-install-recommends -y docker-cli
     - python -m venv venv
     - source venv/bin/activate
     - ./scripts/install-task.sh -b /usr/local/bin
