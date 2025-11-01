@@ -1,6 +1,6 @@
 {
   "pip-compile": {
-    "managerFilePatterns ": ["/(^|/)requirements.*\\.txt$/"]
+    "managerFilePatterns": ["/(^|/)requirements.*\\.txt$/"]
   },
   "pip_requirements": {
     // Prefer pip-compile
