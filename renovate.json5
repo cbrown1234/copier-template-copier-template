@@ -10,6 +10,6 @@
   "pip_setup": {
     "enabled": false // as project uses pip-compile
   },
-  "extends": ["config:recommended", ":dependencyDashboard"],
+  "extends": ["config:best-practices"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
