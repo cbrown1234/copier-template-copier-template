@@ -1,9 +1,11 @@
 {
   "pip-compile": {
-    "fileMatch": ["(^|/)requirements.*\\.txt$"]
+    "managerFilePatterns ": ["/(^|/)requirements.*\\.txt$/"]
   },
   "pip_requirements": {
-    "fileMatch": ["requirements-base\\.txt"],
+    // Prefer pip-compile
+    "includePaths": ["requirements-base.txt"],
+    "ignorePaths": ["**/*"],
     "enabled": true
   },
   "pip_setup": {
