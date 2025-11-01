@@ -10,7 +10,7 @@ tests:
   needs: []
   image: python:3.13-slim
   services:
-    - docker:28.1.1-dind
+    - docker:28.5.1-dind
   variables:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
     PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
