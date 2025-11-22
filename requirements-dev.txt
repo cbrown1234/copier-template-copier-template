@@ -6,31 +6,33 @@
 #
 annotated-types==0.7.0
     # via pydantic
-cfgv==3.4.0
+cfgv==3.5.0
     # via pre-commit
 colorama==0.4.6
     # via copier
-copier==9.7.1
+copier==9.11.0
     # via
     #   -r requirements-dev.in
-    #   copier-templates-extensions
-copier-templates-extensions==0.3.1
+    #   copier-template-extensions
+copier-template-extensions==0.3.3
+    # via copier-templates-extensions
+copier-templates-extensions==0.3.2
     # via -r requirements-dev.in
-distlib==0.3.9
+distlib==0.4.0
     # via virtualenv
-dunamai==1.23.1
+dunamai==1.25.0
     # via copier
-execnet==2.1.1
+execnet==2.1.2
     # via pytest-shutil
-filelock==3.18.0
+filelock==3.20.0
     # via virtualenv
 funcy==2.0
     # via copier
-identify==2.6.10
+identify==2.6.15
     # via pre-commit
-importlib-metadata==8.6.1
+importlib-metadata==8.7.0
     # via pytest-virtualenv
-iniconfig==2.1.0
+iniconfig==2.3.0
     # via pytest
 jinja2==3.1.6
     # via
@@ -38,7 +40,7 @@ jinja2==3.1.6
     #   jinja2-ansible-filters
 jinja2-ansible-filters==1.3.2
     # via copier
-markupsafe==3.0.2
+markupsafe==3.0.3
     # via jinja2
 nodeenv==1.9.1
     # via pre-commit
@@ -49,27 +51,29 @@ packaging==25.0
     #   pytest
 pathspec==0.12.1
     # via copier
-platformdirs==4.3.7
+platformdirs==4.5.0
     # via
     #   copier
     #   virtualenv
-pluggy==1.5.0
+pluggy==1.6.0
     # via pytest
-plumbum==1.9.0
+plumbum==1.10.0
     # via
     #   -r requirements-dev.in
     #   copier
-pre-commit==4.2.0
+pre-commit==4.4.0
     # via -r requirements-dev.in
-prompt-toolkit==3.0.51
+prompt-toolkit==3.0.52
     # via questionary
-pydantic==2.11.3
+pydantic==2.12.4
     # via copier
-pydantic-core==2.33.1
+pydantic-core==2.41.5
     # via pydantic
-pygments==2.19.1
-    # via copier
-pytest==8.3.5
+pygments==2.19.2
+    # via
+    #   copier
+    #   pytest
+pytest==9.0.1
     # via
     #   -r requirements-dev.in
     #   pytest-fixture-config
@@ -78,35 +82,35 @@ pytest==8.3.5
     #   pytest-virtualenv
 pytest-fixture-config==1.8.0
     # via pytest-virtualenv
-pytest-gitconfig==0.7.0
+pytest-gitconfig==0.8.0
     # via -r requirements-dev.in
 pytest-shutil==1.8.1
     # via pytest-virtualenv
 pytest-virtualenv==1.8.1
     # via -r requirements-dev.in
-pyyaml==6.0.2
+pyyaml==6.0.3
     # via
     #   copier
     #   jinja2-ansible-filters
     #   pre-commit
-questionary==2.1.0
+questionary==2.1.1
     # via copier
 six==1.17.0
     # via pytest-shutil
-termcolor==3.0.1
+termcolor==3.2.0
     # via pytest-shutil
-typing-extensions==4.13.2
+typing-extensions==4.15.0
     # via
     #   pydantic
     #   pydantic-core
     #   typing-inspection
-typing-inspection==0.4.0
+typing-inspection==0.4.2
     # via pydantic
-virtualenv==20.30.0
+virtualenv==20.35.4
     # via
     #   pre-commit
     #   pytest-virtualenv
-wcwidth==0.2.13
+wcwidth==0.2.14
     # via prompt-toolkit
-zipp==3.21.0
+zipp==3.23.0
     # via importlib-metadata
