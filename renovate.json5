@@ -10,6 +10,13 @@
   "pip_setup": {
     "enabled": false // as project uses pip-compile
   },
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["digest"],
+      "automerge": true
+    }
+  ],
   "extends": ["config:best-practices"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
