@@ -57,7 +57,7 @@ plumbum==1.10.0
     #   copier
 prompt-toolkit==3.0.52
     # via questionary
-pydantic==2.12.4
+pydantic==2.12.5
     # via copier
 pydantic-core==2.41.5
     # via pydantic
