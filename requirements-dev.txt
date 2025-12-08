@@ -51,7 +51,7 @@ packaging==25.0
     #   pytest
 pathspec==0.12.1
     # via copier
-platformdirs==4.5.0
+platformdirs==4.5.1
     # via
     #   copier
     #   virtualenv
@@ -73,7 +73,7 @@ pygments==2.19.2
     # via
     #   copier
     #   pytest
-pytest==9.0.1
+pytest==9.0.2
     # via
     #   -r requirements-dev.in
     #   pytest-fixture-config
