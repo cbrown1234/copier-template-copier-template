@@ -8,7 +8,7 @@ stages:
 tests:
   stage: test
   needs: []
-  image: python:3.13-slim@sha256:b19309443a59aa604fd694e04a1698b24df57ab8b7f06a6cd3dcb1769391767e
+  image: python:3.13-slim@sha256:56ab277ddf459858f94052252565945c34617c841818faf8f34f6896de06cffe
   services:
     - docker:29.1.2-dind@sha256:40916fb078cdd27640d069bba401324a15a06d3ecbd8895048122c8d321f43f8
   variables:
