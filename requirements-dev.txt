@@ -10,7 +10,7 @@ cfgv==3.5.0
     # via pre-commit
 colorama==0.4.6
     # via copier
-copier==9.11.0
+copier==9.11.2
     # via
     #   -r requirements-dev.in
     #   copier-template-extensions
@@ -24,13 +24,13 @@ dunamai==1.25.0
     # via copier
 execnet==2.1.2
     # via pytest-shutil
-filelock==3.20.0
+filelock==3.20.3
     # via virtualenv
 funcy==2.0
     # via copier
-identify==2.6.15
+identify==2.6.16
     # via pre-commit
-importlib-metadata==8.7.0
+importlib-metadata==8.7.1
     # via pytest-virtualenv
 iniconfig==2.3.0
     # via pytest
@@ -42,14 +42,14 @@ jinja2-ansible-filters==1.3.2
     # via copier
 markupsafe==3.0.3
     # via jinja2
-nodeenv==1.9.1
+nodeenv==1.10.0
     # via pre-commit
 packaging==25.0
     # via
     #   copier
     #   dunamai
     #   pytest
-pathspec==0.12.1
+pathspec==1.0.3
     # via copier
 platformdirs==4.5.1
     # via
@@ -61,7 +61,7 @@ plumbum==1.10.0
     # via
     #   -r requirements-dev.in
     #   copier
-pre-commit==4.5.0
+pre-commit==4.5.1
     # via -r requirements-dev.in
 prompt-toolkit==3.0.52
     # via questionary
@@ -82,7 +82,7 @@ pytest==9.0.2
     #   pytest-virtualenv
 pytest-fixture-config==1.8.0
     # via pytest-virtualenv
-pytest-gitconfig==0.8.0
+pytest-gitconfig==0.9.0
     # via -r requirements-dev.in
 pytest-shutil==1.8.1
     # via pytest-virtualenv
@@ -97,7 +97,7 @@ questionary==2.1.1
     # via copier
 six==1.17.0
     # via pytest-shutil
-termcolor==3.2.0
+termcolor==3.3.0
     # via pytest-shutil
 typing-extensions==4.15.0
     # via
@@ -106,11 +106,11 @@ typing-extensions==4.15.0
     #   typing-inspection
 typing-inspection==0.4.2
     # via pydantic
-virtualenv==20.35.4
+virtualenv==20.36.1
     # via
     #   pre-commit
     #   pytest-virtualenv
-wcwidth==0.2.14
+wcwidth==0.3.0
     # via prompt-toolkit
 zipp==3.23.0
     # via importlib-metadata
