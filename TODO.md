@@ -3,11 +3,12 @@
     - Enables tests to use uv commands to use it's venv, rather than to manage that
     - Cross platform dependencies
     - Should resolve issues with needing to pin pip, pip-tool versions
+- [ ] Refactor `task` tasks
 - [x] Semantic release config review
     - [x] try regenerating the config file with v10+
     - [x] `mode` switch to update (for simpler manual editing)
     - [ ] Test out the new setup
-- [ ] Add `task` task for semantic_release
+- [x] Add `task` task for semantic_release
 - [ ] Add test_sub_project.py equivalent to parent_template
 - [ ] Add ruff config to parent_template
 - [ ] Reduce templating of code files via dotenv files, or pyyaml queries etc
