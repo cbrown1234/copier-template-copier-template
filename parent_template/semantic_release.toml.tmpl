@@ -9,6 +9,7 @@ allow_zero_version = true
 no_git_verify = false
 tag_format = "v{version}"
 version_toml = ["pyproject.toml:project.version"]
+add_partial_tags = false
 
 [semantic_release.branches.main]
 match = "(main|master)"
@@ -17,14 +18,14 @@ prerelease = false
 
 [semantic_release.changelog]
 exclude_commit_patterns = []
-mode = "init"
+mode = "update"
 insertion_flag = "<!-- version list -->"
 template_dir = "templates"
 
 [semantic_release.changelog.default_templates]
 changelog_file = "CHANGELOG.md"
 output_format = "md"
-mask_initial_release = false
+mask_initial_release = true
 
 [semantic_release.changelog.environment]
 block_start_string = "{%"
@@ -50,8 +51,8 @@ patch_tags = ["fix", "perf"]
 other_allowed_tags = ["build", "chore", "ci", "docs", "style", "refactor", "test"]
 allowed_tags = ["feat", "fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "test"]
 default_bump_level = 0
-parse_squash_commits = false
-ignore_merge_commits = false
+parse_squash_commits = true
+ignore_merge_commits = true
 
 [semantic_release.remote]
 name = "origin"
