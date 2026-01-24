@@ -26,6 +26,10 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["digest"],
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["astral-sh/uv"],
+      "automerge": true
     }
   ],
   lockFileMaintenance: {
