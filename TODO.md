@@ -9,6 +9,7 @@
     - [x] `mode` switch to update (for simpler manual editing)
     - [ ] Test out the new setup
 - [x] Add `task` task for semantic_release
+- [ ] Add ci to parent_project
 - [ ] Add test_sub_project.py equivalent to parent_template
 - [ ] Add ruff config to parent_template
 - [ ] Reduce templating of code files via dotenv files, or pyyaml queries etc

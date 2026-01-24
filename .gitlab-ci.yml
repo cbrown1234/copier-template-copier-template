@@ -8,7 +8,7 @@ stages:
 tests:
   stage: test
   needs: []
-  image: python:3.13-slim@sha256:51e1a0a317fdb6e170dc791bbeae63fac5272c82f43958ef74a34e170c6f8b18
+  image: debian:trixie-slim
   services:
     - docker:29.1.5-dind@sha256:3a33fc81fa4d38360f490f5b900e9846f725db45bb1d9b1fe02d849bd42a5cf2
   variables:
