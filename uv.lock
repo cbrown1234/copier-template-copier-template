@@ -68,6 +68,7 @@ dev = [
     { name = "pre-commit" },
     { name = "pytest" },
     { name = "pytest-gitconfig" },
+    { name = "pyyaml" },
 ]
 
 [package.metadata]
@@ -82,6 +83,7 @@ dev = [
     { name = "pre-commit", specifier = ">=4.5.1" },
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "pytest-gitconfig", specifier = ">=0.9.0" },
+    { name = "pyyaml", specifier = ">=6.0.3" },
 ]
 
 [[package]]

@@ -7,27 +7,24 @@ from pathlib import Path
 from copier import run_copy, run_update
 import pytest
 
-from helpers import git_save, is_git_repo_dirty
-
-TEMPLATE_DIR = Path(__file__).parent.parent.absolute()
-ANSWER_FILE_DEFAULT = '.copier-answers.copier-template.yml'
+from tests.helpers import git_save, is_git_repo_dirty
 
 
-def test_copy_default(tmp_path: Path) -> None:
-    run_copy(
-        str(TEMPLATE_DIR),
+def test_copy_default(template_dir: Path, tmp_path: Path) -> None:
+    worker = run_copy(
+        str(template_dir),
         tmp_path,
         vcs_ref='HEAD',
         defaults=True,
         unsafe=True,
     )
-    assert (tmp_path / ANSWER_FILE_DEFAULT).exists()
+    assert (tmp_path / worker.answers_relpath).exists()
 
 
 @pytest.mark.skipif(is_git_repo_dirty(), reason='Fail on dirty repo')
-def test_update_default(tmp_path: Path) -> None:
-    run_copy(
-        str(TEMPLATE_DIR),
+def test_update_default(template_dir: Path, tmp_path: Path) -> None:
+    worker = run_copy(
+        str(template_dir),
         tmp_path,
         defaults=True,
         unsafe=True,
@@ -38,7 +35,7 @@ def test_update_default(tmp_path: Path) -> None:
         vcs_ref='HEAD',
         defaults=True,
         overwrite=True,  # The default when run via CLI
-        answers_file=ANSWER_FILE_DEFAULT,
+        answers_file=worker.answers_relpath,
         unsafe=True,
     )
-    assert (tmp_path / ANSWER_FILE_DEFAULT).exists()
+    assert (tmp_path / worker.answers_relpath).exists()

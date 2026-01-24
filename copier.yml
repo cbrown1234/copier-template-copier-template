@@ -10,8 +10,6 @@ _envops:
   variable_start_string: "[["
   trim_blocks: true
 _templates_suffix: .tmpl
-_skip_if_exists:
-  - requirements*.txt  # Don't update pip-compile lock files
 
 template_name:
   type: str
