@@ -55,6 +55,6 @@ def test_docker_mounts(sub_project: Path, virtualenv: VirtualEnv) -> None:
 
 def test_sub_project_tests(sub_project: Path, virtualenv: VirtualEnv) -> None:
     virtualenv.run(
-        'task dev-setup:virtualenv && task test',
+        'task dev-setup:venv && task test',
         cd=sub_project,
     )

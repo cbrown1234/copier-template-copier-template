@@ -1,23 +1,30 @@
 {
-  "pip-compile": {
-    "managerFilePatterns ": ["/(^|/)requirements.*\\.txt$/"]
-  },
-  "pip_requirements": {
-    // Prefer pip-compile
-    "includePaths": ["requirements-base.txt"],
-    "ignorePaths": ["**/*"],
-    "enabled": true
-  },
-  "pip_setup": {
-    "enabled": false // as project uses pip-compile
-  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["\\.gitlab-ci\\.ya?ml$"],
+      "matchStrings": [
+        "https://astral\\.sh/uv/(?<currentValue>[^/]+)/install\\.sh"
+      ],
+      "depNameTemplate": "astral-sh/uv",
+      "datasourceTemplate": "github-releases"
+    }
+  ],
   "packageRules": [
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["digest"],
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["astral-sh/uv"],
+      "automerge": true
     }
   ],
+  lockFileMaintenance: {
+    enabled: true,
+    automerge: true,
+  },
   "extends": ["config:best-practices"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
