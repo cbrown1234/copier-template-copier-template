@@ -1,4 +1,15 @@
 {
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["\\.gitlab-ci\\.ya?ml$"],
+      "matchStrings": [
+        "https://astral\\.sh/uv/(?<currentValue>[^/]+)/install\\.sh"
+      ],
+      "depNameTemplate": "astral-sh/uv",
+      "datasourceTemplate": "github-releases"
+    }
+  ],
   "pip-compile": {
     "managerFilePatterns": ["/(^|/)requirements.*\\.txt$/"]
   },
