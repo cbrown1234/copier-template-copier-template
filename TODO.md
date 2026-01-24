@@ -1,5 +1,5 @@
 
-- [ ] Switch to uv
+- [x] Switch to uv
     - Enables tests to use uv commands to use it's venv, rather than to manage that
     - Cross platform dependencies
     - Should resolve issues with needing to pin pip, pip-tool versions
