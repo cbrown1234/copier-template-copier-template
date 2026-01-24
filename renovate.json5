@@ -28,6 +28,9 @@
       "automerge": true
     }
   ],
+  lockFileMaintenance: {
+    enabled: true,
+  },
   "extends": ["config:best-practices"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
