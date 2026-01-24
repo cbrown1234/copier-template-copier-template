@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
+import subprocess
 from pathlib import Path
 
 from copier import run_copy
 import pytest
-from pytest_virtualenv import VirtualEnv
 
 from helpers import git_save
 
@@ -43,18 +43,25 @@ def test_sub_project_copy_default(
     assert (sub_sub_project / '.copier-answers.your-template-name.yml').exists()
 
 
-def test_dev_setup(sub_project: Path, virtualenv: VirtualEnv) -> None:
-    virtualenv.run('pre-commit sample-config > .pre-commit-config.yaml', cd=sub_project)
+def test_dev_setup(sub_project: Path) -> None:
+    subprocess.run(
+        'pre-commit sample-config > .pre-commit-config.yaml',
+        cwd=sub_project,
+        shell=True,
+        check=True,
+    )
     git_save(sub_project)
-    virtualenv.run('task dev-setup', cd=sub_project)
+    subprocess.run('task dev-setup', cwd=sub_project, shell=True, check=True)
 
 
-def test_docker_mounts(sub_project: Path, virtualenv: VirtualEnv) -> None:
-    virtualenv.run('task example:docker-mount', cd=sub_project)
+def test_docker_mounts(sub_project: Path) -> None:
+    subprocess.run('task example:docker-mount', cwd=sub_project, shell=True, check=True)
 
 
-def test_sub_project_tests(sub_project: Path, virtualenv: VirtualEnv) -> None:
-    virtualenv.run(
+def test_sub_project_tests(sub_project: Path) -> None:
+    subprocess.run(
         'task dev-setup:venv && task test',
-        cd=sub_project,
+        cwd=sub_project,
+        shell=True,
+        check=True,
     )
