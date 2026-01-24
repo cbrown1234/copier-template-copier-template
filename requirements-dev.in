@@ -1,7 +1,0 @@
-copier >= 9.6.0
-copier_templates_extensions
-pre-commit
-pytest
-pytest-gitconfig
-pytest-virtualenv
-plumbum

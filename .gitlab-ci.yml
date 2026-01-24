@@ -12,7 +12,7 @@ tests:
   services:
     - docker:29.1.2-dind@sha256:40916fb078cdd27640d069bba401324a15a06d3ecbd8895048122c8d321f43f8
   variables:
-    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+    UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
     PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
     GIT_DEPTH: "0"  # All git tags needed for copier
     # When using dind service, you must instruct Docker to talk with
@@ -25,16 +25,16 @@ tests:
   before_script:
     - apt-get update && apt-get install -y git curl
     - apt-get install --no-install-recommends -y docker-cli
-    - python -m venv venv
-    - source venv/bin/activate
+    - curl -LsSf https://astral.sh/uv/0.9.26/install.sh | sh
+    - source $HOME/.local/bin/env
     - ./scripts/install-task.sh -b /usr/local/bin
-    - task dev-setup:virtualenv
+    - task dev-setup:venv
   script:
     - task test
   cache:
-    - key: tests-pip
+    - key: tests-uv
       paths:
-        - ${PIP_CACHE_DIR}
+        - ${UV_CACHE_DIR}
     - key: tests-pre-commit
       paths:
         - ${PRE_COMMIT_HOME}

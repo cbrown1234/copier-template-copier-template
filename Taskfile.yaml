@@ -11,23 +11,12 @@ tasks:
     desc: Bootstrap dev setup
     cmds:
       - pre-commit install
-      - task: dev-setup:virtualenv
+      - task: dev-setup:venv
 
-  dev-setup:virtualenv-base:
-    desc: Install dev requirements
-    requires:
-      vars: [VIRTUAL_ENV]
-    preconditions:
-      - sh: '[ "{{.VIRTUAL_ENV | base }}" != "global" ]'
-        msg: "Must be in a virtualenv not called global"
-    cmds:
-      - pip install --upgrade -r requirements-base.txt
-
-  dev-setup:virtualenv:
+  dev-setup:venv:
     desc: Install dev requirements
     cmds:
-      - task: dev-setup:virtualenv-base
-      - pip-sync requirements-dev.txt
+      - uv sync
 
   maintenance:
     desc: Project maintenance automation
@@ -37,23 +26,23 @@ tasks:
 
   maintenance:requirements-dev:
     vars:
-      FLAGS: '{{.FLAGS | default "--rebuild --upgrade" }}'
+      CLI_ARGS: '{{.CLI_ARGS | default "--upgrade" }}'
     cmds:
-      - task: dev-setup:virtualenv-base
-      - pip-compile {{.FLAGS}} requirements-dev.in
+      - task: dev-setup:venv
+      - uv lock {{.CLI_ARGS}}
 
   test:
     desc: Run tests
     cmds:
-      - rm -rf ./tmp/tests
+      - rm -rf ./tmp/pytest
       - mkdir -p ./tmp/
-      - pytest --basetemp=./tmp/tests/ {{.CLI_ARGS}}
+      - uv run pytest --basetemp=./tmp/pytest/ {{.CLI_ARGS}}
 
   diff:
     desc: Compare last version to HEAD
     cmds:
       - rm -rf tmp/before
       - rm -rf tmp/after
-      - copier copy . tmp/before
-      - copier copy --vcs-ref HEAD . tmp/after
+      - uv run copier copy {{.CLI_ARGS}} . tmp/before
+      - uv run copier copy {{.CLI_ARGS}} --vcs-ref HEAD . tmp/after
       - diff tmp/before tmp/after
