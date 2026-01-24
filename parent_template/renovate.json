@@ -2,7 +2,9 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["\\.gitlab-ci\\.ya?ml$"],
+      "managerFilePatterns": [
+        "/\\.gitlab-ci\\.ya?ml$/"
+      ],
       "matchStrings": [
         "https://astral\\.sh/uv/(?<currentValue>[^/]+)/install\\.sh"
       ],
@@ -12,19 +14,27 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["digest"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "digest"
+      ],
       "automerge": true
     },
     {
-      "matchPackageNames": ["astral-sh/uv"],
+      "matchPackageNames": [
+        "astral-sh/uv"
+      ],
       "automerge": true
     }
   ],
-  lockFileMaintenance: {
-    enabled: true,
-    automerge: true,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
   },
-  "extends": ["config:best-practices"],
+  "extends": [
+    "config:best-practices"
+  ],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
