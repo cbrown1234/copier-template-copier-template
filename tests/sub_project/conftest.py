@@ -10,7 +10,6 @@ import pytest
 from tests.helpers import git_save
 
 
-# TODO: parameterise with copier variables?
 @pytest.fixture
 def sub_project(template_dir: Path, tmp_path_factory: pytest.TempPathFactory) -> Path:
     sub_project = tmp_path_factory.mktemp('sub_project')

@@ -13,7 +13,7 @@ _templates_suffix: .tmpl
 
 template_name:
   type: str
-  default: copier-template
+  default: 'copier-template'
   when: false  # hidden question
 
 template_dir:

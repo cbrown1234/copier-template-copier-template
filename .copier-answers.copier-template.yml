@@ -1,0 +1,6 @@
+# Changes here will be managed by Copier; NEVER EDIT MANUALLY
+_commit: ba5229b
+_src_path: git@gitlab.com:browniantech/copier-template-copier-template.git
+output_template_name: copier-template
+template_dir: parent_template
+vcs_platform: gitlab
