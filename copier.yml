@@ -22,6 +22,8 @@ template_dir:
 
 vcs_platform:
   type: str
+  choices:
+    Gitlab: gitlab
   default: gitlab
 
 output_template_name:
