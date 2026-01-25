@@ -1,8 +1,8 @@
 _subdirectory: <<template_dir>>
 _min_copier_version: "9.6.0"
 _answers_file: .copier-answers.<<var_start>> template_name <<var_end>>.yml
-<% if template_style == 'square_brackets' %>
 _envops:
+<% if template_style == 'square_brackets' %>
   block_end_string: "%]"
   block_start_string: "[%"
   comment_end_string: "#]"
@@ -10,6 +10,7 @@ _envops:
   variable_end_string: "]]"
   variable_start_string: "[["
 <% endif %>
+  trim_blocks: true
 
 template_name:
   type: str
