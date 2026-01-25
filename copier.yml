@@ -16,6 +16,10 @@ template_name:
   default: copier-template
   when: false  # hidden question
 
+template_dir:
+  type: str
+  default: template
+
 vcs_platform:
   type: str
   default: gitlab

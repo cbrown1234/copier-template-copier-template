@@ -23,8 +23,3 @@ minversion = "9.0"
 testpaths = [
     "tests",
 ]
-addopts = [
-    "--ignore=tmp",
-    "--ignore=parent_template",
-]
-norecursedirs = ["tmp*", "parent_template"]
