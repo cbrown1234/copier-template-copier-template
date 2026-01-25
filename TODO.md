@@ -9,9 +9,9 @@
     - [x] `mode` switch to update (for simpler manual editing)
     - [ ] Test out the new setup
 - [x] Add `task` task for semantic_release
-- [ ] Good standard README.md
+- [x] Good standard README.md
 - [ ] Add ci to parent_project
-- [ ] Add test_sub_project.py equivalent to parent_template
+- [x] Add test_sub_project.py equivalent to parent_template
 - [ ] Add ruff config to parent_template
 - [ ] Reduce templating of code files via dotenv files, or pyyaml queries etc
     - Enables linting
