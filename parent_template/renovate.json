@@ -21,6 +21,17 @@
       ],
       "depNameTemplate": "copier",
       "datasourceTemplate": "pypi"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/\\.gitlab-ci\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "https://taskfile\\.dev/install\\.sh.*?(?<currentValue>v[\\d.]+)"
+      ],
+      "depNameTemplate": "go-task/task",
+      "datasourceTemplate": "github-releases"
     }
   ],
   "packageRules": [
@@ -42,6 +53,12 @@
     {
       "matchPackageNames": [
         "copier"
+      ],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": [
+        "go-task/task"
       ],
       "automerge": true
     }
