@@ -28,6 +28,7 @@ vcs_platform:
 
 output_template_name:
   type: str
+  help: Name of your copier template
   default: your-template-name
 
 template_style:
