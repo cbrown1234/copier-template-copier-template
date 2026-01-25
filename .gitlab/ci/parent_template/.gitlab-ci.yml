@@ -2,9 +2,9 @@
 tests:
   stage: test
   needs: []
-  image: debian:trixie-slim
+  image: debian:trixie-slim@sha256:77ba0164de17b88dd0bf6cdc8f65569e6e5fa6cd256562998b62553134a00ef0
   services:
-    - docker:29.1.5-dind
+    - docker:29.1.5-dind@sha256:3a33fc81fa4d38360f490f5b900e9846f725db45bb1d9b1fe02d849bd42a5cf2
   variables:
     UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
     PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
