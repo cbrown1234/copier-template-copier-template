@@ -36,7 +36,7 @@ tasks:
     cmds:
       - rm -rf ./tmp/pytest
       - mkdir -p ./tmp/
-      - uv run pytest --basetemp=./tmp/pytest/ {{.CLI_ARGS}}
+      - uv run --frozen pytest --basetemp=./tmp/pytest/ {{.CLI_ARGS}}
 
   diff:
     desc: Compare last version to HEAD
