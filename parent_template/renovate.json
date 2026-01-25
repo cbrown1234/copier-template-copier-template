@@ -10,6 +10,17 @@
       ],
       "depNameTemplate": "astral-sh/uv",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "copier\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "_min_copier_version:\\s*[\"'](?<currentValue>[^\"']+)[\"']"
+      ],
+      "depNameTemplate": "copier",
+      "datasourceTemplate": "pypi"
     }
   ],
   "packageRules": [
@@ -25,6 +36,12 @@
     {
       "matchPackageNames": [
         "astral-sh/uv"
+      ],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": [
+        "copier"
       ],
       "automerge": true
     }
