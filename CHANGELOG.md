@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.3.1 (2026-01-25)
+
+### Bug Fixes
+
+- Correct template name
+  ([`dcd34d9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/dcd34d946023b36b957272c74497c42a5acab0db))
+
+
 ## v0.3.0 (2026-01-25)
 
 ### Chores
