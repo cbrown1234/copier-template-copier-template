@@ -1,8 +1,8 @@
-_subdirectory: [[template_dir]]
+_subdirectory: <<template_dir>>
 _min_copier_version: "9.6.0"
 _answers_file: .copier-answers.{{ template_name }}.yml
 
 template_name:
   type: str
-  default: '[[output_template_name]]'
+  default: '<<output_template_name>>'
   when: false
