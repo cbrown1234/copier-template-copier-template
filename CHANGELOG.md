@@ -2,6 +2,31 @@
 
 <!-- version list -->
 
+## v0.4.0 (2026-01-25)
+
+### Bug Fixes
+
+- Configure renovate to not pin digests in inner template
+  ([`71bc917`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/71bc917dd4eb3588a1877e4e9f16ab25f028356a))
+
+- Correct template name for ci files
+  ([`930ff74`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/930ff748ab306cfb95a74ab78a56f72591d93448))
+
+### Chores
+
+- **deps**: Pin dependencies
+  ([`a321abb`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a321abb0e376855de87f4f200025c5d2208a03fc))
+
+- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
+  v0.3.2
+  ([`93c3d03`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/93c3d0357de53c926dfcbc06b5894e828ce32026))
+
+### Features
+
+- Deterministic task version updating
+  ([`dc1736d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/dc1736dd02eb611f3c43b28632b2bed78b3da33b))
+
+
 ## v0.3.2 (2026-01-25)
 
 ### Features
