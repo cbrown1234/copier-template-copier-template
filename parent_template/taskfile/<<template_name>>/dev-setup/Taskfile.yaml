@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  default:
+    desc: Bootstrap dev setup
+    cmds:
+      - pre-commit install
+      - task: venv
+
+  venv:
+    desc: Install dev requirements
+    cmds:
+      - uv sync
+
+  maintenance:
+    desc: Project maintenance automation
+    cmds:
+      - pre-commit autoupdate
+      - task: maintenance:requirements
+
+  maintenance:requirements:
+    vars:
+      CLI_ARGS: '{{.CLI_ARGS | default "--upgrade" }}'
+    cmds:
+      - task: dev-setup:venv
+      - uv lock {{.CLI_ARGS}}

@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  docker-mount:
+    desc: "Example using docker with volumes to test in CI"
+    cmds:
+      - docker run -v $(pwd):/code/ --entrypoint=/bin/bash python:3.12-slim -c 'cat /code/pyproject.toml'

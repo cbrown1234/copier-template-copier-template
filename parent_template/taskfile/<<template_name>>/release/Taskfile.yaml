@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  default:
+    aliases: [dry-run]
+    desc: Dry run release of new version e.g. (task release -- --minor)
+    cmd: python-semantic-release --noop version {{.CLI_ARGS}}
+
+  actual:
+    aliases: [wet-run]
+    desc: Release new version e.g. force minor (task release -- --minor)
+    cmd: python-semantic-release version {{.CLI_ARGS}}

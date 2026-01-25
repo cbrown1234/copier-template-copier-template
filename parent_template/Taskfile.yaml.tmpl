@@ -1,0 +1,15 @@
+version: '3'
+
+set: [pipefail]
+
+includes:
+  dev-setup: ./taskfile/<<template_name>>/dev-setup
+  test: ./taskfile/<<template_name>>/test
+  diff: ./taskfile/<<template_name>>/diff
+  example: ./taskfile/<<template_name>>/example
+  release: ./taskfile/<<template_name>>/release
+
+tasks:
+  default:
+    cmds:
+      - task --list
