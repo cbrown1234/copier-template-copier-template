@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.3.2 (2026-01-25)
+
+### Features
+
+- Add minimal ruff config to template
+  ([`030f6b5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/030f6b5f25d78e83c3a42250916132f5f423aac0))
+
+
 ## v0.3.1 (2026-01-25)
 
 ### Bug Fixes
