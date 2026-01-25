@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  default:
+    desc: Run tests
+    cmds:
+      - rm -rf ./tmp/pytest
+      - mkdir -p ./tmp/
+      - uv run --frozen pytest --basetemp=./tmp/pytest/ {{.CLI_ARGS}}

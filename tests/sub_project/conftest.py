@@ -31,14 +31,14 @@ def sub_project(
             ...
     """
     data = getattr(request, 'param', None)
-    project = tmp_path_factory.mktemp('sub_project')
+    sub_project = tmp_path_factory.mktemp('sub_project')
     run_copy(
         str(template_dir),
-        project,
+        sub_project,
         vcs_ref='HEAD',
         data=data,
         defaults=True,
         unsafe=True,
     )
-    git_save(project)
-    return project
+    git_save(sub_project)
+    return sub_project

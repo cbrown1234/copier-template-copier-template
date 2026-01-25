@@ -1,0 +1,34 @@
+---
+tests:
+  stage: test
+  needs: []
+  image: debian:trixie-slim
+  services:
+    - docker:29.1.5-dind
+  variables:
+    UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
+    PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
+    GIT_DEPTH: "0"  # All git tags needed for copier
+    # When using dind service, you must instruct Docker to talk with
+    # the daemon started inside of the service
+    # These are usually specified by the entrypoint, if using the "docker" image
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_CERTDIR: "/certs"  # should be mounded by the gitlab runner
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+  before_script:
+    - apt-get update && apt-get install -y git curl
+    - apt-get install --no-install-recommends -y docker-cli
+    - curl -LsSf https://astral.sh/uv/0.9.26/install.sh | sh
+    - source $HOME/.local/bin/env
+    - sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin v3.42.1
+    - task dev-setup:venv
+  script:
+    - task test
+  cache:
+    - key: tests-uv
+      paths:
+        - ${UV_CACHE_DIR}
+    - key: tests-pre-commit
+      paths:
+        - ${PRE_COMMIT_HOME}

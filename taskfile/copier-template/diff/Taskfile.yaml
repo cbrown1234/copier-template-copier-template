@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+  default:
+    desc: Compare last version to HEAD
+    cmds:
+      - rm -rf tmp/before
+      - rm -rf tmp/after
+      - uv run copier copy {{.CLI_ARGS}} . tmp/before
+      - uv run copier copy {{.CLI_ARGS}} --vcs-ref HEAD . tmp/after
+      - diff tmp/before tmp/after

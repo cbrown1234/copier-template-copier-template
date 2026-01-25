@@ -2,57 +2,14 @@ version: '3'
 
 set: [pipefail]
 
+includes:
+  dev-setup: ./taskfile/copier-template/dev-setup
+  test: ./taskfile/copier-template/test
+  diff: ./taskfile/copier-template/diff
+  example: ./taskfile/copier-template/example
+  release: ./taskfile/copier-template/release
+
 tasks:
   default:
     cmds:
       - task --list
-
-  dev-setup:
-    desc: Bootstrap dev setup
-    cmds:
-      - pre-commit install
-      - task: dev-setup:venv
-
-  dev-setup:venv:
-    desc: Install dev requirements
-    cmds:
-      - uv sync
-
-  maintenance:
-    desc: Project maintenance automation
-    cmds:
-      - pre-commit autoupdate
-      - task: maintenance:requirements-dev
-
-  maintenance:requirements-dev:
-    vars:
-      CLI_ARGS: '{{.CLI_ARGS | default "--upgrade" }}'
-    cmds:
-      - task: dev-setup:venv
-      - uv lock {{.CLI_ARGS}}
-
-  test:
-    desc: Run tests
-    cmds:
-      - rm -rf ./tmp/pytest
-      - mkdir -p ./tmp/
-      - uv run --frozen pytest --basetemp=./tmp/pytest/ {{.CLI_ARGS}}
-
-  diff:
-    desc: Compare last version to HEAD
-    cmds:
-      - rm -rf tmp/before
-      - rm -rf tmp/after
-      - uv run copier copy {{.CLI_ARGS}} . tmp/before
-      - uv run copier copy {{.CLI_ARGS}} --vcs-ref HEAD . tmp/after
-      - diff tmp/before tmp/after
-
-  example:docker-mount:
-    desc: "Example using docker with volumes to test in CI"
-    cmds:
-      - docker info
-      - docker run -v $(pwd):/code/ --entrypoint=/bin/bash python:3.12-slim -c 'cat /code/pyproject.toml'
-
-  release:
-    desc: Release new version e.g. dryrun (task release -- --noop version)
-    cmd: python-semantic-release {{.CLI_ARGS}}
