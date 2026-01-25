@@ -27,3 +27,21 @@ vcs_platform:
 output_template_name:
   type: str
   default: your-template-name
+
+template_style:
+  type: str
+  help: Template delimiter style for the generated template
+  choices:
+    Jinja: jinja
+    Square Brackets: square_brackets
+  default: jinja
+
+var_start:
+  type: str
+  default: "<< '{{' if template_style == 'jinja' else '[[' >>"
+  when: false
+
+var_end:
+  type: str
+  default: "<< '}}' if template_style == 'jinja' else ']]' >>"
+  when: false

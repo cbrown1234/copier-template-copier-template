@@ -1,6 +1,15 @@
 _subdirectory: <<template_dir>>
 _min_copier_version: "9.6.0"
-_answers_file: .copier-answers.{{ template_name }}.yml
+_answers_file: .copier-answers.<<var_start>> template_name <<var_end>>.yml
+<% if template_style == 'square_brackets' %>
+_envops:
+  block_end_string: "%]"
+  block_start_string: "[%"
+  comment_end_string: "#]"
+  comment_start_string: "[#"
+  variable_end_string: "]]"
+  variable_start_string: "[["
+<% endif %>
 
 template_name:
   type: str
