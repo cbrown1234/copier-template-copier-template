@@ -2,6 +2,44 @@
 
 <!-- version list -->
 
+## v0.4.1 (2026-01-27)
+
+### Bug Fixes
+
+- Correct copier min version bumping
+  ([`0d53956`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0d539566f7d1a4e1cca496b05e922fca7c775062))
+
+### Chores
+
+- **deps**: Lock file maintenance
+  ([`3917a95`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3917a95775d368b8d5a348fd81a9b4aa6a35b43e))
+
+- **deps**: Lock file maintenance
+  ([`4b8f607`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4b8f6077eab34bdd0c34a1fe28f8fbf4c2e40468))
+
+- **deps**: Pin dependencies
+  ([`82168e8`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/82168e87134b534c9fff68af0a775ed428ba3ba2))
+
+- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
+  v0.4.0
+  ([`7dc4676`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/7dc46769faaae67169ed28fdeb2273d4bbd44e0f))
+
+- **deps**: Update dependency git@gitlab.com:browniantech/pre-commit-copier-template.git to v0.5.3
+  ([`f6f4643`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f6f4643731d61ff5a8aa6da2b267af7300c92f0f))
+
+- **deps**: Update dependency go-task/task to v3.47.0
+  ([`fbeb01d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/fbeb01db254e294809052aa9439801602d4d2213))
+
+- **deps**: Update dependency go-task/task to v3.48.0
+  ([`2f11400`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2f11400fc20bfa949b685b0a58afa043112bf0b9))
+
+- **deps**: Update python docker tag to v3.14
+  ([`104bbb5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/104bbb5d777bb96a0bf0af772372bb933a0458ac))
+
+- **repo**: Remove duplicate renovate config
+  ([`bd221e3`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/bd221e3567acb21ef35d69460edbdf7fe3a4bd7c))
+
+
 ## v0.4.0 (2026-01-25)
 
 ### Bug Fixes
