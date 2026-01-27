@@ -14,7 +14,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "copier\\.ya?ml$"
+        "/copier\\.ya?ml$/"
       ],
       "matchStrings": [
         "_min_copier_version:\\s*[\"'](?<currentValue>[^\"']+)[\"']"
