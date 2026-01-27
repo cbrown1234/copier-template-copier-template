@@ -51,18 +51,6 @@
       "matchDatasources": [
         "docker"
       ],
-      "matchFileNames": [
-        "parent_template/**"
-      ],
-      "matchUpdateTypes": [
-        "pinDigest"
-      ],
-      "enabled": false
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
       "matchUpdateTypes": [
         "digest"
       ],
