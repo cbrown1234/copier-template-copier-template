@@ -7,12 +7,12 @@
 - [x] Semantic release config review
     - [x] try regenerating the config file with v10+
     - [x] `mode` switch to update (for simpler manual editing)
-    - [ ] Test out the new setup
+    - [x] Test out the new setup
 - [x] Add `task` task for semantic_release
 - [x] Good standard README.md
 - [x] Add ci to parent_project
 - [x] Add test_sub_project.py equivalent to parent_template
-- [ ] Add ruff config to parent_template
+- [x] Add ruff config to parent_template
 - [x] Reduce templating of code files via dotenv files, or pyyaml queries etc
     - Enables linting
 - [ ] Update readme with instruction if copier trust is required
