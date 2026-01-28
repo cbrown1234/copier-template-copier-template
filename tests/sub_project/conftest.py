@@ -4,15 +4,17 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from copier import run_copy
 import pytest
+from copier import run_copy
 
 from tests.helpers import git_save
 
 
 @pytest.fixture
 def sub_project(
-    request, template_dir: Path, tmp_path_factory: pytest.TempPathFactory
+    request: pytest.FixtureRequest,
+    template_dir: Path,
+    tmp_path_factory: pytest.TempPathFactory,
 ) -> Path:
     """Create a sub-project by copying the template.
 
@@ -20,7 +22,7 @@ def sub_project(
     to pass custom copier data:
 
         @pytest.mark.parametrize(
-            'sub_project,expected',
+            ('sub_project','expected'),
             [
                 ({'some_option': 'value1'}, 'expected1'),
                 ({'some_option': 'value2'}, 'expected2'),

@@ -8,7 +8,7 @@ import pytest
 
 
 @pytest.mark.parametrize(
-    'sub_project,expect_gitlab',
+    ('sub_project', 'expect_gitlab'),
     [
         ({'vcs_platform': 'gitlab'}, True),
     ],

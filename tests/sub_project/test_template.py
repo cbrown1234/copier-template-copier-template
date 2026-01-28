@@ -4,15 +4,16 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from copier import run_copy
 import pytest
+from copier import run_copy
 
 from tests.helpers import git_save
 
 
 @pytest.fixture
 def sub_sub_project(
-    sub_project: Path, tmp_path_factory: pytest.TempPathFactory
+    sub_project: Path,
+    tmp_path_factory: pytest.TempPathFactory,
 ) -> Path:
     sub_sub_project = tmp_path_factory.mktemp('sub_sub')
     run_copy(

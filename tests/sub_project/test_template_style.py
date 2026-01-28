@@ -9,7 +9,7 @@ import yaml
 
 
 @pytest.mark.parametrize(
-    'sub_project,expected_var_start,expected_var_end',
+    ('sub_project', 'expected_var_start', 'expected_var_end'),
     [
         ({'template_style': 'jinja'}, '{{', '}}'),
         ({'template_style': 'square_brackets'}, '[[', ']]'),
@@ -24,7 +24,7 @@ def test_template_style(
     """Test that template_style configures the correct delimiters."""
     copier_yml = sub_project / 'copier.yml'
 
-    with open(copier_yml) as f:
+    with copier_yml.open() as f:
         config = yaml.safe_load(f)
 
     envops = config.get('_envops', {})

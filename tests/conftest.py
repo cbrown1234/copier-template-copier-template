@@ -9,11 +9,12 @@ import yaml
 
 
 @pytest.fixture
-def template_dir(request) -> Path:
+def template_dir(request: pytest.FixtureRequest) -> Path:
     return request.config.rootpath
 
 
 @pytest.fixture
 def copier_config(template_dir: Path) -> dict:
-    with open(template_dir / 'copier.yml') as copier_config:
-        return yaml.safe_load(copier_config)
+    copier_config_file = template_dir / 'copier.yml'
+    with copier_config_file.open() as f:
+        return yaml.safe_load(f)
