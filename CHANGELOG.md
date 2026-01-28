@@ -2,6 +2,41 @@
 
 <!-- version list -->
 
+## v0.5.0 (2026-01-28)
+
+### Chores
+
+- **deps**: Update dependency astral-sh/uv to v0.9.27
+  ([`f16229b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f16229bac8b3913eb22060b8bf3b8813437a9781))
+
+- **deps**: Update dependency copier to v9.11.3
+  ([`3ccb4a9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3ccb4a9de682c0100ce7466e3536f16dc9a33eca))
+
+- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
+  v0.4.1
+  ([`5ab1b40`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5ab1b40ac71e0095930122075d82865deb20b942))
+
+- **deps**: Update docker docker tag to v29.2.0
+  ([`9480fc4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/9480fc4386f7e1a67b6b39e7c6f7a0bc58a79719))
+
+- **deps**: Update docker:29.2.0-dind docker digest to a284d31
+  ([`60440f4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/60440f48f41c2ff38b373215897cf58248e3d22a))
+
+- **deps**: Update docker:29.2.0-dind docker digest to dbd6a47
+  ([`2233b63`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2233b632613461c8ef1aa18a9acde2346ef8547b))
+
+- **repo**: Meet ruff config rules
+  ([`e18e5bf`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/e18e5bfb10eb4050b1c9b3dfc6a8030a4d7721b2))
+
+- **repo**: Update ruff config
+  ([`2905aee`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2905aee66f9e8c2c132594fa29d0a127d02df38c))
+
+### Features
+
+- Improve ruff config
+  ([`1380aa8`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1380aa81c3da3b1941c23a0c759b0af9fbe647ac))
+
+
 ## v0.4.1 (2026-01-27)
 
 ### Bug Fixes
