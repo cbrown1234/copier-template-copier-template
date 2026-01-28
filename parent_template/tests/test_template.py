@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from copier import run_copy, run_update
 import pytest
+from copier import run_copy, run_update
 
 from tests.helpers import git_save, is_git_repo_dirty
 

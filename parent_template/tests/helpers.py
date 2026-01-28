@@ -1,7 +1,7 @@
 """Useful methods for testing copier templates."""
 
-from pathlib import Path
 import subprocess
+from pathlib import Path
 
 from plumbum import local
 from plumbum.cmd import git as _git
@@ -40,7 +40,7 @@ def git_save(
             git('tag', tag)
 
 
-def is_git_repo_dirty():
+def is_git_repo_dirty() -> bool:
     """Check if the git repository has uncommitted changes."""
     result = subprocess.run(
         ['git', 'status', '--porcelain'],
