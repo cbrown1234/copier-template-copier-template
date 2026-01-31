@@ -2,6 +2,22 @@
 
 <!-- version list -->
 
+## v0.5.2 (2026-01-31)
+
+### Chores
+
+- Update copier template
+  ([`f8a8c73`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f8a8c7394a597d0e61eae56fb16c8c0349bd3d92))
+
+- Update copier template
+  ([`2d97a6b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2d97a6bbb9c985415c72c774bb405694394b2bed))
+
+### Features
+
+- Add support for recommended extensions
+  ([`1d9fce0`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1d9fce076413e7e9733840f491a213771be4baac))
+
+
 ## v0.5.1 (2026-01-31)
 
 ### Chores
