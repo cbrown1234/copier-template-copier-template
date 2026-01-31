@@ -11,6 +11,16 @@ _envops:
   variable_start_string: "[["
 <% endif %>
   trim_blocks: true
+<% if needs_extensions %>
+_jinja_extensions:
+<% if include_pydantic_validation %>
+  - copier_pydantic.MultilineValidation
+  - copier_pydantic.PydanticExtension
+<% endif %>
+<% if include_template_extensions %>
+  - copier_template_extensions.TemplateExtensionLoader
+<% endif %>
+<% endif %>
 
 template_name:
   type: str

@@ -1,0 +1,5 @@
+from pydantic import BaseModel
+
+class ExampleConfig(BaseModel):
+    var_1: str
+    var_2: int

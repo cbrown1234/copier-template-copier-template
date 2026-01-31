@@ -23,6 +23,8 @@ ignore = [
     "PLR2004", # Magic value used in comparison, ...
     "S311", # Standard pseudo-random generators are not suitable for cryptographic purposes
     "INP001", # https://github.com/astral-sh/ruff/issues/6474
+    "D101", # Tests can self document
+    "D102", # Tests can self document
     "D103", # Tests can self document
     "D104", # Not relevant for tests
     "S602", # Test env is controlled

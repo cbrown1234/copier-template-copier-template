@@ -17,12 +17,12 @@ brew install copier
 ### Create a new project
 
 ```bash
-copier copy <template-url> /path/to/new/project
+copier copy <template-url> /path/to/new/project<% if needs_trust %> --trust<% endif %>
 ```
 
 ### Update an existing project
 
 ```bash
 cd /path/to/your/project
-copier update
+copier update<% if needs_trust %> --trust<% endif %>
 ```

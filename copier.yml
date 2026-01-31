@@ -48,3 +48,23 @@ var_end:
   type: str
   default: "<< '}}' if template_style == 'jinja' else ']]' >>"
   when: false
+
+include_pydantic_validation:
+  type: bool
+  help: Include support for validation with Pydantic models (and multiline errors)
+  default: false
+
+include_template_extensions:
+  type: bool
+  help: Include support for local extensions
+  default: false
+
+needs_extensions:
+  type: bool
+  default: "<< include_pydantic_validation or include_template_extensions >>"
+  when: false
+
+needs_trust:
+  type: bool
+  default: "<< include_pydantic_validation or include_template_extensions >>"
+  when: false
