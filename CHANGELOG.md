@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v0.5.1 (2026-01-31)
+
+### Chores
+
+- **deps**: Update dependency astral-sh/uv to v0.9.28
+  ([`b605025`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/b605025fadbbd74e0c0ac9ddd64174f7e9cb4e2a))
+
+- **repo**: Update TODO list
+  ([`ff41b42`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ff41b42642eb295c81a394f8f041f9e635096f2e))
+
+
 ## v0.5.0 (2026-01-28)
 
 ### Chores
