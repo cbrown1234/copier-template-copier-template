@@ -17,5 +17,5 @@
     - Enables linting
 - [x] Update readme with instruction if copier trust is required
 - [x] Add copier extensions option
-- [ ] Add https://pypi.org/project/copier-pydantic/
+- [x] Add https://pypi.org/project/copier-pydantic/
 - [ ] Try cog for updating some file contents maybe
