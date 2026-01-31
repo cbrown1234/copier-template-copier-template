@@ -5,11 +5,20 @@ A [Copier](https://copier.readthedocs.io/) template.
 ## Install Copier
 
 ```bash
+<% if needs_extensions %>
+uv tool install copier<% if include_pydantic_validation %> --with copier-pydantic<% endif %><% if include_template_extensions %> --with copier-template-extensions<% endif %>
+
+# or
+pipx install copier
+pipx inject copier<% if include_pydantic_validation %> copier-pydantic<% endif %><% if include_template_extensions %> copier-template-extensions<% endif %>
+
+<% else %>
 uv tool install copier
 # or
 pipx install copier
 # or
 brew install copier
+<% endif %>
 ```
 
 ## Usage
