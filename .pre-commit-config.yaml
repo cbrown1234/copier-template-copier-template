@@ -17,20 +17,20 @@ repos:
       - id: check-merge-conflict
         args: [--assume-in-merge]
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.28.0
+    rev: v8.30.0
     hooks:
       - id: gitleaks
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Ruff version.
-    rev: v0.14.3
+    rev: v0.14.14
     hooks:
       # Run the linter.
-      - id: ruff
+      - id: ruff-check
         args: [--fix]
       # Run the formatter.
       - id: ruff-format
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.37.1
+    rev: v1.38.0
     hooks:
       - id: yamllint
         args: [--strict]
@@ -43,7 +43,7 @@ repos:
                 scripts/install-task.sh
             )$
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.34.1
+    rev: 0.36.1
     hooks:
       - id: check-github-workflows
         args: ["--verbose"]
