@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v0.5.3 (2026-01-31)
+
+### Chores
+
+- Improve readme for extensions
+  ([`187f39c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/187f39c5adc8d3e731cd3c057224a3c94e2960cb))
+
+- Update TODO list
+  ([`db42bcb`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/db42bcbed4f6bd729b224870216486b0304eded9))
+
+
 ## v0.5.2 (2026-01-31)
 
 ### Chores
