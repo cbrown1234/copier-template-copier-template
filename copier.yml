@@ -24,6 +24,7 @@ vcs_platform:
   type: str
   choices:
     Gitlab: gitlab
+    GitHub: github
   default: gitlab
 
 output_template_name:

@@ -19,7 +19,7 @@
 - [x] Add copier extensions option
 - [x] Add https://pypi.org/project/copier-pydantic/
 - [ ] Try cog for updating some file contents maybe
-- [ ] GitHub Actions support
+- [x] GitHub Actions support
     - Add as alternative to GitLab CI when vcs_platform is github
 - [x] License file generation
     - Offer common licenses (MIT, Apache 2.0, Unlicense, none)
