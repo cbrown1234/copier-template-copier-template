@@ -1,6 +1,8 @@
 # Changes here will be managed by Copier; NEVER EDIT MANUALLY
-_commit: v0.5.1
+_commit: v0.5.4
 _src_path: git@gitlab.com:browniantech/copier-template-copier-template.git
+include_pydantic_validation: false
+include_template_extensions: false
 output_template_name: copier-template
 template_dir: parent_template
 template_style: jinja
