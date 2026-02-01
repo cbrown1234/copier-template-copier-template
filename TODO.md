@@ -19,3 +19,14 @@
 - [x] Add copier extensions option
 - [x] Add https://pypi.org/project/copier-pydantic/
 - [ ] Try cog for updating some file contents maybe
+- [ ] GitHub Actions support
+    - Add as alternative to GitLab CI when vcs_platform is github
+- [ ] License file generation
+    - Offer common licenses (MIT, Apache 2.0, GPL, none)
+- [ ] Code coverage integration
+    - Optional codecov/coveralls setup in CI and pytest config
+- [ ] Matrix testing in CI
+    - Test across multiple Python versions, not just minimum
+- [ ] Template inheritance/composition documentation
+    - Document patterns for extending this template with org-specific defaults
+    - Consider recommending pre-commit-copier-template for pre-commit customization
