@@ -6,12 +6,10 @@ A [Copier](https://copier.readthedocs.io/) template.
 
 ```bash
 <% if needs_extensions %>
-uv tool install copier<% if include_pydantic_validation %> --with copier-pydantic<% endif %><% if include_template_extensions %> --with copier-template-extensions<% endif %>
-
+uv tool install copier<% if include_pydantic_validation %> --with copier-pydantic<% endif +%><% if include_template_extensions %> --with copier-template-extensions<% endif +%>
 # or
 pipx install copier
-pipx inject copier<% if include_pydantic_validation %> copier-pydantic<% endif %><% if include_template_extensions %> copier-template-extensions<% endif %>
-
+pipx inject copier<% if include_pydantic_validation %> copier-pydantic<% endif +%><% if include_template_extensions %> copier-template-extensions<% endif +%>
 <% else %>
 uv tool install copier
 # or
@@ -26,12 +24,12 @@ brew install copier
 ### Create a new project
 
 ```bash
-copier copy <template-url> /path/to/new/project<% if needs_trust %> --trust<% endif %>
+copier copy <template-url> /path/to/new/project<% if needs_trust %> --trust<% endif +%>
 ```
 
 ### Update an existing project
 
 ```bash
 cd /path/to/your/project
-copier update<% if needs_trust %> --trust<% endif %>
+copier update<% if needs_trust %> --trust<% endif +%>
 ```
