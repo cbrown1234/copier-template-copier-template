@@ -59,6 +59,32 @@ include_template_extensions:
   help: Include support for local extensions
   default: false
 
+license_type:
+  type: str
+  help: License for the generated template (see https://choosealicense.com)
+  choices:
+    MIT: mit
+    Apache 2.0: apache-2.0
+    The Unlicense: unlicense
+    None: none
+  default: mit
+
+license:
+  type: bool
+  default: "<< license_type != 'none' >>"
+  when: false
+
+copyright_year:
+  type: str
+  default: "<< '%Y' | strftime >>"
+  when: "<< license and license_type not in ['none', 'unlicense'] >>"
+
+copyright_name:
+  type: str
+  placeholder: "Your Name"
+  default: "Placeholder Name"
+  when: "<< license and license_type not in ['none', 'unlicense'] >>"
+
 needs_extensions:
   type: bool
   default: "<< include_pydantic_validation or include_template_extensions >>"

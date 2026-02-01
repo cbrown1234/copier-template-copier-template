@@ -21,8 +21,8 @@
 - [ ] Try cog for updating some file contents maybe
 - [ ] GitHub Actions support
     - Add as alternative to GitLab CI when vcs_platform is github
-- [ ] License file generation
-    - Offer common licenses (MIT, Apache 2.0, GPL, none)
+- [x] License file generation
+    - Offer common licenses (MIT, Apache 2.0, Unlicense, none)
 - [ ] Code coverage integration
     - Optional codecov/coveralls setup in CI and pytest config
 - [ ] Matrix testing in CI

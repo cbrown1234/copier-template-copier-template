@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 import pytest
 from copier import run_copy
@@ -15,6 +16,7 @@ def sub_project(
     request: pytest.FixtureRequest,
     template_dir: Path,
     tmp_path_factory: pytest.TempPathFactory,
+    mock_answers_required_without_defaults: dict[str, Any],
 ) -> Path:
     """Create a sub-project by copying the template.
 
@@ -32,7 +34,8 @@ def sub_project(
         def test_example(sub_project: Path, expected: str) -> None:
             ...
     """
-    data = getattr(request, 'param', None)
+    data = getattr(request, 'param', {})
+    data = mock_answers_required_without_defaults | data
     sub_project = tmp_path_factory.mktemp('sub_project')
     run_copy(
         str(template_dir),

@@ -3,6 +3,16 @@ name = "<<output_template_name>>-copier-template"
 version = "0.0.0"
 description = "Copier template for <<output_template_name>>"
 readme = "README.md"
+<% if license_type == 'mit' %>
+license = "MIT"
+<% elif license_type == 'apache-2.0' %>
+license = "Apache-2.0"
+<% elif license_type == 'unlicense' %>
+license = "Unlicense"
+<% endif %>
+<% if license %>
+license-files = ["LICENSE"]
+<% endif %>
 dependencies = [
     "copier>=9.6.0",
 <% if include_pydantic_validation %>
