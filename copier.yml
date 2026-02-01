@@ -82,7 +82,6 @@ copyright_year:
 copyright_name:
   type: str
   placeholder: "Your Name"
-  default: "Placeholder Name"
   when: "<< license and license_type not in ['none', 'unlicense'] >>"
 
 needs_extensions:
