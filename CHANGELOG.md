@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.5.4 (2026-02-01)
+
+### Chores
+
+- Improve whitespace in README
+  ([`91757c5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/91757c56aafdf7bb47e16b3928e9d4bb70129cf3))
+
+
 ## v0.5.3 (2026-01-31)
 
 ### Chores
