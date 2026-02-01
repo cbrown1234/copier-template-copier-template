@@ -2,6 +2,26 @@
 
 <!-- version list -->
 
+## v0.5.5 (2026-02-01)
+
+### Chores
+
+- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
+  v0.5.4
+  ([`c8fe752`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/c8fe7525d1c2c8d82b61906ed97647f1795740f4))
+
+- **repo**: Update TODO list
+  ([`3db9599`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3db9599deb601ea6fd419116e0ecdea223b4e6e3))
+
+### Features
+
+- Add license choice
+  ([`5b43215`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5b4321588bd8df0a3f3980df3270f43d65ca0473))
+
+- **repo**: Refactor tests
+  ([`6bb43cd`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/6bb43cd303eba2c1ce3f0c52270d8aa9e400e6e8))
+
+
 ## v0.5.4 (2026-02-01)
 
 ### Chores
