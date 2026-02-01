@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.5.6 (2026-02-01)
+
+### Bug Fixes
+
+- Remove default copyright name
+  ([`774d04c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/774d04c7bc66a4e76dbeb9e8bef631c53c1d90eb))
+
+
 ## v0.5.5 (2026-02-01)
 
 ### Chores
