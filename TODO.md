@@ -25,7 +25,7 @@
     - Offer common licenses (MIT, Apache 2.0, Unlicense, none)
 - [ ] Code coverage integration
     - Optional codecov/coveralls setup in CI and pytest config
-- [ ] Matrix testing in CI
+- [x] Matrix testing in CI
     - Test across multiple Python versions, not just minimum
 - [ ] Template inheritance/composition documentation
     - Document patterns for extending this template with org-specific defaults

@@ -5,9 +5,13 @@ tests:
   image: debian:trixie-slim
   services:
     - docker:29.2.0-dind@sha256:a284d31e4db9a9916fd9be44380263eaeafedf0e3048a859f978922b5a0c16fc
+  parallel:
+    matrix:
+      - PYTHON_VERSION: ["3.10", "3.11", "3.12", "3.13", "3.14"]
   variables:
     UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
     PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
+    UV_PYTHON: "$PYTHON_VERSION"
     GIT_DEPTH: "0"  # All git tags needed for copier
     # When using dind service, you must instruct Docker to talk with
     # the daemon started inside of the service
@@ -21,14 +25,15 @@ tests:
     - apt-get install --no-install-recommends -y docker-cli
     - curl -LsSf https://astral.sh/uv/0.9.29/install.sh | sh
     - source $HOME/.local/bin/env
+    - uv python install $PYTHON_VERSION
     - sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin v3.48.0
     - task dev-setup:venv
   script:
     - task test
   cache:
-    - key: tests-uv
+    - key: tests-uv-py$PYTHON_VERSION
       paths:
         - ${UV_CACHE_DIR}
-    - key: tests-pre-commit
+    - key: tests-pre-commit-py$PYTHON_VERSION
       paths:
         - ${PRE_COMMIT_HOME}
