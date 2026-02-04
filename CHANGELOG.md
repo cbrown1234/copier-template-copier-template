@@ -2,6 +2,46 @@
 
 <!-- version list -->
 
+## v0.5.7 (2026-02-04)
+
+### Chores
+
+- **deps**: Lock file maintenance
+  ([`ce48b2c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ce48b2ce4c0700a5d17a74170d9cc4e49797e565))
+
+- **deps**: Update debian:trixie-slim docker digest to bfc1a09
+  ([`81d70d4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/81d70d417d6048bcf904ac13ac64217b2d6cbd95))
+
+- **deps**: Update debian:trixie-slim docker digest to f6e2cfa
+  ([`dac8d92`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/dac8d92e12984bd62b592aaab7c1d34e5dea7c02))
+
+- **deps**: Update dependency astral-sh/uv to v0.9.29
+  ([`94804ad`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/94804ad0f9db0d63613793109f69e4d680b5255f))
+
+- **deps**: Update python:3.14-slim docker digest to 0c6bb25
+  ([`de87b4a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/de87b4ab1f6a94efe3539c3d084277008948c2d7))
+
+- **deps**: Update python:3.14-slim docker digest to 1a3c6db
+  ([`f7a7142`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f7a71428bd3e718c84611da4e33502675582cbc1))
+
+- **deps**: Update python:3.14-slim docker digest to d517cd3
+  ([`241f6e6`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/241f6e64424380fd6b8c460012a9482aeb13e6d9))
+
+- **repo**: Update copier template
+  ([`d82fa18`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/d82fa181676b55b1746537781e24ab183c207662))
+
+### Features
+
+- Add gitlab support
+  ([`8eb7896`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/8eb78965a67ebd2d7baf58fadab99a1c40c9b95c))
+
+- Add python version matrix testing
+  ([`822f4c5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/822f4c5a0a36265169578112a2ade81f37a19339))
+
+- Relax python min version
+  ([`adb1e81`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/adb1e818faf5a51560c028be34461cf692f18b29))
+
+
 ## v0.5.6 (2026-02-01)
 
 ### Bug Fixes
