@@ -3,6 +3,7 @@ version: '3'
 set: [pipefail]
 
 includes:
+  cog: ./taskfile/copier-template/cog
   dev-setup: ./taskfile/copier-template/dev-setup
   test: ./taskfile/copier-template/test
   diff: ./taskfile/copier-template/diff

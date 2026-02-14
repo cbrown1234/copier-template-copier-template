@@ -18,13 +18,11 @@
 - [x] Update readme with instruction if copier trust is required
 - [x] Add copier extensions option
 - [x] Add https://pypi.org/project/copier-pydantic/
-- [ ] Try cog for updating some file contents maybe
+- [x] Try cog for updating some file contents maybe
 - [x] GitHub Actions support
     - Add as alternative to GitLab CI when vcs_platform is github
 - [x] License file generation
     - Offer common licenses (MIT, Apache 2.0, Unlicense, none)
-- [ ] Code coverage integration
-    - Optional codecov/coveralls setup in CI and pytest config
 - [x] Matrix testing in CI
     - Test across multiple Python versions, not just minimum
 - [ ] Template inheritance/composition documentation

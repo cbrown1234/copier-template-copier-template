@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  default:
+    desc: Update all cogapp-generated content
+    cmds:
+      - uvx --from cogapp cog -r @cog.files
