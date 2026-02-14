@@ -2,6 +2,53 @@
 
 <!-- version list -->
 
+## v0.5.8 (2026-02-14)
+
+### Chores
+
+- **deps**: Lock file maintenance
+  ([`377e2b2`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/377e2b2fd62bd5ec0e60bf9413a4f0db0800e79c))
+
+- **deps**: Update dependency astral-sh/uv to v0.10.0
+  ([`f8a896b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f8a896b28a5046208cad39dd5357c45c3423713a))
+
+- **deps**: Update dependency astral-sh/uv to v0.10.1
+  ([`2629022`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2629022b7ddf8057b514ddaa6d75c13c77816d2d))
+
+- **deps**: Update dependency astral-sh/uv to v0.10.2
+  ([`23fb420`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/23fb42045077a38ba7c1b636c00551a6665212b9))
+
+- **deps**: Update dependency astral-sh/uv to v0.9.30
+  ([`4de339d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4de339dc6bed1086a62ad1819c38f9eb021e4e30))
+
+- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
+  v0.5.7
+  ([`2b09a4a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2b09a4aab4d83c97063a740cba98dc7f8a8054b9))
+
+- **deps**: Update dependency git@gitlab.com:browniantech/pre-commit-copier-template.git to v0.5.5
+  ([`a7dd18f`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a7dd18f3e1ab650b4559f363018d12d7c301fcbb))
+
+- **deps**: Update docker docker tag to v29.2.1
+  ([`65c19f2`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/65c19f246a683ac781ca93adb1adbac647528b42))
+
+- **deps**: Update python:3.14-slim docker digest to 486b809
+  ([`0ce52ad`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0ce52add50c27f59d354caa23f4e8f804cf2b25f))
+
+- **deps**: Update python:3.14-slim docker digest to fa0acdc
+  ([`ae975cf`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ae975cf21fa8b1b386cc657d18d08beb2cae9da7))
+
+### Features
+
+- Add plumbum test example
+  ([`8ea69c9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/8ea69c94835103de60d57e472bcaefa461558c9e))
+
+- **repo**: Add cog setup for updating gitignore
+  ([`2761680`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/27616805d28bae40f59fd34e75e5857b80be5e7a))
+
+- **repo**: Update cog setup
+  ([`4aecfb0`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4aecfb052d5b012a24e9ff3701688cbd91a111de))
+
+
 ## v0.5.7 (2026-02-04)
 
 ### Chores
