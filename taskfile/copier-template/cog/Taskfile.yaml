@@ -4,4 +4,4 @@ tasks:
   default:
     desc: Update all cogapp-generated content
     cmds:
-      - uvx --from cogapp cog -r @cog.files
+      - uvx --from cogapp cog -r @cog.files {{.CLI_ARGS}}
