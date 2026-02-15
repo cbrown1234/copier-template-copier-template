@@ -28,3 +28,29 @@
 - [ ] Template inheritance/composition documentation
     - Document patterns for extending this template with org-specific defaults
     - Consider recommending pre-commit-copier-template for pre-commit customization
+- [x] Expand README
+    - Explain what a meta-template is and why you'd use this
+    - Feature list, architecture overview, development guide
+    - Examples of templates built with this
+- [ ] Align copier version requirements
+    - Root requires `_min_copier_version: "9.11.3"` but parent_template requires `"9.6.0"`
+    - Align or document the difference
+- [ ] Align uv versions between CI configs
+    - GitLab CI uses 0.10.2, GitHub Actions template uses 0.9.28
+- [ ] Improve Pydantic and extensions examples
+    - Pydantic model stub is minimal (6 lines)
+    - Extensions directory is essentially empty
+    - Add useful examples so users have a working starting point
+- [ ] Add CONTRIBUTING.md and development docs
+    - Document the self-hosted nature (template uses itself)
+    - Explain how to test changes, run the test suite, and the relationship between root and parent_template
+- [ ] Synchronize gitignore maintenance strategy
+    - Root uses cog-generation; parent_template/.gitignore is manually maintained with a stale hash comment
+- [ ] Add input validation for copier questions
+    - Validate `template_name` for valid filename characters
+    - Validate `output_template_name` has been changed from its default
+    - Add help text for `template_dir` question
+- [ ] Add .editorconfig for cross-editor consistency
+- [ ] Improve parent_template test infrastructure
+    - Include `mock_answers_required_without_defaults` fixture pattern
+    - Generated templates should be able to follow the same testing patterns as root
