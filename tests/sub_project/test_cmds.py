@@ -1,4 +1,4 @@
-"""Tests for a generated sub-project."""
+"""Example tests for a generated sub-project."""
 
 from __future__ import annotations
 
