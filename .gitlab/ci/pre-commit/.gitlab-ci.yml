@@ -1,7 +1,7 @@
 pre-commit:
   stage: lint
   needs: []
-  image: python:3.14-slim@sha256:486b8092bfb12997e10d4920897213a06563449c951c5506c2a2cfaf591c599f
+  image: python:3.14-slim@sha256:4f5f9ce230b88b941e26e26ac21317a98a4b0e02d1414b9b0e888fe4d7a51bc4
   variables:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
     PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
