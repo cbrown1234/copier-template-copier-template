@@ -2,6 +2,31 @@
 
 <!-- version list -->
 
+## v0.6.0 (2026-03-24)
+
+### Bug Fixes
+
+- Exclude chore commits from changelog
+  ([`fe2d1be`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/fe2d1be6cc1545c273a1b5a5b8f78b9e3972dcf4))
+
+### Features
+
+- Add release:test for local side affects test
+  ([`543d2c1`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/543d2c1ba501f0f38ee39e2121a9f128a1e00b36))
+
+- Exclude chore commits from changelog
+  ([`688ebd9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/688ebd9b2b1b01bdacc277fbf3836d1d56e101f0))
+
+- Handle semantic release as dev dep
+  ([`66dc46e`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/66dc46e7b2c04ca8bfc548a440c879e3e49f0867))
+
+- Renovate automerges github action digest updates
+  ([`029343e`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/029343e53c755a2e2d7ae2ddc979ea305922e9de))
+
+- Update readme
+  ([`0bdbdcc`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0bdbdcc885e72caad455af7252f3f962b41a48fe))
+
+
 ## v0.5.8 (2026-02-14)
 
 ### Chores
