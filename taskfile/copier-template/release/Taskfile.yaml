@@ -6,7 +6,11 @@ tasks:
     desc: Dry run release of new version e.g. (task release -- --minor)
     cmd: uv run python-semantic-release --noop version {{.CLI_ARGS}}
 
+  test:
+    desc: Dry run (with local side-effects) release of new version
+    cmd: uv run python-semantic-release -vv version --no-commit --no-tag {{.CLI_ARGS}}
+
   actual:
     aliases: [wet-run]
-    desc: Release new version e.g. force minor (task release -- --minor)
+    desc: Release new version e.g. force minor (task release:actual -- --minor)
     cmd: uv run python-semantic-release version {{.CLI_ARGS}}
