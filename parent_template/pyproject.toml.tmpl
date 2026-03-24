@@ -95,6 +95,9 @@ allowed_tags = ["feat", "fix", "perf", "build", "chore", "ci", "docs", "style", 
 default_bump_level = 0
 parse_squash_commits = true
 ignore_merge_commits = true
+exclude_commit_patterns = [
+    '''chore(?:\([^)]*?\))?: .+''',
+]
 
 [tool.semantic_release.remote]
 name = "origin"
