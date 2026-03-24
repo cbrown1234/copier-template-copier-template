@@ -59,7 +59,9 @@ prerelease_token = "rc"
 prerelease = false
 
 [tool.semantic_release.changelog]
-exclude_commit_patterns = []
+exclude_commit_patterns = [
+    '''chore(?:\([^)]*?\))?: .+''',
+]
 mode = "update"
 insertion_flag = "<!-- version list -->"
 template_dir = "semantic_release_templates"
@@ -95,9 +97,6 @@ allowed_tags = ["feat", "fix", "perf", "build", "chore", "ci", "docs", "style", 
 default_bump_level = 0
 parse_squash_commits = true
 ignore_merge_commits = true
-exclude_commit_patterns = [
-    '''chore(?:\([^)]*?\))?: .+''',
-]
 
 [tool.semantic_release.remote]
 name = "origin"
