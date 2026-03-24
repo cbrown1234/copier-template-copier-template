@@ -33,7 +33,7 @@ copier copy <template-url> /path/to/new/project
 
 ```bash
 cd /path/to/your/project
-copier update
+copier update --answers-file .copier-answers.copier-template.yml
 ```
 
 ## Development
