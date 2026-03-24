@@ -33,7 +33,7 @@
     - Feature list, architecture overview, development guide
     - Examples of templates built with this
 - [ ] Align copier version requirements
-    - Root requires `_min_copier_version: "9.11.3"` but parent_template requires `"9.6.0"`
+    - Root requires `_min_copier_version: "9.14.0"` but parent_template requires `"9.6.0"`
     - Align or document the difference
 - [ ] Align uv versions between CI configs
     - GitLab CI uses 0.10.2, GitHub Actions template uses 0.9.28
@@ -53,4 +53,35 @@
 - [ ] Add .editorconfig for cross-editor consistency
 - [ ] Improve parent_template test infrastructure
     - Include `mock_answers_required_without_defaults` fixture pattern
+    - Generate `mock_answers_required_without_defaults.yaml` in sub_project test directories (not just the fixture pattern)
     - Generated templates should be able to follow the same testing patterns as root
+- [ ] Add minimum Python version as a copier question
+    - `pyproject.toml.tmpl` hardcodes `requires-python = ">= 3.10"` and `ruff.toml` hardcodes `target-version = "py313"` — these should match
+    - Drive `requires-python`, `ruff target-version`, CI matrix minimum version, and `.python-version` from a single answer
+- [ ] Fix `ruff.toml` `target-version` to match minimum Python version
+    - Currently hardcoded to `py313` while `requires-python` is `>= 3.10`
+    - Suppresses lint rules relevant to older supported Python versions
+    - Ideally derived from the minimum Python version question above
+- [ ] Document pre-commit template composition pattern
+    - A separate pre-commit template is composed with this one; this relationship is not documented anywhere
+    - Add to README and/or CONTRIBUTING.md: which pre-commit template to use, order of copier apply, update workflow
+    - Related to template inheritance/composition documentation above
+- [ ] Document or add `cog` maintenance task in generated template
+    - Root has `task cog` for gitignore maintenance; generated templates silently drop this pattern
+    - Either add a minimal cog task or document the deliberate omission in the dev-setup taskfile
+    - Related to gitignore maintenance strategy above
+- [ ] Verify Renovate tracks uv version in GitHub Actions CI template
+    - `renovate.json.tmpl` custom regex manager tracks uv in `.gitlab-ci.yml`
+    - GitHub Actions uses `astral-sh/setup-uv` action — should be tracked by Renovate's built-in github-actions manager, but verify this is working
+    - Related to uv version alignment above
+
+## Not planned
+
+Considered but deliberately out of scope:
+
+- **Pre-commit config generation** — handled by a separate pre-commit template that composes with this one
+- **Coverage reporting** — generated projects are Copier templates (config/template files), not code libraries; coverage of test helpers adds no meaningful signal
+- **Issue/PR/MR templates** — out of scope for a template scaffolding tool
+- **VS Code / editor workspace settings** — out of scope; users configure editors themselves
+- **`description` copier question** — users can edit README.md after generation
+- **`CHANGELOG.md` stub** — semantic-release creates this automatically on first release; a pre-existing empty file adds no value
