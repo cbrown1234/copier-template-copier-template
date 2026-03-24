@@ -31,5 +31,5 @@ copier copy <template-url> /path/to/new/project<% if needs_trust %> --trust<% en
 
 ```bash
 cd /path/to/your/project
-copier update<% if needs_trust %> --trust<% endif +%>
+copier update --answers-file .copier-answers.<< template_name >>.yml<% if needs_trust %> --trust<% endif +%>
 ```
