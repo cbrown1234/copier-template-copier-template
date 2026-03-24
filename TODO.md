@@ -44,8 +44,8 @@
 - [ ] Add CONTRIBUTING.md and development docs
     - Document the self-hosted nature (template uses itself)
     - Explain how to test changes, run the test suite, and the relationship between root and parent_template
-- [ ] Synchronize gitignore maintenance strategy
-    - Root uses cog-generation; parent_template/.gitignore is manually maintained with a stale hash comment
+- [x] Synchronize gitignore maintenance strategy
+    - `parent_template/.gitignore` converted to cog-managed; root `cog.files` now also processes it
 - [ ] Add input validation for copier questions
     - Validate `template_name` for valid filename characters
     - Validate `output_template_name` has been changed from its default
@@ -66,10 +66,8 @@
     - A separate pre-commit template is composed with this one; this relationship is not documented anywhere
     - Add to README and/or CONTRIBUTING.md: which pre-commit template to use, order of copier apply, update workflow
     - Related to template inheritance/composition documentation above
-- [ ] Document or add `cog` maintenance task in generated template
-    - Root has `task cog` for gitignore maintenance; generated templates silently drop this pattern
-    - Either add a minimal cog task or document the deliberate omission in the dev-setup taskfile
-    - Related to gitignore maintenance strategy above
+- [x] Resolve `cog` maintenance task for generated templates
+    - Generated templates do not include `task cog`; `parent_template/.gitignore` is kept up to date via the root's `task cog` instead
 - [ ] Verify Renovate tracks uv version in GitHub Actions CI template
     - `renovate.json.tmpl` custom regex manager tracks uv in `.gitlab-ci.yml`
     - GitHub Actions uses `astral-sh/setup-uv` action — should be tracked by Renovate's built-in github-actions manager, but verify this is working
