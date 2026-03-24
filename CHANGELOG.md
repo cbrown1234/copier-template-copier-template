@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.6.1 (2026-03-24)
+
+### Bug Fixes
+
+- Correct answerfile in README
+  ([`0c99142`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0c99142cfed90809db63e2adfb57cefdf44ab849))
+
+
 ## v0.6.0 (2026-03-24)
 
 ### Bug Fixes
