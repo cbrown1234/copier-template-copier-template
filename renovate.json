@@ -32,6 +32,17 @@
       ],
       "depNameTemplate": "go-task/task",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "setup-uv@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "astral-sh/uv",
+      "datasourceTemplate": "github-releases"
     }
   ],
   "packageRules": [

@@ -35,7 +35,7 @@
 - [ ] Align copier version requirements
     - Root requires `_min_copier_version: "9.14.0"` but parent_template requires `"9.6.0"`
     - Align or document the difference
-- [ ] Align uv versions between CI configs
+- [x] Align uv versions between CI configs
     - GitLab CI uses 0.10.2, GitHub Actions template uses 0.9.28
 - [ ] Improve Pydantic and extensions examples
     - Pydantic model stub is minimal (6 lines)
@@ -68,7 +68,7 @@
     - Related to template inheritance/composition documentation above
 - [x] Resolve `cog` maintenance task for generated templates
     - Generated templates do not include `task cog`; `parent_template/.gitignore` is kept up to date via the root's `task cog` instead
-- [ ] Verify Renovate tracks uv version in GitHub Actions CI template
+- [x] Verify Renovate tracks uv version in GitHub Actions CI template
     - `renovate.json.tmpl` custom regex manager tracks uv in `.gitlab-ci.yml`
     - GitHub Actions uses `astral-sh/setup-uv` action — should be tracked by Renovate's built-in github-actions manager, but verify this is working
     - Related to uv version alignment above
