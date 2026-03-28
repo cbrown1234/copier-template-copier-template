@@ -7,6 +7,6 @@ include_pydantic_validation: false
 include_template_extensions: false
 license_type: mit
 output_template_name: copier-template
-template_dir: parent_template
+template_dir: meta_template
 template_style: jinja
 vcs_platform: gitlab

@@ -1,4 +1,4 @@
-_subdirectory: parent_template
+_subdirectory: meta_template
 _min_copier_version: "9.14.0"
 _answers_file: .copier-answers.<< template_name >>.yml
 _envops:
