@@ -25,6 +25,17 @@
     - Offer common licenses (MIT, Apache 2.0, Unlicense, none)
 - [x] Matrix testing in CI
     - Test across multiple Python versions, not just minimum
+- [ ] Rename `parent_template/` to `meta_template/` for clarity
+    - Update `copier.yml`, `.copier-answers.copier-template.yml`, `renovate.json`, `cog.files`, and prose references
+- [ ] Improve README.md for new users
+    - Add real template URL to Usage section
+    - Add "Template questions" section explaining each visible question
+    - Frame Features section as "What you get"
+    - Add pre-commit composition note in Development section
+- [ ] Add `example/` directory with committed generated snapshots
+    - `example/basic/` — GitHub, Jinja, MIT, no extensions
+    - `example/full/` — GitHub, Jinja, MIT, Pydantic + extensions enabled
+    - `example/README.md` explaining what each example demonstrates
 - [ ] Template inheritance/composition documentation
     - Document patterns for extending this template with org-specific defaults
     - Consider recommending pre-commit-copier-template for pre-commit customization
