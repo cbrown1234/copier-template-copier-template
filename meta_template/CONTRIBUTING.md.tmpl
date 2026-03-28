@@ -1,0 +1,34 @@
+# Contributing to << output_template_name >>-copier-template
+
+## Dev setup
+
+Prerequisites: [uv](https://docs.astral.sh/uv/) and [Task](https://taskfile.dev/).
+
+```bash
+task dev-setup
+```
+
+Run `task --list` to see all available commands.
+
+## Running tests
+
+There are two test suites:
+
+- **`tests/`** — tests the template itself: verifies that `copier copy` and `copier update` produce the expected output.
+- **`tests/sub_project/`** — tests a project generated *from* your template: verifies that the generated template works end-to-end.
+
+Run both with:
+
+```bash
+task test
+```
+
+## Making changes
+
+Template files live under `<< template_dir >>/`. After making changes, run `task test` to verify everything works.
+
+To pull in upstream improvements from the meta-template:
+
+```bash
+copier update --answers-file <<_copier_conf.answers_file>>
+```

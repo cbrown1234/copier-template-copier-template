@@ -11,8 +11,8 @@
 - [x] Add `task` task for semantic_release
 - [x] Good standard README.md
 - [x] Add ci to parent_project
-- [x] Add test_sub_project.py equivalent to parent_template
-- [x] Add ruff config to parent_template
+- [x] Add test_sub_project.py equivalent to meta_template
+- [x] Add ruff config to meta_template
 - [x] Reduce templating of code files via dotenv files, or pyyaml queries etc
     - Enables linting
 - [x] Update readme with instruction if copier trust is required
@@ -25,17 +25,23 @@
     - Offer common licenses (MIT, Apache 2.0, Unlicense, none)
 - [x] Matrix testing in CI
     - Test across multiple Python versions, not just minimum
-- [ ] Rename `parent_template/` to `meta_template/` for clarity
+- [x] Rename `parent_template/` to `meta_template/` for clarity
     - Update `copier.yml`, `.copier-answers.copier-template.yml`, `renovate.json`, `cog.files`, and prose references
-- [ ] Improve README.md for new users
+- [x] Improve README.md for new users
     - Add real template URL to Usage section
-    - Add "Template questions" section explaining each visible question
-    - Frame Features section as "What you get"
     - Add pre-commit composition note in Development section
+    - Add "Template questions" section explaining each visible question — deferred, see asciinema demo TODO instead
 - [ ] Add `example/` directory with committed generated snapshots
     - `example/basic/` — GitHub, Jinja, MIT, no extensions
     - `example/full/` — GitHub, Jinja, MIT, Pydantic + extensions enabled
     - `example/README.md` explaining what each example demonstrates
+    - Add a `task example` command (in `taskfile/copier-template/example/`) that generates these snapshots into `example/` so they can be kept up to date
+- [ ] Add asciinema demo to README
+    - Record an interactive `copier copy` session to show the question flow in action
+    - Consider tooling: `asciinema rec` + `agg` to convert to SVG/GIF for inline embedding (self-contained), vs uploading to asciinema.org (prettier playback, external dependency)
+    - Consider using `copier copy --defaults` with data flags for a reproducible non-interactive recording
+    - Add a `task demo` command to `taskfile/copier-template/` to regenerate the recording
+    - Decide whether this replaces or complements a static "Template questions" section in the README
 - [ ] Template inheritance/composition documentation
     - Document patterns for extending this template with org-specific defaults
     - Consider recommending pre-commit-copier-template for pre-commit customization
@@ -44,7 +50,7 @@
     - Feature list, architecture overview, development guide
     - Examples of templates built with this
 - [ ] Align copier version requirements
-    - Root requires `_min_copier_version: "9.14.0"` but parent_template requires `"9.6.0"`
+    - Root requires `_min_copier_version: "9.14.0"` but meta_template requires `"9.6.0"`
     - Align or document the difference
 - [x] Align uv versions between CI configs
     - GitLab CI uses 0.10.2, GitHub Actions template uses 0.9.28
@@ -52,17 +58,17 @@
     - Pydantic model stub is minimal (6 lines)
     - Extensions directory is essentially empty
     - Add useful examples so users have a working starting point
-- [ ] Add CONTRIBUTING.md and development docs
-    - Document the self-hosted nature (template uses itself)
-    - Explain how to test changes, run the test suite, and the relationship between root and parent_template
+- [x] Add CONTRIBUTING.md and development docs
+    - Added as `meta_template/CONTRIBUTING.md.tmpl` so all generated projects get one
+    - Covers dev setup, test suites, and how to pull upstream template improvements
 - [x] Synchronize gitignore maintenance strategy
-    - `parent_template/.gitignore` converted to cog-managed; root `cog.files` now also processes it
+    - `meta_template/.gitignore` converted to cog-managed; root `cog.files` now also processes it
 - [ ] Add input validation for copier questions
     - Validate `template_name` for valid filename characters
     - Validate `output_template_name` has been changed from its default
-    - Add help text for `template_dir` question
+    - [x] Add help text for `template_dir` question
 - [ ] Add .editorconfig for cross-editor consistency
-- [ ] Improve parent_template test infrastructure
+- [ ] Improve meta_template test infrastructure
     - Include `mock_answers_required_without_defaults` fixture pattern
     - Generate `mock_answers_required_without_defaults.yaml` in sub_project test directories (not just the fixture pattern)
     - Generated templates should be able to follow the same testing patterns as root
@@ -73,12 +79,11 @@
     - Currently hardcoded to `py313` while `requires-python` is `>= 3.10`
     - Suppresses lint rules relevant to older supported Python versions
     - Ideally derived from the minimum Python version question above
-- [ ] Document pre-commit template composition pattern
-    - A separate pre-commit template is composed with this one; this relationship is not documented anywhere
-    - Add to README and/or CONTRIBUTING.md: which pre-commit template to use, order of copier apply, update workflow
-    - Related to template inheritance/composition documentation above
+- [x] Document pre-commit template composition pattern
+    - Added note to README Development section
+    - Which specific pre-commit template to use and update workflow still undocumented — see template inheritance/composition TODO above
 - [x] Resolve `cog` maintenance task for generated templates
-    - Generated templates do not include `task cog`; `parent_template/.gitignore` is kept up to date via the root's `task cog` instead
+    - Generated templates do not include `task cog`; `meta_template/.gitignore` is kept up to date via the root's `task cog` instead
 - [x] Verify Renovate tracks uv version in GitHub Actions CI template
     - `renovate.json.tmpl` custom regex manager tracks uv in `.gitlab-ci.yml`
     - GitHub Actions uses `astral-sh/setup-uv` action — should be tracked by Renovate's built-in github-actions manager, but verify this is working

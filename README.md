@@ -26,7 +26,10 @@ brew install copier
 ### Create a new project
 
 ```bash
-copier copy <template-url> /path/to/new/project
+# SSH
+copier copy git@gitlab.com:browniantech/copier-template-copier-template.git /path/to/new-template
+# HTTPS
+copier copy https://gitlab.com/browniantech/copier-template-copier-template.git /path/to/new-template
 ```
 
 ### Update an existing project
@@ -48,3 +51,7 @@ copier update --answers-file .copier-answers.copier-template.yml
 ### Self-hosted
 
 This repo uses itself. See `.copier-answers.copier-template.yml` for the answers used.
+
+### Pre-commit composition
+
+This template does not generate a `.pre-commit-config.yaml`. Pre-commit configuration is expected to be handled by a separate template that composes with this one.

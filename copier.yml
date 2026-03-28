@@ -19,6 +19,7 @@ template_name:
 template_dir:
   type: str
   default: template
+  help: Subdirectory within the repo that will contain the template files (default 'template')
 
 vcs_platform:
   type: str

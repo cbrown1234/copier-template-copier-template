@@ -2,6 +2,8 @@
 
 A [Copier](https://copier.readthedocs.io/) template.
 
+<!-- TODO: Describe what this template generates -->
+
 ## Install Copier
 
 ```bash
@@ -33,3 +35,9 @@ copier copy <template-url> /path/to/new/project<% if needs_trust %> --trust<% en
 cd /path/to/your/project
 copier update --answers-file .copier-answers.<<output_template_name>>.yml<% if needs_trust %> --trust<% endif +%>
 ```
+
+## Development
+
+Prerequisites: [uv](https://docs.astral.sh/uv/) and [Task](https://taskfile.dev/).
+
+Run `task --list` to see available commands. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full development guide.
