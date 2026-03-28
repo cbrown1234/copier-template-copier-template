@@ -65,9 +65,7 @@
     - `meta_template/.gitignore` converted to cog-managed; root `cog.files` now also processes it
 - [ ] Add input validation for copier questions
     - Validate `template_name` for valid filename characters
-    - Validate `output_template_name` has been changed from its default
     - [x] Add help text for `template_dir` question
-- [ ] Add .editorconfig for cross-editor consistency
 - [ ] Improve meta_template test infrastructure
     - Include `mock_answers_required_without_defaults` fixture pattern
     - Generate `mock_answers_required_without_defaults.yaml` in sub_project test directories (not just the fixture pattern)
