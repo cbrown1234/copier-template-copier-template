@@ -2,6 +2,26 @@
 
 <!-- version list -->
 
+## v0.6.3 (2026-03-29)
+
+### Features
+
+- Add asciinema task
+  ([`a1b4e5c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a1b4e5caa7cf2ff88114a58590c93e59d30eddd5))
+
+- Align uv version used in github ci
+  ([`4f61b10`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4f61b1013a89501aa9211b514d7166db687890c7))
+
+- Improve docs
+  ([`5145106`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5145106ca0991ad224140d0b1338a18f4692b960))
+
+- Rename template dir for clarity
+  ([`a9de300`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a9de3000a70a01398e6a282c9c781623401176d9))
+
+- **repo**: Improve cog file updating
+  ([`8389c59`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/8389c59ff13afae30ddfd68c5ea8cabdf56135ce))
+
+
 ## v0.6.2 (2026-03-24)
 
 ### Bug Fixes
