@@ -41,7 +41,7 @@ copier update --answers-file .copier-answers.copier-template.yml
 
 ## Demo
 
-[![demo](https://asciinema.org/a/PLACEHOLDER.svg)](https://asciinema.org/a/PLACEHOLDER)
+[![demo](https://asciinema.org/a/b55vKtHm1GVDkRzL.svg)](https://asciinema.org/a/b55vKtHm1GVDkRzL)
 
 ## Development
 
