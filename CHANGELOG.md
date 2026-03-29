@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.6.5 (2026-03-29)
+
+### Features
+
+- Add doc for Copier Template Extensions
+  ([`3146091`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3146091024b043bd1bc473be5d6017ec1bbf815b))
+
+
 ## v0.6.4 (2026-03-29)
 
 ### Features
