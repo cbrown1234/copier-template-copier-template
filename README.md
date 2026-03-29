@@ -5,7 +5,7 @@ A [Copier](https://copier.readthedocs.io/) meta-template — a template that sca
 ## Features
 
 - **Test harness included** pytest setup with examples and helpers, ready to test your template, and it's usage
-- **Modern Batteries included** semantic release, Renovate, Ruff, and [go-task](https://taskfile.dev/) automation all preconfigured
+- **Modern Batteries included** uv, semantic release, Renovate, and [go-task](https://taskfile.dev/) automation all preconfigured
 - **CI/CD out of the box** Supports GitLab CI or GitHub Actions, with matrix testing across Python versions
 - **Optional Copier extensions**
     - [Pydantic validation](https://pypi.org/project/copier-pydantic/)

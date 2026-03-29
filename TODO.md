@@ -36,7 +36,7 @@
     - `example/full/` — GitHub, Jinja, MIT, Pydantic + extensions enabled
     - `example/README.md` explaining what each example demonstrates
     - Add a `task example` command (in `taskfile/copier-template/example/`) that generates these snapshots into `example/` so they can be kept up to date
-- [ ] Add asciinema demo to README
+- [x] Add asciinema demo to README
     - Record an interactive `copier copy` session to show the question flow in action
     - Consider tooling: `asciinema rec` + `agg` to convert to SVG/GIF for inline embedding (self-contained), vs uploading to asciinema.org (prettier playback, external dependency)
     - Consider using `copier copy --defaults` with data flags for a reproducible non-interactive recording
