@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  record:
+    desc: "Record a demo of copier copy using asciinema (saves to tmp/demo.cast)"
+    cmds:
+      - mkdir -p tmp
+      - asciinema rec --overwrite tmp/demo.cast
+
+  upload:
+    desc: "Upload tmp/demo.cast to asciinema.org and update README.md with the embed URL"
+    cmds:
+      - |
+        URL=$(asciinema upload tmp/demo.cast | tee /dev/tty | grep -oE 'https://asciinema\.org/a/[A-Za-z0-9]+')
+        python3 -c "
+        import re, sys
+        url = sys.argv[1]
+        readme = open('README.md').read()
+        updated = re.sub(r'https://asciinema\.org/a/[A-Za-z0-9]+', url, readme)
+        open('README.md', 'w').write(updated)
+        print(f'Updated README.md with {url}')
+        " "$URL"

@@ -4,6 +4,7 @@ set: [pipefail]
 
 includes:
   cog: ./taskfile/copier-template/cog
+  demo: ./taskfile/copier-template/demo
   dev-setup: ./taskfile/copier-template/dev-setup
   test: ./taskfile/copier-template/test
   diff: ./taskfile/copier-template/diff

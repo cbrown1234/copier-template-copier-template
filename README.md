@@ -39,14 +39,15 @@ cd /path/to/your/project
 copier update --answers-file .copier-answers.copier-template.yml
 ```
 
+## Demo
+
+[![demo](https://asciinema.org/a/PLACEHOLDER.svg)](https://asciinema.org/a/PLACEHOLDER)
+
 ## Development
 
-### Prerequisites
+Prerequisites: [uv](https://docs.astral.sh/uv/) and [Task](https://taskfile.dev/).
 
-- [uv](https://docs.astral.sh/uv/)
-- [Task](https://taskfile.dev/)
-
-[Task](https://taskfile.dev/) is the project task runner. Run `task --list` to see available commands, including dev setup, testing, and releases.
+Run `task --list` to see available commands. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full development guide.
 
 ### Self-hosted
 
