@@ -26,3 +26,13 @@ template_name:
   type: str
   default: '<<output_template_name>>'
   when: false
+<% if include_pydantic_validation %>
+
+example_answer_pydanic_validated:
+  type: yaml
+  multiline: true
+  default: |
+    var_1: 'marvin'
+    var_2: 42
+  validator: "<<var_start>> example_answer_pydanic_validated | validate_as(ExampleConfig) <<var_end>>"
+<% endif %>
