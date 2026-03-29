@@ -2,6 +2,20 @@
 
 <!-- version list -->
 
+## v0.6.4 (2026-03-29)
+
+### Features
+
+- Add asciinema demo to README
+  ([`5be6554`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5be6554a08b533939b74ba8fd15ff625a200cd88))
+
+- Add placeholder asciinema demo
+  ([`0bbae39`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0bbae390f4036a2bce7522f06ada7a0ef94a3df7))
+
+- Add pydantic validated answer example
+  ([`909cc3b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/909cc3ba246ae3f3f0d9aefe7ff736a33afb02f9))
+
+
 ## v0.6.3 (2026-03-29)
 
 ### Features
