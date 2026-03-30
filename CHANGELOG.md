@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v0.7.0 (2026-03-30)
+
+### Features
+
+- Simplify test helpers
+  ([`ed5f4f3`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ed5f4f3df3da3383182e911f490812567fa07aa0))
+
+### Testing
+
+- Check shipped tests pass w/dirty git
+  ([`a0c3921`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a0c39210b3675533e777b21b277ce52c189f23a8))
+
+
 ## v0.6.5 (2026-03-29)
 
 ### Features
