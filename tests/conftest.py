@@ -14,13 +14,6 @@ def template_dir(request: pytest.FixtureRequest) -> Path:
     return request.config.rootpath
 
 
-@pytest.fixture
-def copier_config(template_dir: Path) -> dict:
-    copier_config_file = template_dir / 'copier.yml'
-    with copier_config_file.open() as f:
-        return yaml.safe_load(f)
-
-
 @pytest.fixture(scope='session')
 def mock_answers_required_without_defaults() -> dict[str, Any]:
     """Answers to question required with no default.
