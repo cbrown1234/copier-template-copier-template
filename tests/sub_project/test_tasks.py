@@ -26,3 +26,10 @@ def test_sub_project_tests(sub_project: Path) -> None:
     with local.cwd(sub_project):
         task('dev-setup:venv')
         task('test')
+
+
+def test_sub_project_tests_dirty_repo(sub_project: Path) -> None:
+    with local.cwd(sub_project):
+        task('dev-setup:venv')
+        (sub_project / 'dirty_file.txt').write_text('dirty')
+        task('test')
