@@ -5,7 +5,7 @@ tasks:
     desc: Bootstrap dev setup
     cmds:
       - task: venv
-      - prek install
+      - uv run prek install
 
   venv:
     desc: Install dev requirements
@@ -15,12 +15,12 @@ tasks:
   maintenance:
     desc: Project maintenance automation
     cmds:
-      - prek auto-update
+      - uv run prek auto-update
       - task: maintenance:requirements
 
   maintenance:requirements:
     vars:
       CLI_ARGS: '{{.CLI_ARGS | default "--upgrade" }}'
     cmds:
-      - task: dev-setup:venv
+      - task: venv
       - uv lock {{.CLI_ARGS}}

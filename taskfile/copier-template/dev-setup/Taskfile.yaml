@@ -22,5 +22,5 @@ tasks:
     vars:
       CLI_ARGS: '{{.CLI_ARGS | default "--upgrade" }}'
     cmds:
-      - task: dev-setup:venv
+      - task: venv
       - uv lock {{.CLI_ARGS}}
