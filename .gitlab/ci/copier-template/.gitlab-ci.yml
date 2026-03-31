@@ -10,7 +10,7 @@ tests:
       - PYTHON_VERSION: ["3.10", "3.11", "3.12", "3.13", "3.14"]
   variables:
     UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
-    PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
+    PREK_HOME: "$CI_PROJECT_DIR/.cache/prek"
     UV_PYTHON: "$PYTHON_VERSION"
     GIT_DEPTH: "0"  # All git tags needed for copier
     # When using dind service, you must instruct Docker to talk with
@@ -34,6 +34,6 @@ tests:
     - key: tests-uv-py$PYTHON_VERSION
       paths:
         - ${UV_CACHE_DIR}
-    - key: tests-pre-commit-py$PYTHON_VERSION
+    - key: tests-prek-py$PYTHON_VERSION
       paths:
-        - ${PRE_COMMIT_HOME}
+        - ${PREK_HOME}
