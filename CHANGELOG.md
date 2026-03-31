@@ -2,6 +2,22 @@
 
 <!-- version list -->
 
+## v0.7.1 (2026-03-31)
+
+### Bug Fixes
+
+- **deps**: Update dependency copier to v9.14.1
+  ([`1d21902`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1d2190214554cdf8da2ed68c08da33077f2779b4))
+
+### Features
+
+- Ensure renovate updates copier and _min_copier_version in sync
+  ([`1a5aa68`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1a5aa687b0894fda61e4b13378206110ed63cb12))
+
+- **repo**: Update copier and _min_copier_version in sync
+  ([`424876d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/424876d59e05fbb9cc9ee2fb56c8d09ef3ec6659))
+
+
 ## v0.7.0 (2026-03-30)
 
 ### Features
