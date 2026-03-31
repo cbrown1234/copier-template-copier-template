@@ -4,8 +4,8 @@ tasks:
   default:
     desc: Bootstrap dev setup
     cmds:
-      - pre-commit install
       - task: venv
+      - prek install
 
   venv:
     desc: Install dev requirements
@@ -15,7 +15,7 @@ tasks:
   maintenance:
     desc: Project maintenance automation
     cmds:
-      - pre-commit autoupdate
+      - prek auto-update
       - task: maintenance:requirements
 
   maintenance:requirements:
