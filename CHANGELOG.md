@@ -2,6 +2,22 @@
 
 <!-- version list -->
 
+## v0.8.0 (2026-04-01)
+
+### Bug Fixes
+
+- Correct prek usage
+  ([`761dca6`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/761dca6db4f713ce3b086192955dcb5ffd430bb5))
+
+### Features
+
+- Experimental switch to prek from pre-commit
+  ([`a283602`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a283602395ea1c3b0ded234ac744d3c52527fc8b))
+
+- Git fetch after release
+  ([`95119f2`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/95119f263e635ac3397e3255bcc394f0520a2d2d))
+
+
 ## v0.7.1 (2026-03-31)
 
 ### Bug Fixes
