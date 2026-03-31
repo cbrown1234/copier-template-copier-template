@@ -13,4 +13,6 @@ tasks:
   actual:
     aliases: [wet-run]
     desc: Release new version e.g. force minor (task release:actual -- --minor)
-    cmd: uv run python-semantic-release version {{.CLI_ARGS}}
+    cmds:
+      - uv run python-semantic-release version {{.CLI_ARGS}}
+      - git fetch
