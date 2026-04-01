@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v0.8.1 (2026-04-01)
+
+### Bug Fixes
+
+- Correct test
+  ([`fa6ca07`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/fa6ca07129140e2f15a9b6667a65fc5201126624))
+
+### Features
+
+- Add no-default answer handling to tests
+  ([`a395bf4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a395bf4add207a1570fa76a5f8641133921e49a1))
+
+
 ## v0.8.0 (2026-04-01)
 
 ### Bug Fixes
