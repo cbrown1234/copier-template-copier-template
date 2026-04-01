@@ -4,17 +4,16 @@ pre-commit:
   image: python:3.14-slim@sha256:fb83750094b46fd6b8adaa80f66e2302ecbe45d513f6cece637a841e1025b4ca
   variables:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-    PRE_COMMIT_HOME: "$CI_PROJECT_DIR/.cache/pre-commit"
+    PREK_HOME: "$CI_PROJECT_DIR/.cache/prek"
   before_script:
     - apt-get update && apt-get install -y git
-    - pip install pre-commit
+    - pip install prek
   script:
-    - pre-commit install --install-hooks
-    - pre-commit run --all-files
+    - prek run --all-files
   cache:
     - key: pip
       paths:
         - ${PIP_CACHE_DIR}
-    - key: pre-commit
+    - key: prek
       paths:
-        - ${PRE_COMMIT_HOME}
+        - ${PREK_HOME}
