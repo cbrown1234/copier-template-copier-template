@@ -4,7 +4,7 @@ tests:
   needs: []
   image: debian:trixie-slim@sha256:26f98ccd92fd0a44d6928ce8ff8f4921b4d2f535bfa07555ee5d18f61429cf0c
   services:
-    - name: docker:29.3.1-dind@sha256:4d90f1f6c400315c2dba96d3ec93c01e64198395cbba04f79d12adce4f737029
+    - name: docker:dind@sha256:4d90f1f6c400315c2dba96d3ec93c01e64198395cbba04f79d12adce4f737029
       command: ["--registry-mirror", "http://host.docker.internal:5000"]
   parallel:
     matrix:
