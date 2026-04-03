@@ -2,15 +2,23 @@ version: '3'
 
 tasks:
   default:
+    deps: [pre-release-checks]
     aliases: [dry-run]
     desc: Dry run release of new version e.g. (task release -- --minor)
     cmd: uv run python-semantic-release --noop version {{.CLI_ARGS}}
 
-  test:
+  pre-release-checks:
+    cmds:
+      - task: :lint:default
+      - task: :test:default
+
+  local-side-effects:
+    deps: [pre-release-checks]
     desc: Dry run (with local side-effects) release of new version
-    cmd: uv run python-semantic-release -vv version --no-commit --no-tag {{.CLI_ARGS}}
+    cmd: uv run python-semantic-release version --no-commit --no-tag {{.CLI_ARGS}}
 
   actual:
+    deps: [pre-release-checks]
     aliases: [wet-run]
     desc: Release new version e.g. force minor (task release:actual -- --minor)
     cmds:
