@@ -3,6 +3,14 @@ version: '3'
 tasks:
   default:
     desc: Run tests
+    summary: |
+      Runs the pytest suite
+
+      Stores the tmp test files locally for easier inspection, and compatiblity
+      with running docker commands that mount the project directory
+      (which could be potentially included, and hence tested, in the template)
+      in gitlab CI dind, as the docker service does not have access to the
+      same /tmp/ directory as the main runner, where pytest stores tmp files by default.
     cmds:
       - rm -rf ./tmp/pytest
       - mkdir -p ./tmp/
