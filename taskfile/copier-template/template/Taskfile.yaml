@@ -1,7 +1,13 @@
 version: '3'
 
 tasks:
-  default:
+  current:
+    desc: Generate current version of the template
+    cmds:
+      - rm -rf tmp/current
+      - uv run copier copy {{.CLI_ARGS}} --vcs-ref HEAD . tmp/current
+
+  diff:
     desc: Compare last version to HEAD
     cmds:
       - rm -rf tmp/before

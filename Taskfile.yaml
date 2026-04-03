@@ -7,7 +7,7 @@ includes:
   demo: ./taskfile/copier-template/demo
   dev-setup: ./taskfile/copier-template/dev-setup
   test: ./taskfile/copier-template/test
-  diff: ./taskfile/copier-template/diff
+  template: ./taskfile/copier-template/template
   example: ./taskfile/copier-template/example
   release: ./taskfile/copier-template/release
 

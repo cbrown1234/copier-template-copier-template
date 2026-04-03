@@ -20,9 +20,16 @@ def sub_project(
 ) -> Path:
     """Create a sub-project by copying the template.
 
-    Can be used directly for default values, or with indirect parametrization
-    to pass custom copier data:
+    Can be used directly for default values:
 
+    ```python
+        def test_example(sub_project: Path) -> None:
+            ...
+    ```
+
+    Or with indirect parametrization to pass custom copier data:
+
+    ```python
         @pytest.mark.parametrize(
             ('sub_project','expected'),
             [
@@ -33,6 +40,8 @@ def sub_project(
         )
         def test_example(sub_project: Path, expected: str) -> None:
             ...
+    ```
+
     """
     data = getattr(request, 'param', {})
     data = mock_answers_required_without_defaults | data
