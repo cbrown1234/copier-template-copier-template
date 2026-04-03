@@ -6,6 +6,7 @@ includes:
   cog: ./taskfile/copier-template/cog
   demo: ./taskfile/copier-template/demo
   dev-setup: ./taskfile/copier-template/dev-setup
+  lint: ./taskfile/copier-template/lint
   test: ./taskfile/copier-template/test
   template: ./taskfile/copier-template/template
   example: ./taskfile/copier-template/example
