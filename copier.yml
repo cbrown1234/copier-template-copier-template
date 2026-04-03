@@ -23,10 +23,12 @@ template_dir:
 
 vcs_platform:
   type: str
+  help: Which VCS platform would you like CI setup for?
   choices:
     Gitlab: gitlab
     GitHub: github
-  default: gitlab
+    None: ""
+  default: github
 
 output_template_name:
   type: str

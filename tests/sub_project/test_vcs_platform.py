@@ -12,6 +12,7 @@ import pytest
     [
         ({'vcs_platform': 'gitlab'}, True, False),
         ({'vcs_platform': 'github'}, False, True),
+        ({'vcs_platform': ''}, False, False),
     ],
     indirect=['sub_project'],
 )
