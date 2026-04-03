@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.11.0 (2026-04-03)
+
+### Features
+
+- Release improvements
+  ([`b21d2a4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/b21d2a4489923d8d2fa29cf3e3f0bb64e4d64f69))
+
+
 ## v0.10.0 (2026-04-03)
 
 ### Bug Fixes
