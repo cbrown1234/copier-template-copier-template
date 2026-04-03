@@ -24,6 +24,8 @@ def git_save(
 ) -> None:
     """Save the current repo state in git.
 
+    `$ copier update` / `>>> copier.run_update(...)` requires clean git state
+
     Args:
         dst: Path to the repo to save.
         message: Commit message.

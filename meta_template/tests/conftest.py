@@ -18,6 +18,12 @@ def mock_answers_required_without_defaults() -> dict[str, Any]:
     """Answers questions deliberately without a default.
 
     e.g. to force user choice, or because no obvious default exists
+
+    ```python
+    return {
+        'your_question': 'Mock answer for tests',
+    }
+    ```
+
     """
-    # Add default values for use in tests here:
     return {}
