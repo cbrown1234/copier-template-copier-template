@@ -4,7 +4,7 @@ tests:
   needs: []
   image: debian:trixie-slim
   services:
-    - docker:29.3.0-dind@sha256:1ba18449911d01f477a3fc104123c85d677addc60701b14b3fcb5381f9c4a537
+    - docker:dind
   parallel:
     matrix:
       - PYTHON_VERSION: ["3.10", "3.11", "3.12", "3.13", "3.14"]
