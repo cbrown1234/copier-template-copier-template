@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v0.10.0 (2026-04-03)
+
+### Bug Fixes
+
+- Unpin docker image
+  ([`0c20c49`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0c20c49ba1c4a10df2c4f177b0cf5b6dd625bdc0))
+
+### Features
+
+- Gitlab CI improvements
+  ([`6e17f73`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/6e17f731130605123f4567283f46f0113224bb45))
+
+
 ## v0.9.0 (2026-04-03)
 
 ### Documentation
