@@ -2,6 +2,31 @@
 
 <!-- version list -->
 
+## v0.9.0 (2026-04-03)
+
+### Documentation
+
+- Improve README
+  ([`4a6e029`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4a6e0293d0b5d42dbb8e953866f6daabc527cc41))
+
+- Improve test harness docs
+  ([`5ed4694`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5ed469427d97763cc367d2ae6a834b0665a63b7c))
+
+- Improve test harness docs
+  ([`d8839a5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/d8839a573b3db3236c950652ae8544b6d8b573c3))
+
+- Improve test suite docs
+  ([`e672840`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/e672840fb59855df518d6cecf235bcaf92fac051))
+
+### Features
+
+- Improve template inspection commands
+  ([`d738a9a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/d738a9a19f6b3b238f0543e0ad8f460093c1e01b))
+
+- Update CI choices
+  ([`5898c5f`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5898c5f5272fa2a3d2e9831202f38bac25cd7815))
+
+
 ## v0.8.1 (2026-04-01)
 
 ### Bug Fixes
