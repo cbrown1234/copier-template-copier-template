@@ -14,6 +14,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
+        "/copier\\.ya?ml\\.tmpl$/",
         "/copier\\.ya?ml$/"
       ],
       "matchStrings": [
