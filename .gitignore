@@ -1,6 +1,9 @@
 tmp/
 .vscode/
 
+# Docker Sandbox
+.sbx
+
 # [[[cog
 # import cog, urllib.request
 # content = urllib.request.urlopen("https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore").read().decode()
