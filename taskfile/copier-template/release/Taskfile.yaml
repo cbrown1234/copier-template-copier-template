@@ -10,7 +10,11 @@ tasks:
   pre-release-checks:
     cmds:
       - task: :lint:default
+        vars:
+          CLI_ARGS: ""  # Avoid passthrough
       - task: :test:default
+        vars:
+          CLI_ARGS: ""  # Avoid passthrough
 
   local-side-effects:
     deps: [pre-release-checks]
