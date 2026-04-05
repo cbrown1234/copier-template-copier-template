@@ -2,6 +2,24 @@
 
 <!-- version list -->
 
+## v0.12.1 (2026-04-05)
+
+### Bug Fixes
+
+- Avoid passing release CLI_ARGS to pre-release-checks
+  ([`c19313b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/c19313bc5f06345cbdef3b883f669d1def0f3fb7))
+
+### Documentation
+
+- Add non-interactive usage notes to README for agents and CI
+  ([`504df1a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/504df1a0df21d1624bf474dc7beedcc7c75ad109))
+
+### Testing
+
+- Assert structured file content instead of raw substrings
+  ([`1378d50`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1378d50d98dd549f0005e8f1aa57fdd2bdd4646c))
+
+
 ## v0.12.0 (2026-04-05)
 
 ### Bug Fixes
