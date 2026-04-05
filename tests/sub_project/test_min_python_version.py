@@ -8,10 +8,13 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-import pytest
+try:
+    import tomllib  # stdlib in Python 3.11+
+except ImportError:
+    import tomli as tomllib  # type: ignore[no-redef]  # backport for Python 3.10
 
-GITHUB_CI = '.github/workflows/test.yml'
-GITLAB_CI = '.gitlab/ci/copier-template/.gitlab-ci.yml'
+import pytest
+import yaml
 
 
 @pytest.mark.parametrize(
@@ -42,37 +45,50 @@ GITLAB_CI = '.gitlab/ci/copier-template/.gitlab-ci.yml'
     indirect=['sub_project'],
 )
 def test_min_python_version(sub_project: Path, expected: dict) -> None:
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert f'requires-python = ">= {expected["version"]}"' in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    assert pyproject['project']['requires-python'] == f'>= {expected["version"]}'
 
-    ruff_toml = (sub_project / 'ruff.toml').read_text()
-    assert f'target-version = "{expected["ruff_target"]}"' in ruff_toml
+    with (sub_project / 'ruff.toml').open('rb') as f:
+        ruff_toml = tomllib.load(f)
+    assert ruff_toml['target-version'] == expected['ruff_target']
 
 
 @pytest.mark.parametrize(
-    ('vcs_platform', 'ci_file', 'ci_key'),
+    ('vcs_platform', 'ci_file', 'get_versions'),
     [
-        ('github', GITHUB_CI, 'python-version'),
-        ('gitlab', GITLAB_CI, 'PYTHON_VERSION'),
+        (
+            'github',
+            '.github/workflows/test.yml',
+            lambda c: c['jobs']['tests']['strategy']['matrix']['python-version'],
+        ),
+        (
+            'gitlab',
+            '.gitlab/ci/copier-template/.gitlab-ci.yml',
+            lambda c: c['tests']['parallel']['matrix'][0]['PYTHON_VERSION'],
+        ),
     ],
 )
 @pytest.mark.parametrize(
-    ('min_python_version', 'ci_matrix'),
+    ('min_python_version', 'expected_versions'),
     [
-        ('3.10', '["3.10", "3.11", "3.12", "3.13", "3.14"]'),
-        ('3.12', '["3.12", "3.13", "3.14"]'),
-        ('3.14', '["3.14"]'),
+        ('3.10', ['3.10', '3.11', '3.12', '3.13', '3.14']),
+        ('3.12', ['3.12', '3.13', '3.14']),
+        ('3.14', ['3.14']),
     ],
 )
 def test_ci_matrix(
     sub_project_factory: Callable,
     vcs_platform: str,
     ci_file: str,
-    ci_key: str,
+    get_versions: Callable,
     min_python_version: str,
-    ci_matrix: str,
+    expected_versions: list[str],
 ) -> None:
-    sp = sub_project_factory(
+    sub_project = sub_project_factory(
         {'vcs_platform': vcs_platform, 'min_python_version': min_python_version}
     )
-    assert f'{ci_key}: {ci_matrix}' in (sp / Path(ci_file)).read_text()
+    with (sub_project / ci_file).open() as f:
+        ci_config = yaml.safe_load(f)
+
+    assert get_versions(ci_config) == expected_versions

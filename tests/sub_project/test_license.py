@@ -4,6 +4,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
+try:
+    import tomllib  # stdlib in Python 3.11+
+except ImportError:
+    import tomli as tomllib  # type: ignore[no-redef]  # backport for Python 3.10
+
 import pytest
 
 
@@ -15,9 +20,10 @@ def test_default_mit_license(sub_project: Path) -> None:
     assert 'MIT License' in license_text
     assert 'Mock Name' in license_text
 
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert 'license = "MIT"' in pyproject
-    assert 'license-files = ["LICENSE"]' in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    assert pyproject['project']['license'] == 'MIT'
+    assert pyproject['project']['license-files'] == ['LICENSE']
 
 
 @pytest.mark.parametrize(
@@ -33,9 +39,10 @@ def test_apache_license(sub_project: Path) -> None:
     assert 'Apache License' in license_text
     assert 'Mock Name' in license_text
 
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert 'license = "Apache-2.0"' in pyproject
-    assert 'license-files = ["LICENSE"]' in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    assert pyproject['project']['license'] == 'Apache-2.0'
+    assert pyproject['project']['license-files'] == ['LICENSE']
 
 
 @pytest.mark.parametrize(
@@ -52,9 +59,10 @@ def test_unlicense(sub_project: Path) -> None:
     # Unlicense doesn't have copyright holder name
     assert 'Mock Name' not in license_text
 
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert 'license = "Unlicense"' in pyproject
-    assert 'license-files = ["LICENSE"]' in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    assert pyproject['project']['license'] == 'Unlicense'
+    assert pyproject['project']['license-files'] == ['LICENSE']
 
 
 @pytest.mark.parametrize(
@@ -66,6 +74,7 @@ def test_no_license(sub_project: Path) -> None:
     license_file = sub_project / 'LICENSE'
     assert not license_file.exists()
 
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert 'license = ' not in pyproject
-    assert 'license-files' not in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    assert 'license' not in pyproject['project']
+    assert 'license-files' not in pyproject['project']

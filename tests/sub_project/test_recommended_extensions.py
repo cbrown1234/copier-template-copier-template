@@ -4,7 +4,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
+try:
+    import tomllib  # stdlib in Python 3.11+
+except ImportError:
+    import tomli as tomllib  # type: ignore[no-redef]  # backport for Python 3.10
+
 import pytest
+import yaml
 
 
 def test_default_no_extensions(sub_project: Path) -> None:
@@ -14,12 +20,15 @@ def test_default_no_extensions(sub_project: Path) -> None:
     readme = (sub_project / 'README.md').read_text()
     assert '--trust' not in readme
 
-    copier_yml = (sub_project / 'copier.yml').read_text()
-    assert '_jinja_extensions' not in copier_yml
+    with (sub_project / 'copier.yml').open() as f:
+        copier_config = yaml.safe_load(f)
+    assert '_jinja_extensions' not in copier_config
 
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert 'copier-pydantic' not in pyproject
-    assert 'copier-template-extensions' not in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    deps = pyproject['project']['dependencies']
+    assert not any('copier-pydantic' in d for d in deps)
+    assert not any('copier-template-extensions' in d for d in deps)
 
 
 @pytest.mark.parametrize(
@@ -33,13 +42,16 @@ def test_pydantic_validation_enabled(sub_project: Path) -> None:
     readme = (sub_project / 'README.md').read_text()
     assert '--trust' in readme
 
-    copier_yml = (sub_project / 'copier.yml').read_text()
-    assert 'copier_pydantic.MultilineValidation' in copier_yml
-    assert 'copier_pydantic.PydanticExtension' in copier_yml
+    with (sub_project / 'copier.yml').open() as f:
+        copier_config = yaml.safe_load(f)
+    assert 'copier_pydantic.MultilineValidation' in copier_config['_jinja_extensions']
+    assert 'copier_pydantic.PydanticExtension' in copier_config['_jinja_extensions']
 
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert 'copier-pydantic' in pyproject
-    assert 'copier-template-extensions' not in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    deps = pyproject['project']['dependencies']
+    assert any('copier-pydantic' in d for d in deps)
+    assert not any('copier-template-extensions' in d for d in deps)
 
 
 @pytest.mark.parametrize(
@@ -53,12 +65,18 @@ def test_template_extensions_enabled(sub_project: Path) -> None:
     readme = (sub_project / 'README.md').read_text()
     assert '--trust' in readme
 
-    copier_yml = (sub_project / 'copier.yml').read_text()
-    assert 'copier_template_extensions.TemplateExtensionLoader' in copier_yml
+    with (sub_project / 'copier.yml').open() as f:
+        copier_config = yaml.safe_load(f)
+    assert (
+        'copier_template_extensions.TemplateExtensionLoader'
+        in copier_config['_jinja_extensions']
+    )
 
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert 'copier-pydantic' not in pyproject
-    assert 'copier-template-extensions' in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    deps = pyproject['project']['dependencies']
+    assert not any('copier-pydantic' in d for d in deps)
+    assert any('copier-template-extensions' in d for d in deps)
 
 
 @pytest.mark.parametrize(
@@ -73,11 +91,17 @@ def test_both_extensions_enabled(sub_project: Path) -> None:
     readme = (sub_project / 'README.md').read_text()
     assert '--trust' in readme
 
-    copier_yml = (sub_project / 'copier.yml').read_text()
-    assert 'copier_pydantic.MultilineValidation' in copier_yml
-    assert 'copier_pydantic.PydanticExtension' in copier_yml
-    assert 'copier_template_extensions.TemplateExtensionLoader' in copier_yml
+    with (sub_project / 'copier.yml').open() as f:
+        copier_config = yaml.safe_load(f)
+    assert 'copier_pydantic.MultilineValidation' in copier_config['_jinja_extensions']
+    assert 'copier_pydantic.PydanticExtension' in copier_config['_jinja_extensions']
+    assert (
+        'copier_template_extensions.TemplateExtensionLoader'
+        in copier_config['_jinja_extensions']
+    )
 
-    pyproject = (sub_project / 'pyproject.toml').read_text()
-    assert 'copier-pydantic' in pyproject
-    assert 'copier-template-extensions' in pyproject
+    with (sub_project / 'pyproject.toml').open('rb') as f:
+        pyproject = tomllib.load(f)
+    deps = pyproject['project']['dependencies']
+    assert any('copier-pydantic' in d for d in deps)
+    assert any('copier-template-extensions' in d for d in deps)
