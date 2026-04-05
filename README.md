@@ -33,12 +33,16 @@ copier copy git@gitlab.com:browniantech/copier-template-copier-template.git /pat
 copier copy https://gitlab.com/browniantech/copier-template-copier-template.git /path/to/new-template
 ```
 
+For non-interactive usage (scripts, CI, AI agents), see `copier copy --help` for the `--defaults` and `--data` flags.
+
 ### Update an existing project
 
 ```bash
 cd /path/to/your/project
 copier update --answers-file .copier-answers.copier-template.yml
 ```
+
+For non-interactive updates, use `--skip-answered` to reuse all existing answers without prompting.
 
 ## Demo
 

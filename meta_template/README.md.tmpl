@@ -29,12 +29,16 @@ brew install copier
 copier copy <template-url> /path/to/new/project<% if needs_trust %> --trust<% endif +%>
 ```
 
+For non-interactive usage (scripts, CI, AI agents), see `copier copy --help` for the `--defaults` and `--data` flags.
+
 ### Update an existing project
 
 ```bash
 cd /path/to/your/project
 copier update --answers-file .copier-answers.<<output_template_name>>.yml<% if needs_trust %> --trust<% endif +%>
 ```
+
+For non-interactive updates, use `--skip-answered` to reuse all existing answers without prompting.
 
 ## Demo
 

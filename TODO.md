@@ -16,6 +16,7 @@
 - [x] Reduce templating of code files via dotenv files, or pyyaml queries etc
     - Enables linting
 - [x] Update readme with instruction if copier trust is required
+- [x] Add non-interactive usage notes to README (--defaults, --data, --skip-answered) for agents and CI
 - [x] Add copier extensions option
 - [x] Add https://pypi.org/project/copier-pydantic/
 - [x] Try cog for updating some file contents maybe
