@@ -2,6 +2,22 @@
 
 <!-- version list -->
 
+## v0.12.0 (2026-04-05)
+
+### Bug Fixes
+
+- **renovate**: Track _min_copier_version in copier.yml.tmpl files
+  ([`a73f935`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a73f935c29bee44002bb878760c83504ffb2afde))
+
+### Features
+
+- Add min_python_version question
+  ([`418cbe1`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/418cbe1da240c26b52254b891fee63268406a9e1))
+
+- Add sub_project_factory fixture
+  ([`e3af541`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/e3af54197bdf913bab4d4e9b9660bbeed442fcc2))
+
+
 ## v0.11.0 (2026-04-03)
 
 ### Features
