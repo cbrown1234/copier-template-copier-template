@@ -63,6 +63,27 @@ include_template_extensions:
   help: Include support for local extensions
   default: false
 
+all_python_versions:
+  type: yaml
+  default: |
+    - '3.10'
+    - '3.11'
+    - '3.12'
+    - '3.13'
+    - '3.14'
+  when: false
+
+min_python_version:
+  type: str
+  help: Minimum Python version the generated template's code will support.
+  choices: "<< all_python_versions >>"
+  default: "<< all_python_versions | first >>"
+
+python_versions:
+  type: yaml
+  default: "<< all_python_versions[all_python_versions.index(min_python_version):] >>"
+  when: false
+
 license_type:
   type: str
   help: License for the generated template (see https://choosealicense.com)

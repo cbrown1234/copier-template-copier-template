@@ -7,7 +7,7 @@ tests:
     - docker:dind
   parallel:
     matrix:
-      - PYTHON_VERSION: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+      - PYTHON_VERSION: ["<< python_versions | join('", "') >>"]
   variables:
     UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
     PREK_HOME: "$CI_PROJECT_DIR/.cache/prek"

@@ -14,7 +14,7 @@ ignore = [
 
 [lint.extend-per-file-ignores]
 # https://github.com/astral-sh/ruff/issues/4368#issuecomment-2245567481
-"tests/**/*.py" = [
+"**/tests/**/*.py" = [
     # at least this three should be fine in tests:
     "S101", # asserts allowed in tests...
     "ARG", # Unused function args -> fixtures nevertheless are functionally relevant...
@@ -29,6 +29,7 @@ ignore = [
     "D104", # Not relevant for tests
     "S602", # Test env is controlled
     "S607", # Test env is controlled
+    "PLR0913", # Fixtures inflate arg count
 ]
 
 [format]

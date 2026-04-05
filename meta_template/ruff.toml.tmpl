@@ -1,5 +1,5 @@
 line-length = 88
-target-version = "py313"
+target-version = "py<< min_python_version.replace('.', '') >>"
 
 [lint]
 select = ["ALL"]
@@ -27,6 +27,7 @@ ignore = [
     "D104", # Not relevant for tests
     "S602", # Test env is controlled
     "S607", # Test env is controlled
+    "PLR0913", # Fixtures inflate arg count
 ]
 
 [format]
