@@ -65,14 +65,14 @@ def test_min_python_version(sub_project: Path, expected: dict) -> None:
     ],
 )
 def test_ci_matrix(
-    make_sub_project: Callable,
+    sub_project_factory: Callable,
     vcs_platform: str,
     ci_file: str,
     ci_key: str,
     min_python_version: str,
     ci_matrix: str,
 ) -> None:
-    sp = make_sub_project(
+    sp = sub_project_factory(
         {'vcs_platform': vcs_platform, 'min_python_version': min_python_version}
     )
     assert f'{ci_key}: {ci_matrix}' in (sp / Path(ci_file)).read_text()

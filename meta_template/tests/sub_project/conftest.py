@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -56,3 +57,40 @@ def sub_project(
     )
     git_save(sub_project)
     return sub_project
+
+
+@pytest.fixture
+def sub_project_factory(
+    template_dir: Path,
+    tmp_path_factory: pytest.TempPathFactory,
+    mock_answers_required_without_defaults: dict[str, Any],
+) -> Callable[[dict[str, Any] | None], Path]:
+    """Return a factory that creates a sub-project from the template with given data.
+
+    Useful for matrix-style tests with multiple independent parametrize decorators:
+
+    ```python
+        @pytest.mark.parametrize('opt_a', ['x', 'y'])
+        @pytest.mark.parametrize('opt_b', ['p', 'q'])
+        def test_example(sub_project_factory, opt_a, opt_b) -> None:
+            sub_project = sub_project_factory({'opt_a': opt_a, 'opt_b': opt_b})
+            ...
+    ```
+
+    """
+
+    def _factory(data: dict[str, Any] | None = None) -> Path:
+        merged = mock_answers_required_without_defaults | (data or {})
+        dst = tmp_path_factory.mktemp('sub_project')
+        run_copy(
+            str(template_dir),
+            dst,
+            vcs_ref='HEAD',
+            data=merged,
+            defaults=True,
+            unsafe=True,
+        )
+        git_save(dst)
+        return dst
+
+    return _factory
