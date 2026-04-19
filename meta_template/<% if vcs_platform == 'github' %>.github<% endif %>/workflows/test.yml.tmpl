@@ -6,6 +6,10 @@ name: Tests
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
 
 env:
   PREK_HOME: .cache/prek

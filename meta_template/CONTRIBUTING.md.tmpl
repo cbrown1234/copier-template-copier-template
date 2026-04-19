@@ -27,6 +27,24 @@ Run both with:
 task test
 ```
 
+## Releases
+
+Releases are automated via [python-semantic-release](https://python-semantic-release.readthedocs.io/). Preview what the next release would look like with:
+
+```bash
+task release
+```
+<% if vcs_platform == 'gitlab' %>
+### CI setup
+
+The release job uses `CI_JOB_TOKEN` by default. [Enable CI job token push access](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html) in your project settings. To use a dedicated token instead, add a `GITLAB_TOKEN` CI/CD variable (masked, protected) with a [project access token](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) that has Maintainer role and `write_repository` + `api` scopes.
+<% endif %>
+<% if vcs_platform == 'github' %>
+### CI setup
+
+The release workflow uses the built-in `GITHUB_TOKEN`. If your default branch restricts pushes via [branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-a-branch-protection-rule/about-branch-protection-rules), use a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) stored as a repository secret named `GH_TOKEN` instead.
+<% endif %>
+
 ## Making changes
 
 Template files live under `<< template_dir >>/`. After making changes, run `task test` to verify everything works.

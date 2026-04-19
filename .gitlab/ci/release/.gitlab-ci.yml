@@ -1,0 +1,20 @@
+---
+release:
+  stage: release
+  image: python:3.14-slim@sha256:bc389f7dfcb21413e72a28f491985326994795e34d2b86c8ae2f417b4e7818aa
+  variables:
+    GIT_DEPTH: "0"
+    GITLAB_TOKEN: ${GITLAB_TOKEN:-$CI_JOB_TOKEN}
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  before_script:
+    - apt-get update && apt-get install -y git
+    - pip install uv
+    - uv sync --group dev
+  script:
+    - uv run python-semantic-release version
+  resource_group: release
