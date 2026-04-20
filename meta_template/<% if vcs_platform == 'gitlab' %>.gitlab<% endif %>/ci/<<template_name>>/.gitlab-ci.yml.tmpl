@@ -37,3 +37,29 @@ tests:
     - key: tests-prek-py$PYTHON_VERSION
       paths:
         - ${PREK_HOME}
+
+release:
+  stage: release
+  image: debian:trixie-slim
+  variables:
+    UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
+    GIT_DEPTH: "0"
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  before_script:
+    - apt-get update && apt-get install -y git curl
+    - curl -LsSf https://astral.sh/uv/0.11.7/install.sh | sh
+    - source $HOME/.local/bin/env
+    - uv sync --group dev
+  script:
+    - git checkout -B "$CI_COMMIT_BRANCH" "$CI_COMMIT_SHA"
+    - uv run python-semantic-release version
+  resource_group: release
+  cache:
+    - key: release-uv
+      paths:
+        - ${UV_CACHE_DIR}
