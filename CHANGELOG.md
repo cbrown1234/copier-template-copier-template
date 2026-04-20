@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.13.2 (2026-04-20)
+
+### Bug Fixes
+
+- Gitlab release needs personal/project token
+  ([`094b745`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/094b74569f8ba131fae5a798df8979ad63908142))
+
+
 ## v0.13.1 (2026-04-20)
 
 ### Bug Fixes
