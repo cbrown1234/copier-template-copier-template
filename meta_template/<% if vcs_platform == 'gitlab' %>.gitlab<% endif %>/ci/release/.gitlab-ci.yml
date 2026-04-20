@@ -16,5 +16,6 @@ release:
     - pip install uv
     - uv sync --group dev
   script:
+    - git checkout -B "$CI_COMMIT_BRANCH" "$CI_COMMIT_SHA"
     - uv run python-semantic-release version
   resource_group: release
