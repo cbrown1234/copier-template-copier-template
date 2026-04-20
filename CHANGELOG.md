@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v0.13.0 (2026-04-20)
+
+### Bug Fixes
+
+- Gitlab release needs checkout
+  ([`31fb57d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/31fb57d378fe6dc968ac0bbb9448d2607b55ea47))
+
+- **deps**: Update dependency copier to v9.14.2
+  ([`af17c0d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/af17c0db26ed7fedf36c72fd7c2188dd575621c0))
+
+- **deps**: Update dependency copier to v9.14.3
+  ([`57c45c2`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/57c45c22f11f5eb7cef7d34d54d317e724d2730c))
+
+### Features
+
+- Add automated release
+  ([`9d50c88`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/9d50c887343cd94a0d8b3dedd6a74b6c53bc2e5c))
+
+
 ## v0.12.1 (2026-04-05)
 
 ### Bug Fixes
