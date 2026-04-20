@@ -27,6 +27,25 @@ Run both with:
 task test
 ```
 
+## Releases
+
+Releases are automated via [python-semantic-release](https://python-semantic-release.readthedocs.io/). Preview what the next release would look like with:
+
+```bash
+task release
+```
+
+### CI setup
+
+The release job uses `CI_JOB_TOKEN` by default. Under **Settings → CI/CD → Job token permissions**:
+
+- Enable [**Allow Git push requests to the repository**](https://docs.gitlab.com/ci/jobs/ci_job_token/) so semantic-release can push the version-bump commit and tag.
+- Add this project to its own **Authorized groups and projects** allowlist and grant the following [fine-grained permissions](https://docs.gitlab.com/ci/jobs/fine_grained_permissions/):
+    - `ADMIN_RELEASES` — create the GitLab release via the Releases API.
+    - `READ_REPOSITORIES` — read repository metadata.
+
+To override with a dedicated token, add a `GITLAB_TOKEN` CI/CD variable (masked, protected) with a [project access token](https://docs.gitlab.com/user/project/settings/project_access_tokens/) that has Maintainer role and `write_repository` + `api` scopes. When set, it takes precedence over `CI_JOB_TOKEN`.
+
 ## Making changes
 
 Template files live under `meta_template/`. After making changes, run `task test` to verify everything works.
