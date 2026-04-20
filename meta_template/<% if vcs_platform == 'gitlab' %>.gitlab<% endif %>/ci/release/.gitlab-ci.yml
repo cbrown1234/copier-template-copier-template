@@ -11,7 +11,6 @@ release:
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   before_script:
-    - export GITLAB_TOKEN="${GITLAB_TOKEN:-$CI_JOB_TOKEN}"
     - apt-get update && apt-get install -y git
     - pip install uv
     - uv sync --group dev

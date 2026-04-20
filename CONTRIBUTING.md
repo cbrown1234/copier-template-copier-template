@@ -37,14 +37,10 @@ task release
 
 ### CI setup
 
-The release job uses `CI_JOB_TOKEN` by default. Under **Settings → CI/CD → Job token permissions**:
+python-semantic-release [does not support `CI_JOB_TOKEN`](https://github.com/python-semantic-release/python-semantic-release/issues/977) (it authenticates via the `PRIVATE-TOKEN` header, which only accepts personal/project access tokens). You must supply a [project access token](https://docs.gitlab.com/user/project/settings/project_access_tokens/):
 
-- Enable [**Allow Git push requests to the repository**](https://docs.gitlab.com/ci/jobs/ci_job_token/) so semantic-release can push the version-bump commit and tag.
-- Add this project to its own **Authorized groups and projects** allowlist and grant the following [fine-grained permissions](https://docs.gitlab.com/ci/jobs/fine_grained_permissions/):
-    - `ADMIN_RELEASES` — create the GitLab release via the Releases API.
-    - `READ_REPOSITORIES` — read repository metadata.
-
-To override with a dedicated token, add a `GITLAB_TOKEN` CI/CD variable (masked, protected) with a [project access token](https://docs.gitlab.com/user/project/settings/project_access_tokens/) that has Maintainer role and `write_repository` + `api` scopes. When set, it takes precedence over `CI_JOB_TOKEN`.
+1. Create a project access token with Maintainer role and `api` + `write_repository` scopes.
+2. Add it as a CI/CD variable named `GITLAB_TOKEN` (masked, protected).
 
 ## Making changes
 
