@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.13.1 (2026-04-20)
+
+### Bug Fixes
+
+- Gitlab release needs releases api
+  ([`d071203`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/d0712032e562178aea6eb1eaf42591978c69e873))
+
+
 ## v0.13.0 (2026-04-20)
 
 ### Bug Fixes
