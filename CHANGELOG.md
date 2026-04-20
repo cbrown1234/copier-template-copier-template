@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.13.3 (2026-04-20)
+
+### Bug Fixes
+
+- Improve gitlab release ci
+  ([`1ee4ad9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1ee4ad9d05b2d2635d6fb3cf6aeea71dfb9416a7))
+
+
 ## v0.13.2 (2026-04-20)
 
 ### Bug Fixes
