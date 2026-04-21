@@ -1,5 +1,8 @@
 # copier-template-copier-template
 
+[![pipeline status](https://gitlab.com/browniantech/copier-template-copier-template/badges/main/pipeline.svg)](https://gitlab.com/browniantech/copier-template-copier-template/-/pipelines)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 A [Copier](https://copier.readthedocs.io/) meta-template — a template that scaffolds new Copier templates with modern Python project tooling preconfigured.
 
 ## Features

@@ -3,7 +3,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/\\.gitlab-ci\\.ya?ml$/"
+        "/\\.gitlab-ci\\.ya?ml(\\.tmpl)?$/"
       ],
       "matchStrings": [
         "https://astral\\.sh/uv/(?<currentValue>[^/]+)/install\\.sh"
@@ -26,7 +26,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/\\.gitlab-ci\\.ya?ml$/"
+        "/\\.gitlab-ci\\.ya?ml(\\.tmpl)?$/"
       ],
       "matchStrings": [
         "https://taskfile\\.dev/install\\.sh.*?(?<currentValue>v[\\d.]+)"
@@ -37,13 +37,35 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/workflows/[^/]+\\.ya?ml$/"
+        "/workflows/[^/]+\\.ya?ml(\\.tmpl)?$/"
       ],
       "matchStrings": [
         "setup-uv@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
       ],
       "depNameTemplate": "astral-sh/uv",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/workflows/[^/]+\\.ya?ml(\\.tmpl)?$/"
+      ],
+      "matchStrings": [
+        "setup-task@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "go-task/task",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/pyproject\\.toml\\.tmpl$/"
+      ],
+      "matchStrings": [
+        "\"copier>=(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "copier",
+      "datasourceTemplate": "pypi"
     }
   ],
   "packageRules": [
