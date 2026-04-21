@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.14.0 (2026-04-21)
+
+### Features
+
+- Version alignment
+  ([`caa5168`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/caa516864b7ad8c8ad166c7d3860290d17aea36b))
+
+
 ## v0.13.3 (2026-04-20)
 
 ### Bug Fixes
