@@ -2,7 +2,7 @@
 tests:
   stage: test
   needs: []
-  image: debian:trixie-slim@sha256:4ffb3a1511099754cddc70eb1b12e50ffdb67619aa0ab6c13fcd800a78ef7c7a
+  image: debian:trixie-slim@sha256:e02d6676e4dc2633fe045d6435d6039396736055976136f71ee5b77498f96fcf
   services:
     - name: docker:dind@sha256:c77e5d7912f9b137cc67051fdc2991d8f5ae22c55ddf532bb836dcb693a04940
       command: ["--registry-mirror", "http://host.docker.internal:5000"]
@@ -41,7 +41,7 @@ tests:
 
 release:
   stage: release
-  image: debian:trixie-slim@sha256:4ffb3a1511099754cddc70eb1b12e50ffdb67619aa0ab6c13fcd800a78ef7c7a
+  image: debian:trixie-slim@sha256:e02d6676e4dc2633fe045d6435d6039396736055976136f71ee5b77498f96fcf
   variables:
     UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
     GIT_DEPTH: "0"
