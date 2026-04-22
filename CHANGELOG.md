@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.14.1 (2026-04-22)
+
+### Bug Fixes
+
+- Disable release interup on gitlab
+  ([`91b1db5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/91b1db5ee3a8938073c7a12f38b7332d7898a453))
+
+
 ## v0.14.0 (2026-04-21)
 
 ### Features
