@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.15.0 (2026-04-28)
+
+### Features
+
+- Improve test comments
+  ([`3ae9535`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3ae953515e55b9d20ddb65ed8a049d28c6cc2b9e))
+
+
 ## v0.14.1 (2026-04-22)
 
 ### Bug Fixes
