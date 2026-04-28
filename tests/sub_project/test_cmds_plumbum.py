@@ -1,4 +1,7 @@
-"""Example tests for a generated sub-project using plumbum."""
+"""Example tests that run shell commands within a generated sub-project.
+
+Uses plumbum
+"""
 
 from __future__ import annotations
 

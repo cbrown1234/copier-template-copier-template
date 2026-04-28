@@ -22,7 +22,7 @@ def test_copy_default(
         vcs_ref='HEAD',
         defaults=True,
         data=mock_answers_required_without_defaults,
-        unsafe=True,
+        unsafe=True,  # set to False if unsafe features not needed for template
     )
     assert (tmp_path / worker.answers_relpath).exists()
 
@@ -47,6 +47,6 @@ def test_update_default(
         defaults=True,
         overwrite=True,  # The default when run via CLI
         answers_file=worker.answers_relpath,
-        unsafe=True,
+        unsafe=True,  # set to False if unsafe features not needed for template
     )
     assert (tmp_path / worker.answers_relpath).exists()

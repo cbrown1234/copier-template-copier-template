@@ -1,4 +1,7 @@
-"""Example tests for a generated sub-project."""
+"""Example tests that run shell commands within a generated sub-project.
+
+Uses python builtin functionality
+"""
 
 from __future__ import annotations
 

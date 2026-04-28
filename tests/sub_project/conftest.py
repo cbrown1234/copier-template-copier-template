@@ -1,4 +1,4 @@
-"""Tests for the copier template."""
+"""Test fixtures for generating the copier template output."""
 
 from __future__ import annotations
 

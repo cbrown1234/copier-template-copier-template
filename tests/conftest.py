@@ -1,4 +1,4 @@
-"""Tests for the copier template."""
+"""Test fixtures for the copier template."""
 
 from __future__ import annotations
 
@@ -18,6 +18,8 @@ def mock_answers_required_without_defaults() -> dict[str, Any]:
     """Answers questions deliberately without a default.
 
     e.g. to force user choice, or because no obvious default exists
+
+    Update the return value approprately:
 
     ```python
     return {
