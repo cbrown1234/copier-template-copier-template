@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.15.1 (2026-04-30)
+
+### Bug Fixes
+
+- **deps**: Update dependency copier to v9.15.0
+  ([`562a3d7`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/562a3d7dccb858fc2d219eeb630e98fdac0d9b0e))
+
+
 ## v0.15.0 (2026-04-28)
 
 ### Features
