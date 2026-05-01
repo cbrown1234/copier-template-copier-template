@@ -9,6 +9,7 @@ _envops:
   variable_end_string: ">>"
   variable_start_string: "<<"
   trim_blocks: true
+  undefined: jinja2.StrictUndefined  # error loudly for undefined variables
 _templates_suffix: .tmpl
 
 template_name:

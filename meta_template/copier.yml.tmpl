@@ -11,6 +11,7 @@ _envops:
   variable_start_string: "[["
 <% endif %>
   trim_blocks: true
+  undefined: jinja2.StrictUndefined  # error loudly for undefined variables
 <% if needs_extensions %>
 _jinja_extensions:
 <% if include_pydantic_validation %>
