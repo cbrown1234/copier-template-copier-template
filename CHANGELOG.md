@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.16.0 (2026-05-01)
+
+### Features
+
+- Error on undefined vars
+  ([`5cfec15`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5cfec1550af47482f6e6902d23c49ce4e5e18417))
+
+
 ## v0.15.1 (2026-04-30)
 
 ### Bug Fixes
