@@ -14,6 +14,17 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
+        "/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "setup-uv@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "depNameTemplate": "astral-sh/uv",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
         "/copier\\.ya?ml$/"
       ],
       "matchStrings": [
@@ -29,6 +40,17 @@
       ],
       "matchStrings": [
         "https://taskfile\\.dev/install\\.sh.*?(?<currentValue>v[\\d.]+)"
+      ],
+      "depNameTemplate": "go-task/task",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "setup-task@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
       ],
       "depNameTemplate": "go-task/task",
       "datasourceTemplate": "github-releases"

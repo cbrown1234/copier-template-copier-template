@@ -30,6 +30,7 @@ testpaths = [
 [tool.semantic_release]
 assets = []
 build_command = """
+    set -e
     uv lock --upgrade-package "$PACKAGE_NAME"
     git add uv.lock
 """
