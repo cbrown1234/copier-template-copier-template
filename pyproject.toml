@@ -92,7 +92,7 @@ ignore_merge_commits = true
 
 [tool.semantic_release.remote]
 name = "origin"
-type = "gitlab"
+type = "github"
 ignore_token_for_push = false
 insecure = false
 

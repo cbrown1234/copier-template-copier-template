@@ -37,10 +37,7 @@ task release
 
 ### CI setup
 
-python-semantic-release [does not support `CI_JOB_TOKEN`](https://github.com/python-semantic-release/python-semantic-release/issues/977) (it authenticates via the `PRIVATE-TOKEN` header, which only accepts personal/project access tokens). You must supply a [project access token](https://docs.gitlab.com/user/project/settings/project_access_tokens/):
-
-1. Create a project access token with Maintainer role and `api` + `write_repository` scopes.
-2. Add it as a CI/CD variable named `GITLAB_TOKEN` (masked, protected).
+The release workflow uses the built-in `GITHUB_TOKEN`. If your default branch restricts pushes via [branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-a-branch-protection-rule/about-branch-protection-rules), use a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) stored as a repository secret named `GH_TOKEN` instead.
 
 ## Making changes
 
