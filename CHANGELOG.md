@@ -7,7 +7,7 @@
 ### Bug Fixes
 
 - Correct github release uv lock bump
-  ([`3f19dd3`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3f19dd3737d6cfb692f73060d6f2968301811f3f))
+  ([`c38ffc4`](https://github.com/cbrown1234/copier-template-copier-template/commit/c38ffc4b3d50c1749b37ab25bfeec0ffd7d6a9bf))
 
 
 ## v0.16.0 (2026-05-01)
@@ -15,7 +15,7 @@
 ### Features
 
 - Error on undefined vars
-  ([`5cfec15`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5cfec1550af47482f6e6902d23c49ce4e5e18417))
+  ([`1c6deee`](https://github.com/cbrown1234/copier-template-copier-template/commit/1c6deee1750af3153a525fc0e3605d4ae1db1b70))
 
 
 ## v0.15.1 (2026-04-30)
@@ -23,7 +23,7 @@
 ### Bug Fixes
 
 - **deps**: Update dependency copier to v9.15.0
-  ([`562a3d7`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/562a3d7dccb858fc2d219eeb630e98fdac0d9b0e))
+  ([`6e50bab`](https://github.com/cbrown1234/copier-template-copier-template/commit/6e50babf191992e17d6ffe32206e5076a2d127aa))
 
 
 ## v0.15.0 (2026-04-28)
@@ -31,7 +31,7 @@
 ### Features
 
 - Improve test comments
-  ([`3ae9535`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3ae953515e55b9d20ddb65ed8a049d28c6cc2b9e))
+  ([`33d9a22`](https://github.com/cbrown1234/copier-template-copier-template/commit/33d9a2233b96172d34356d9294955b2116229a7e))
 
 
 ## v0.14.1 (2026-04-22)
@@ -39,7 +39,7 @@
 ### Bug Fixes
 
 - Disable release interup on gitlab
-  ([`91b1db5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/91b1db5ee3a8938073c7a12f38b7332d7898a453))
+  ([`ca13302`](https://github.com/cbrown1234/copier-template-copier-template/commit/ca13302e614f0e90ded34d320e7c562e220a8407))
 
 
 ## v0.14.0 (2026-04-21)
@@ -47,7 +47,7 @@
 ### Features
 
 - Version alignment
-  ([`caa5168`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/caa516864b7ad8c8ad166c7d3860290d17aea36b))
+  ([`339e90b`](https://github.com/cbrown1234/copier-template-copier-template/commit/339e90b73ec9acad6daa7b8987b9d4bdea0b170a))
 
 
 ## v0.13.3 (2026-04-20)
@@ -55,7 +55,7 @@
 ### Bug Fixes
 
 - Improve gitlab release ci
-  ([`1ee4ad9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1ee4ad9d05b2d2635d6fb3cf6aeea71dfb9416a7))
+  ([`7eff674`](https://github.com/cbrown1234/copier-template-copier-template/commit/7eff6748cb3115dbf3484b34e98407857b79cc81))
 
 
 ## v0.13.2 (2026-04-20)
@@ -63,7 +63,7 @@
 ### Bug Fixes
 
 - Gitlab release needs personal/project token
-  ([`094b745`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/094b74569f8ba131fae5a798df8979ad63908142))
+  ([`4d016cd`](https://github.com/cbrown1234/copier-template-copier-template/commit/4d016cd5732a27a946f1a4da035e856e372c29fd))
 
 
 ## v0.13.1 (2026-04-20)
@@ -71,7 +71,7 @@
 ### Bug Fixes
 
 - Gitlab release needs releases api
-  ([`d071203`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/d0712032e562178aea6eb1eaf42591978c69e873))
+  ([`13b28b2`](https://github.com/cbrown1234/copier-template-copier-template/commit/13b28b26f0e0540b4b6c0d8eb0a804b65b61cb03))
 
 
 ## v0.13.0 (2026-04-20)
@@ -79,18 +79,18 @@
 ### Bug Fixes
 
 - Gitlab release needs checkout
-  ([`31fb57d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/31fb57d378fe6dc968ac0bbb9448d2607b55ea47))
+  ([`9463862`](https://github.com/cbrown1234/copier-template-copier-template/commit/9463862dc6e153030ec2776f03948ed0a9c083dc))
 
 - **deps**: Update dependency copier to v9.14.2
-  ([`af17c0d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/af17c0db26ed7fedf36c72fd7c2188dd575621c0))
+  ([`7f04dc4`](https://github.com/cbrown1234/copier-template-copier-template/commit/7f04dc4585d1385b8b329cb772c8e67dbcd21c43))
 
 - **deps**: Update dependency copier to v9.14.3
-  ([`57c45c2`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/57c45c22f11f5eb7cef7d34d54d317e724d2730c))
+  ([`de6e594`](https://github.com/cbrown1234/copier-template-copier-template/commit/de6e594427c43d5b8cd839ed1982eb7e47c7af87))
 
 ### Features
 
 - Add automated release
-  ([`9d50c88`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/9d50c887343cd94a0d8b3dedd6a74b6c53bc2e5c))
+  ([`68706d5`](https://github.com/cbrown1234/copier-template-copier-template/commit/68706d523832aa230688e0022a1eb052acdf3b65))
 
 
 ## v0.12.1 (2026-04-05)
@@ -98,17 +98,17 @@
 ### Bug Fixes
 
 - Avoid passing release CLI_ARGS to pre-release-checks
-  ([`c19313b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/c19313bc5f06345cbdef3b883f669d1def0f3fb7))
+  ([`2baa9f0`](https://github.com/cbrown1234/copier-template-copier-template/commit/2baa9f06cf41b3f61b14499d0269d8001d210d0a))
 
 ### Documentation
 
 - Add non-interactive usage notes to README for agents and CI
-  ([`504df1a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/504df1a0df21d1624bf474dc7beedcc7c75ad109))
+  ([`83f2bcd`](https://github.com/cbrown1234/copier-template-copier-template/commit/83f2bcdd574e99b0731a3efca89753c1dca87c5a))
 
 ### Testing
 
 - Assert structured file content instead of raw substrings
-  ([`1378d50`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1378d50d98dd549f0005e8f1aa57fdd2bdd4646c))
+  ([`ff50b1f`](https://github.com/cbrown1234/copier-template-copier-template/commit/ff50b1fd6a80759bed038893e6ae8e0a5aac20d3))
 
 
 ## v0.12.0 (2026-04-05)
@@ -116,15 +116,15 @@
 ### Bug Fixes
 
 - **renovate**: Track _min_copier_version in copier.yml.tmpl files
-  ([`a73f935`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a73f935c29bee44002bb878760c83504ffb2afde))
+  ([`104f43b`](https://github.com/cbrown1234/copier-template-copier-template/commit/104f43becd5c6b0af37ff70c1273a4dbb9f8f9dd))
 
 ### Features
 
 - Add min_python_version question
-  ([`418cbe1`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/418cbe1da240c26b52254b891fee63268406a9e1))
+  ([`0590316`](https://github.com/cbrown1234/copier-template-copier-template/commit/059031604bd23aeee3bc4319a2dd66bc8b0e464d))
 
 - Add sub_project_factory fixture
-  ([`e3af541`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/e3af54197bdf913bab4d4e9b9660bbeed442fcc2))
+  ([`05283b5`](https://github.com/cbrown1234/copier-template-copier-template/commit/05283b5a881dbdf4840ac28f024c9a1165c96927))
 
 
 ## v0.11.0 (2026-04-03)
@@ -132,7 +132,7 @@
 ### Features
 
 - Release improvements
-  ([`b21d2a4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/b21d2a4489923d8d2fa29cf3e3f0bb64e4d64f69))
+  ([`f502070`](https://github.com/cbrown1234/copier-template-copier-template/commit/f502070f0ae35ee1e7960454c0469ac7b5ff4e90))
 
 
 ## v0.10.0 (2026-04-03)
@@ -140,12 +140,12 @@
 ### Bug Fixes
 
 - Unpin docker image
-  ([`0c20c49`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0c20c49ba1c4a10df2c4f177b0cf5b6dd625bdc0))
+  ([`9131c0b`](https://github.com/cbrown1234/copier-template-copier-template/commit/9131c0ba065c1bc5ff8e950c5f547374371a46e0))
 
 ### Features
 
 - Gitlab CI improvements
-  ([`6e17f73`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/6e17f731130605123f4567283f46f0113224bb45))
+  ([`af60698`](https://github.com/cbrown1234/copier-template-copier-template/commit/af60698e59f136f79ab3891a5a2c1ea9a20ba56d))
 
 
 ## v0.9.0 (2026-04-03)
@@ -153,24 +153,24 @@
 ### Documentation
 
 - Improve README
-  ([`4a6e029`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4a6e0293d0b5d42dbb8e953866f6daabc527cc41))
+  ([`61ec85c`](https://github.com/cbrown1234/copier-template-copier-template/commit/61ec85c0ce8e8766630f6d2693f86d45a8d9df34))
 
 - Improve test harness docs
-  ([`5ed4694`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5ed469427d97763cc367d2ae6a834b0665a63b7c))
+  ([`237d34f`](https://github.com/cbrown1234/copier-template-copier-template/commit/237d34fbd648fabf7cfebbe31dfaec560dc05cd0))
 
 - Improve test harness docs
-  ([`d8839a5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/d8839a573b3db3236c950652ae8544b6d8b573c3))
+  ([`b640632`](https://github.com/cbrown1234/copier-template-copier-template/commit/b640632b0fac6d296ef2b2d45f4c3f1a655a075c))
 
 - Improve test suite docs
-  ([`e672840`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/e672840fb59855df518d6cecf235bcaf92fac051))
+  ([`5703801`](https://github.com/cbrown1234/copier-template-copier-template/commit/5703801ecb7311e4b9714915c4b8447336d5c911))
 
 ### Features
 
 - Improve template inspection commands
-  ([`d738a9a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/d738a9a19f6b3b238f0543e0ad8f460093c1e01b))
+  ([`aa4904d`](https://github.com/cbrown1234/copier-template-copier-template/commit/aa4904d7002436103b0f1a6515519021148a364d))
 
 - Update CI choices
-  ([`5898c5f`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5898c5f5272fa2a3d2e9831202f38bac25cd7815))
+  ([`5733d8f`](https://github.com/cbrown1234/copier-template-copier-template/commit/5733d8fd4e9838267fec8baa0dc94ae8e68ce3e8))
 
 
 ## v0.8.1 (2026-04-01)
@@ -178,12 +178,12 @@
 ### Bug Fixes
 
 - Correct test
-  ([`fa6ca07`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/fa6ca07129140e2f15a9b6667a65fc5201126624))
+  ([`055efbd`](https://github.com/cbrown1234/copier-template-copier-template/commit/055efbd55eed2b40239a19fe7c00880fdab5faac))
 
 ### Features
 
 - Add no-default answer handling to tests
-  ([`a395bf4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a395bf4add207a1570fa76a5f8641133921e49a1))
+  ([`6709473`](https://github.com/cbrown1234/copier-template-copier-template/commit/6709473879569adf77d2d0a27208909a96b11156))
 
 
 ## v0.8.0 (2026-04-01)
@@ -191,15 +191,15 @@
 ### Bug Fixes
 
 - Correct prek usage
-  ([`761dca6`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/761dca6db4f713ce3b086192955dcb5ffd430bb5))
+  ([`b9fefbb`](https://github.com/cbrown1234/copier-template-copier-template/commit/b9fefbbe35afb1037c2703bf1f8fea93d112cd21))
 
 ### Features
 
 - Experimental switch to prek from pre-commit
-  ([`a283602`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a283602395ea1c3b0ded234ac744d3c52527fc8b))
+  ([`a2fb552`](https://github.com/cbrown1234/copier-template-copier-template/commit/a2fb552508795e6bd2c1aad1c11eb52b70321f73))
 
 - Git fetch after release
-  ([`95119f2`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/95119f263e635ac3397e3255bcc394f0520a2d2d))
+  ([`193f363`](https://github.com/cbrown1234/copier-template-copier-template/commit/193f363c44fb346f31da2814a0158016a02548f8))
 
 
 ## v0.7.1 (2026-03-31)
@@ -207,15 +207,15 @@
 ### Bug Fixes
 
 - **deps**: Update dependency copier to v9.14.1
-  ([`1d21902`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1d2190214554cdf8da2ed68c08da33077f2779b4))
+  ([`8e14eb0`](https://github.com/cbrown1234/copier-template-copier-template/commit/8e14eb088d2c46adfb8118be7f3e86c2a9b45e5d))
 
 ### Features
 
 - Ensure renovate updates copier and _min_copier_version in sync
-  ([`1a5aa68`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1a5aa687b0894fda61e4b13378206110ed63cb12))
+  ([`dfc4532`](https://github.com/cbrown1234/copier-template-copier-template/commit/dfc453294857ba357c737474165a458d4d94b5d8))
 
 - **repo**: Update copier and _min_copier_version in sync
-  ([`424876d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/424876d59e05fbb9cc9ee2fb56c8d09ef3ec6659))
+  ([`64980f7`](https://github.com/cbrown1234/copier-template-copier-template/commit/64980f72602e4f0b3a0967af5d7cee84f9c85541))
 
 
 ## v0.7.0 (2026-03-30)
@@ -223,12 +223,12 @@
 ### Features
 
 - Simplify test helpers
-  ([`ed5f4f3`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ed5f4f3df3da3383182e911f490812567fa07aa0))
+  ([`28d504f`](https://github.com/cbrown1234/copier-template-copier-template/commit/28d504f80df770f72f413da5cf5f0aa97c7a997d))
 
 ### Testing
 
 - Check shipped tests pass w/dirty git
-  ([`a0c3921`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a0c39210b3675533e777b21b277ce52c189f23a8))
+  ([`0a3163f`](https://github.com/cbrown1234/copier-template-copier-template/commit/0a3163fc36d71dda569089f110a056364eb5364d))
 
 
 ## v0.6.5 (2026-03-29)
@@ -236,7 +236,7 @@
 ### Features
 
 - Add doc for Copier Template Extensions
-  ([`3146091`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3146091024b043bd1bc473be5d6017ec1bbf815b))
+  ([`15797aa`](https://github.com/cbrown1234/copier-template-copier-template/commit/15797aa8aa4472f4b084e944c514f4418d0b3702))
 
 
 ## v0.6.4 (2026-03-29)
@@ -244,13 +244,13 @@
 ### Features
 
 - Add asciinema demo to README
-  ([`5be6554`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5be6554a08b533939b74ba8fd15ff625a200cd88))
+  ([`b2b02c8`](https://github.com/cbrown1234/copier-template-copier-template/commit/b2b02c8afd54b013919808b4a533f50f931767ff))
 
 - Add placeholder asciinema demo
-  ([`0bbae39`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0bbae390f4036a2bce7522f06ada7a0ef94a3df7))
+  ([`f9593dd`](https://github.com/cbrown1234/copier-template-copier-template/commit/f9593ddc70666a924bb0136d07e04713d008ca3e))
 
 - Add pydantic validated answer example
-  ([`909cc3b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/909cc3ba246ae3f3f0d9aefe7ff736a33afb02f9))
+  ([`18bf8f9`](https://github.com/cbrown1234/copier-template-copier-template/commit/18bf8f965897646ad7d7e79a474cbfebeab15119))
 
 
 ## v0.6.3 (2026-03-29)
@@ -258,19 +258,19 @@
 ### Features
 
 - Add asciinema task
-  ([`a1b4e5c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a1b4e5caa7cf2ff88114a58590c93e59d30eddd5))
+  ([`ab27b39`](https://github.com/cbrown1234/copier-template-copier-template/commit/ab27b3961d7a0a6e94e2cece667a99d663ab6f98))
 
 - Align uv version used in github ci
-  ([`4f61b10`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4f61b1013a89501aa9211b514d7166db687890c7))
+  ([`d369627`](https://github.com/cbrown1234/copier-template-copier-template/commit/d3696274f2b0a400d9854ddf39af113520f5e2d4))
 
 - Improve docs
-  ([`5145106`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5145106ca0991ad224140d0b1338a18f4692b960))
+  ([`c97bb14`](https://github.com/cbrown1234/copier-template-copier-template/commit/c97bb14c6c566106c49ee490f797b8466858fdec))
 
 - Rename template dir for clarity
-  ([`a9de300`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a9de3000a70a01398e6a282c9c781623401176d9))
+  ([`4abe6f1`](https://github.com/cbrown1234/copier-template-copier-template/commit/4abe6f16960888c3ff1c8753f95dff6f01af3923))
 
 - **repo**: Improve cog file updating
-  ([`8389c59`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/8389c59ff13afae30ddfd68c5ea8cabdf56135ce))
+  ([`f2cc051`](https://github.com/cbrown1234/copier-template-copier-template/commit/f2cc05155595fdf35a5a4b0913c90c7665a1dd28))
 
 
 ## v0.6.2 (2026-03-24)
@@ -278,7 +278,7 @@
 ### Bug Fixes
 
 - Correct answerfile in README
-  ([`421ebd3`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/421ebd38cfd36adef22e2a1b133afae93be0696b))
+  ([`95c551a`](https://github.com/cbrown1234/copier-template-copier-template/commit/95c551a86587350ceb1b3fc686165e7f4ac81499))
 
 
 ## v0.6.1 (2026-03-24)
@@ -286,7 +286,7 @@
 ### Bug Fixes
 
 - Correct answerfile in README
-  ([`0c99142`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0c99142cfed90809db63e2adfb57cefdf44ab849))
+  ([`a1457dc`](https://github.com/cbrown1234/copier-template-copier-template/commit/a1457dc55a16c6e645854a25fa0636a3a9d68536))
 
 
 ## v0.6.0 (2026-03-24)
@@ -294,111 +294,52 @@
 ### Bug Fixes
 
 - Exclude chore commits from changelog
-  ([`fe2d1be`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/fe2d1be6cc1545c273a1b5a5b8f78b9e3972dcf4))
+  ([`49ccf70`](https://github.com/cbrown1234/copier-template-copier-template/commit/49ccf70de09317cd60bda0f161739239efad246c))
 
 ### Features
 
 - Add release:test for local side affects test
-  ([`543d2c1`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/543d2c1ba501f0f38ee39e2121a9f128a1e00b36))
+  ([`eece162`](https://github.com/cbrown1234/copier-template-copier-template/commit/eece16290817d145d80aa8b25fe845e34efd3699))
 
 - Exclude chore commits from changelog
-  ([`688ebd9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/688ebd9b2b1b01bdacc277fbf3836d1d56e101f0))
+  ([`106ecf7`](https://github.com/cbrown1234/copier-template-copier-template/commit/106ecf7d00155b78b4cbac04959c76c134200edc))
 
 - Handle semantic release as dev dep
-  ([`66dc46e`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/66dc46e7b2c04ca8bfc548a440c879e3e49f0867))
+  ([`cd70e33`](https://github.com/cbrown1234/copier-template-copier-template/commit/cd70e338166130d3001343dd70454384fa6befa6))
 
 - Renovate automerges github action digest updates
-  ([`029343e`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/029343e53c755a2e2d7ae2ddc979ea305922e9de))
+  ([`12b2de9`](https://github.com/cbrown1234/copier-template-copier-template/commit/12b2de94ccef60aba78bc081e33f3f80199aae41))
 
 - Update readme
-  ([`0bdbdcc`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0bdbdcc885e72caad455af7252f3f962b41a48fe))
+  ([`5e45671`](https://github.com/cbrown1234/copier-template-copier-template/commit/5e456718bf240072b30204a846e2adc0c0312292))
 
 
 ## v0.5.8 (2026-02-14)
 
-### Chores
-
-- **deps**: Lock file maintenance
-  ([`377e2b2`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/377e2b2fd62bd5ec0e60bf9413a4f0db0800e79c))
-
-- **deps**: Update dependency astral-sh/uv to v0.10.0
-  ([`f8a896b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f8a896b28a5046208cad39dd5357c45c3423713a))
-
-- **deps**: Update dependency astral-sh/uv to v0.10.1
-  ([`2629022`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2629022b7ddf8057b514ddaa6d75c13c77816d2d))
-
-- **deps**: Update dependency astral-sh/uv to v0.10.2
-  ([`23fb420`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/23fb42045077a38ba7c1b636c00551a6665212b9))
-
-- **deps**: Update dependency astral-sh/uv to v0.9.30
-  ([`4de339d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4de339dc6bed1086a62ad1819c38f9eb021e4e30))
-
-- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
-  v0.5.7
-  ([`2b09a4a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2b09a4aab4d83c97063a740cba98dc7f8a8054b9))
-
-- **deps**: Update dependency git@gitlab.com:browniantech/pre-commit-copier-template.git to v0.5.5
-  ([`a7dd18f`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a7dd18f3e1ab650b4559f363018d12d7c301fcbb))
-
-- **deps**: Update docker docker tag to v29.2.1
-  ([`65c19f2`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/65c19f246a683ac781ca93adb1adbac647528b42))
-
-- **deps**: Update python:3.14-slim docker digest to 486b809
-  ([`0ce52ad`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0ce52add50c27f59d354caa23f4e8f804cf2b25f))
-
-- **deps**: Update python:3.14-slim docker digest to fa0acdc
-  ([`ae975cf`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ae975cf21fa8b1b386cc657d18d08beb2cae9da7))
-
 ### Features
 
 - Add plumbum test example
-  ([`8ea69c9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/8ea69c94835103de60d57e472bcaefa461558c9e))
+  ([`d028b5e`](https://github.com/cbrown1234/copier-template-copier-template/commit/d028b5ed7c98def369b8fe9801bc60d57517634d))
 
 - **repo**: Add cog setup for updating gitignore
-  ([`2761680`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/27616805d28bae40f59fd34e75e5857b80be5e7a))
+  ([`6f2038e`](https://github.com/cbrown1234/copier-template-copier-template/commit/6f2038ef91477808560f31dc94d032bb4e58356d))
 
 - **repo**: Update cog setup
-  ([`4aecfb0`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4aecfb052d5b012a24e9ff3701688cbd91a111de))
+  ([`0e5f2d3`](https://github.com/cbrown1234/copier-template-copier-template/commit/0e5f2d335b575ce46917a5427b410284bfd8d43f))
 
 
 ## v0.5.7 (2026-02-04)
 
-### Chores
-
-- **deps**: Lock file maintenance
-  ([`ce48b2c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ce48b2ce4c0700a5d17a74170d9cc4e49797e565))
-
-- **deps**: Update debian:trixie-slim docker digest to bfc1a09
-  ([`81d70d4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/81d70d417d6048bcf904ac13ac64217b2d6cbd95))
-
-- **deps**: Update debian:trixie-slim docker digest to f6e2cfa
-  ([`dac8d92`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/dac8d92e12984bd62b592aaab7c1d34e5dea7c02))
-
-- **deps**: Update dependency astral-sh/uv to v0.9.29
-  ([`94804ad`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/94804ad0f9db0d63613793109f69e4d680b5255f))
-
-- **deps**: Update python:3.14-slim docker digest to 0c6bb25
-  ([`de87b4a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/de87b4ab1f6a94efe3539c3d084277008948c2d7))
-
-- **deps**: Update python:3.14-slim docker digest to 1a3c6db
-  ([`f7a7142`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f7a71428bd3e718c84611da4e33502675582cbc1))
-
-- **deps**: Update python:3.14-slim docker digest to d517cd3
-  ([`241f6e6`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/241f6e64424380fd6b8c460012a9482aeb13e6d9))
-
-- **repo**: Update copier template
-  ([`d82fa18`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/d82fa181676b55b1746537781e24ab183c207662))
-
 ### Features
 
 - Add gitlab support
-  ([`8eb7896`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/8eb78965a67ebd2d7baf58fadab99a1c40c9b95c))
+  ([`c1bc2cb`](https://github.com/cbrown1234/copier-template-copier-template/commit/c1bc2cb19cfa3ccbe56b0b93bec56d863a4cee3c))
 
 - Add python version matrix testing
-  ([`822f4c5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/822f4c5a0a36265169578112a2ade81f37a19339))
+  ([`05f7658`](https://github.com/cbrown1234/copier-template-copier-template/commit/05f7658683f827b738e0b38104d8f197080fa0bd))
 
 - Relax python min version
-  ([`adb1e81`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/adb1e818faf5a51560c028be34461cf692f18b29))
+  ([`ea67c3a`](https://github.com/cbrown1234/copier-template-copier-template/commit/ea67c3af8dd23e5072eb68ca5566bd6be2fac6f5))
 
 
 ## v0.5.6 (2026-02-01)
@@ -406,108 +347,43 @@
 ### Bug Fixes
 
 - Remove default copyright name
-  ([`774d04c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/774d04c7bc66a4e76dbeb9e8bef631c53c1d90eb))
+  ([`d8e4d43`](https://github.com/cbrown1234/copier-template-copier-template/commit/d8e4d435cb0a8534a2aab736ff754c81e9deea30))
 
 
 ## v0.5.5 (2026-02-01)
 
-### Chores
-
-- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
-  v0.5.4
-  ([`c8fe752`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/c8fe7525d1c2c8d82b61906ed97647f1795740f4))
-
-- **repo**: Update TODO list
-  ([`3db9599`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3db9599deb601ea6fd419116e0ecdea223b4e6e3))
-
 ### Features
 
 - Add license choice
-  ([`5b43215`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5b4321588bd8df0a3f3980df3270f43d65ca0473))
+  ([`0f8a655`](https://github.com/cbrown1234/copier-template-copier-template/commit/0f8a655ba8fc16b84395187b076bd7b4ab57ee2c))
 
 - **repo**: Refactor tests
-  ([`6bb43cd`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/6bb43cd303eba2c1ce3f0c52270d8aa9e400e6e8))
+  ([`6c62c75`](https://github.com/cbrown1234/copier-template-copier-template/commit/6c62c75a813845d75b82b34ce11ce062348d375e))
 
 
 ## v0.5.4 (2026-02-01)
 
-### Chores
-
-- Improve whitespace in README
-  ([`91757c5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/91757c56aafdf7bb47e16b3928e9d4bb70129cf3))
-
 
 ## v0.5.3 (2026-01-31)
-
-### Chores
-
-- Improve readme for extensions
-  ([`187f39c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/187f39c5adc8d3e731cd3c057224a3c94e2960cb))
-
-- Update TODO list
-  ([`db42bcb`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/db42bcbed4f6bd729b224870216486b0304eded9))
 
 
 ## v0.5.2 (2026-01-31)
 
-### Chores
-
-- Update copier template
-  ([`f8a8c73`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f8a8c7394a597d0e61eae56fb16c8c0349bd3d92))
-
-- Update copier template
-  ([`2d97a6b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2d97a6bbb9c985415c72c774bb405694394b2bed))
-
 ### Features
 
 - Add support for recommended extensions
-  ([`1d9fce0`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1d9fce076413e7e9733840f491a213771be4baac))
+  ([`b90e69d`](https://github.com/cbrown1234/copier-template-copier-template/commit/b90e69d2d40ff442cf035636ee357939d4669ddd))
 
 
 ## v0.5.1 (2026-01-31)
 
-### Chores
-
-- **deps**: Update dependency astral-sh/uv to v0.9.28
-  ([`b605025`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/b605025fadbbd74e0c0ac9ddd64174f7e9cb4e2a))
-
-- **repo**: Update TODO list
-  ([`ff41b42`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ff41b42642eb295c81a394f8f041f9e635096f2e))
-
 
 ## v0.5.0 (2026-01-28)
-
-### Chores
-
-- **deps**: Update dependency astral-sh/uv to v0.9.27
-  ([`f16229b`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f16229bac8b3913eb22060b8bf3b8813437a9781))
-
-- **deps**: Update dependency copier to v9.11.3
-  ([`3ccb4a9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3ccb4a9de682c0100ce7466e3536f16dc9a33eca))
-
-- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
-  v0.4.1
-  ([`5ab1b40`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5ab1b40ac71e0095930122075d82865deb20b942))
-
-- **deps**: Update docker docker tag to v29.2.0
-  ([`9480fc4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/9480fc4386f7e1a67b6b39e7c6f7a0bc58a79719))
-
-- **deps**: Update docker:29.2.0-dind docker digest to a284d31
-  ([`60440f4`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/60440f48f41c2ff38b373215897cf58248e3d22a))
-
-- **deps**: Update docker:29.2.0-dind docker digest to dbd6a47
-  ([`2233b63`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2233b632613461c8ef1aa18a9acde2346ef8547b))
-
-- **repo**: Meet ruff config rules
-  ([`e18e5bf`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/e18e5bfb10eb4050b1c9b3dfc6a8030a4d7721b2))
-
-- **repo**: Update ruff config
-  ([`2905aee`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2905aee66f9e8c2c132594fa29d0a127d02df38c))
 
 ### Features
 
 - Improve ruff config
-  ([`1380aa8`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/1380aa81c3da3b1941c23a0c759b0af9fbe647ac))
+  ([`903412c`](https://github.com/cbrown1234/copier-template-copier-template/commit/903412cd79dee0103397c96821ba9c22fdff817e))
 
 
 ## v0.4.1 (2026-01-27)
@@ -515,37 +391,7 @@
 ### Bug Fixes
 
 - Correct copier min version bumping
-  ([`0d53956`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0d539566f7d1a4e1cca496b05e922fca7c775062))
-
-### Chores
-
-- **deps**: Lock file maintenance
-  ([`3917a95`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3917a95775d368b8d5a348fd81a9b4aa6a35b43e))
-
-- **deps**: Lock file maintenance
-  ([`4b8f607`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/4b8f6077eab34bdd0c34a1fe28f8fbf4c2e40468))
-
-- **deps**: Pin dependencies
-  ([`82168e8`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/82168e87134b534c9fff68af0a775ed428ba3ba2))
-
-- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
-  v0.4.0
-  ([`7dc4676`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/7dc46769faaae67169ed28fdeb2273d4bbd44e0f))
-
-- **deps**: Update dependency git@gitlab.com:browniantech/pre-commit-copier-template.git to v0.5.3
-  ([`f6f4643`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f6f4643731d61ff5a8aa6da2b267af7300c92f0f))
-
-- **deps**: Update dependency go-task/task to v3.47.0
-  ([`fbeb01d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/fbeb01db254e294809052aa9439801602d4d2213))
-
-- **deps**: Update dependency go-task/task to v3.48.0
-  ([`2f11400`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/2f11400fc20bfa949b685b0a58afa043112bf0b9))
-
-- **deps**: Update python docker tag to v3.14
-  ([`104bbb5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/104bbb5d777bb96a0bf0af772372bb933a0458ac))
-
-- **repo**: Remove duplicate renovate config
-  ([`bd221e3`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/bd221e3567acb21ef35d69460edbdf7fe3a4bd7c))
+  ([`9d95b4a`](https://github.com/cbrown1234/copier-template-copier-template/commit/9d95b4a9abf121a11ddd2807175d70f9598c080a))
 
 
 ## v0.4.0 (2026-01-25)
@@ -553,24 +399,15 @@
 ### Bug Fixes
 
 - Configure renovate to not pin digests in inner template
-  ([`71bc917`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/71bc917dd4eb3588a1877e4e9f16ab25f028356a))
+  ([`452dd6c`](https://github.com/cbrown1234/copier-template-copier-template/commit/452dd6c5f746f3274d01a5358455f128a257ae74))
 
 - Correct template name for ci files
-  ([`930ff74`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/930ff748ab306cfb95a74ab78a56f72591d93448))
-
-### Chores
-
-- **deps**: Pin dependencies
-  ([`a321abb`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/a321abb0e376855de87f4f200025c5d2208a03fc))
-
-- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
-  v0.3.2
-  ([`93c3d03`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/93c3d0357de53c926dfcbc06b5894e828ce32026))
+  ([`3ac003a`](https://github.com/cbrown1234/copier-template-copier-template/commit/3ac003a7ec07bdabeb9facd7193a4b78228cf3eb))
 
 ### Features
 
 - Deterministic task version updating
-  ([`dc1736d`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/dc1736dd02eb611f3c43b28632b2bed78b3da33b))
+  ([`736d545`](https://github.com/cbrown1234/copier-template-copier-template/commit/736d545a5540d7929fa326a5d47cc17c97329392))
 
 
 ## v0.3.2 (2026-01-25)
@@ -578,7 +415,7 @@
 ### Features
 
 - Add minimal ruff config to template
-  ([`030f6b5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/030f6b5f25d78e83c3a42250916132f5f423aac0))
+  ([`c16e5ba`](https://github.com/cbrown1234/copier-template-copier-template/commit/c16e5ba85d873bee067aabe18c18cf39ef82d577))
 
 
 ## v0.3.1 (2026-01-25)
@@ -586,35 +423,30 @@
 ### Bug Fixes
 
 - Correct template name
-  ([`dcd34d9`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/dcd34d946023b36b957272c74497c42a5acab0db))
+  ([`9c79d6d`](https://github.com/cbrown1234/copier-template-copier-template/commit/9c79d6d3fe55356216ee38b5dc1f68692bc67ed6))
 
 
 ## v0.3.0 (2026-01-25)
 
-### Chores
-
-- **repo**: Update TODO list
-  ([`aac13ab`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/aac13ab65b8f899fa9814dee64d219722edae001))
-
 ### Features
 
 - Add gitlab ci tests
-  ([`ea3647e`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/ea3647e90c5ea5631134edc2cb542f9db1e754a1))
+  ([`1920dcb`](https://github.com/cbrown1234/copier-template-copier-template/commit/1920dcb7783aff4ed6f0045078d4f87e46eb042b))
 
 - Enable autoupdate of min copier version
-  ([`27b6001`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/27b600157ffa2242f8cc5d3bdd6292b415a25b92))
+  ([`e42c732`](https://github.com/cbrown1234/copier-template-copier-template/commit/e42c732150e063a2bb1fde6453d7c5660cf3e0b6))
 
 - Enable choice of template chars
-  ([`da32ce5`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/da32ce58e407815305de27b1fc7e13d39944c73a))
+  ([`a8e3a2a`](https://github.com/cbrown1234/copier-template-copier-template/commit/a8e3a2a33e43ddbaa262be307fc2cb96e94d0ae7))
 
 - Enable parametrizing test sub_project fixture answers
-  ([`0eef2cf`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/0eef2cfa054c88059dcbd0ac7d8bf52ae4eebbac))
+  ([`6730c18`](https://github.com/cbrown1234/copier-template-copier-template/commit/6730c1884a76d73fdfcab69b5ee6dafe3e12458d))
 
 - Enable trim_blocks as standard
-  ([`22fd850`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/22fd850034a91d712d560b8c462bd9440d76812a))
+  ([`58b7382`](https://github.com/cbrown1234/copier-template-copier-template/commit/58b7382521d192b7d67bba246f20e99395260d0b))
 
 - Refactor taskfile
-  ([`6862f3c`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/6862f3c053c78f56a9d5c832dd1f042397c88e00))
+  ([`0ef652a`](https://github.com/cbrown1234/copier-template-copier-template/commit/0ef652a72e709f1e691a93688588ddb2b6fc9712))
 
 
 ## v0.2.0 (2026-01-25)
@@ -622,18 +454,12 @@
 ### Bug Fixes
 
 - Use frozen lockfile for tests
-  ([`6e5492a`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/6e5492adbd3aeee9984fdb5235a519e56e854cd5))
-
-### Chores
-
-- **deps**: Update dependency git@gitlab.com:browniantech/copier-template-copier-template.git to
-  v0.1.1
-  ([`5280175`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/52801752bb8bb2cfbd71ded8b9d9e2c7cecdfff9))
+  ([`bdb6ea8`](https://github.com/cbrown1234/copier-template-copier-template/commit/bdb6ea800d029fd65f42959d515e5cec9fb827f4))
 
 ### Features
 
 - **repo**: Switch template escape characters
-  ([`f4362df`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/f4362dffddd6ab5fbdc3d4a6a762f971a7c8d23e))
+  ([`34e78ac`](https://github.com/cbrown1234/copier-template-copier-template/commit/34e78aca787ddc23b566b4322916a4046607c359))
 
 
 ## v0.1.1 (2026-01-25)
@@ -641,15 +467,7 @@
 ### Bug Fixes
 
 - Update docker example file
-  ([`5017f43`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/5017f43cf4ec4ec8bce185a059957b19b9d1861f))
-
-### Chores
-
-- Bump copier template
-  ([`40178bf`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/40178bfb568c5593d542d7988008d0b567b87e3c))
-
-- Bump uv lock file
-  ([`331d799`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/331d799a0c01db29f852aa6a8b5c534303047988))
+  ([`2ae15a3`](https://github.com/cbrown1234/copier-template-copier-template/commit/2ae15a37de135f54db610df6647207009ff74fa8))
 
 
 ## v0.1.0 (2026-01-25)
