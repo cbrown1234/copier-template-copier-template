@@ -1,6 +1,6 @@
 # copier-template-copier-template
 
-[![pipeline status](https://gitlab.com/browniantech/copier-template-copier-template/badges/main/pipeline.svg)](https://gitlab.com/browniantech/copier-template-copier-template/-/pipelines)
+[![Tests](https://github.com/cbrown1234/copier-template-copier-template/actions/workflows/test.yml/badge.svg)](https://github.com/cbrown1234/copier-template-copier-template/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A [Copier](https://copier.readthedocs.io/) meta-template — a template that scaffolds new Copier templates with modern Python project tooling preconfigured.
@@ -31,9 +31,9 @@ brew install copier
 
 ```bash
 # SSH
-copier copy git@gitlab.com:browniantech/copier-template-copier-template.git /path/to/new-template
+copier copy git@github.com:cbrown1234/copier-template-copier-template.git /path/to/new-template
 # HTTPS
-copier copy https://gitlab.com/browniantech/copier-template-copier-template.git /path/to/new-template
+copier copy https://github.com/cbrown1234/copier-template-copier-template.git /path/to/new-template
 ```
 
 For non-interactive usage (scripts, CI, AI agents), see `copier copy --help` for the `--defaults` and `--data` flags.
