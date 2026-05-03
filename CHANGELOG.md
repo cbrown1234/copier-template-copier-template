@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.17.0 (2026-05-03)
+
+### Features
+
+- Switch to open source repo references
+  ([`23437ac`](https://github.com/cbrown1234/copier-template-copier-template/commit/23437ac5e2511a1f54c32d4847fbfdd77379a247))
+
+
 ## v0.16.1 (2026-05-03)
 
 ### Bug Fixes
