@@ -49,7 +49,7 @@ For non-interactive updates, use `--skip-answered` to reuse all existing answers
 
 ## Demo
 
-[![demo](https://asciinema.org/a/b55vKtHm1GVDkRzL.svg)](https://asciinema.org/a/b55vKtHm1GVDkRzL)
+[![demo](https://asciinema.org/a/bFcXBgVNxzAaNAjO.svg)](https://asciinema.org/a/bFcXBgVNxzAaNAjO)
 
 ## Development
 
