@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.16.1 (2026-05-03)
+
+### Bug Fixes
+
+- Correct github release uv lock bump
+  ([`3f19dd3`](https://gitlab.com/browniantech/copier-template-copier-template/-/commit/3f19dd3737d6cfb692f73060d6f2968301811f3f))
+
+
 ## v0.16.0 (2026-05-01)
 
 ### Features
