@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v0.17.3 (2026-06-23)
+
+### Bug Fixes
+
+- **deps**: Update copier
+  ([#47](https://github.com/cbrown1234/copier-template-copier-template/pull/47),
+  [`3a758ea`](https://github.com/cbrown1234/copier-template-copier-template/commit/3a758ea1ca8efb4c0ec111a1d887c666dbd90199))
+
+
 ## v0.17.2 (2026-06-14)
 
 ### Bug Fixes
