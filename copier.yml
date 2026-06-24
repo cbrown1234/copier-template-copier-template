@@ -1,6 +1,10 @@
 _subdirectory: meta_template
 _min_copier_version: "9.16.0"
+<<<<<<< before updating
 _answers_file: .copier-answers.<< template_name >>.yml
+=======
+_answers_file: .copier-answers.{{ template_name }}.yml
+>>>>>>> after updating
 _envops:
   block_end_string: "%>"
   block_start_string: "<%"
