@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.17.4 (2026-07-08)
+
+### Bug Fixes
+
+- Resolve conflicts
+  ([`c56bb2a`](https://github.com/cbrown1234/copier-template-copier-template/commit/c56bb2a4e407ecbed94501d5a958b47a926ed0e6))
+
+
 ## v0.17.3 (2026-06-23)
 
 ### Bug Fixes
