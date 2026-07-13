@@ -1,6 +1,6 @@
 [project]
 name = "copier-template-copier-template"
-version = "0.17.4"
+version = "0.17.5"
 description = "Copier template for copier-template"
 readme = "README.md"
 license = "MIT"
