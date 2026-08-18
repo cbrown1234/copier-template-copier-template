@@ -40,7 +40,7 @@ jobs:
       - name: Install Task
         uses: go-task/setup-task@a00fbb05ce67b35648be3c78cbc9fd85354c757e # v2
         with:
-          version: "3.52.0"
+          version: "3.53.1"
 
       - name: Cache prek
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
