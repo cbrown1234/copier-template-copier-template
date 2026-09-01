@@ -1,5 +1,5 @@
 _subdirectory: meta_template
-_min_copier_version: "9.17.2"
+_min_copier_version: "9.18.1"
 _answers_file: .copier-answers.<< template_name >>.yml
 _envops:
   block_end_string: "%>"
