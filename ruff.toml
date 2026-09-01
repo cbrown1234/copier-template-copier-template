@@ -4,6 +4,7 @@ target-version = "py310"
 [lint]
 select = ["ALL"]
 ignore = [
+    "CPY", # copyright
     "D203",
     "D213",
     "Q000",
@@ -30,6 +31,7 @@ ignore = [
     "S602", # Test env is controlled
     "S607", # Test env is controlled
     "PLR0913", # Fixtures inflate arg count
+    "PLR0917", # Test params inflate arg count
 ]
 
 [format]
