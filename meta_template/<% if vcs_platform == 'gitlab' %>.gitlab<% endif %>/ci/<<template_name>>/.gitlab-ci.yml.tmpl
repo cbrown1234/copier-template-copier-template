@@ -2,9 +2,10 @@
 tests:
   stage: test
   needs: []
-  image: debian:trixie-slim
+  image:
+    name: debian:trixie-slim
   services:
-    - docker:dind
+    - name: docker:dind
   parallel:
     matrix:
       - PYTHON_VERSION: ["<< python_versions | join('", "') >>"]
