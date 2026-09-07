@@ -1,5 +1,6 @@
-_subdirectory: meta_template
 _min_copier_version: "9.18.1"
+
+_subdirectory: meta_template
 _answers_file: .copier-answers.<< template_name >>.yml
 _envops:
   block_end_string: "%>"
@@ -12,10 +13,10 @@ _envops:
   undefined: jinja2.StrictUndefined  # error loudly for undefined variables
 _templates_suffix: .tmpl
 
-template_name:
+template_name:  # Useful for namespacing
   type: str
   default: 'copier-template'
-  when: false  # hidden question
+  when: false  # hidden question: reusable variable with default value
 
 template_dir:
   type: str
