@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.17.9 (2026-09-07)
+
+### Bug Fixes
+
+- Reduce merge conflicts with template name changes
+  ([`4ce2f5e`](https://github.com/cbrown1234/copier-template-copier-template/commit/4ce2f5e18735e454bf1998129b73b09ba673f33a))
+
+
 ## v0.17.8 (2026-09-01)
 
 ### Bug Fixes
