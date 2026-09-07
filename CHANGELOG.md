@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.18.0 (2026-09-07)
+
+### Features
+
+- Add self update task
+  ([`6b3a591`](https://github.com/cbrown1234/copier-template-copier-template/commit/6b3a591444d760ed9dc384a8f657346ba75a9b4d))
+
+
 ## v0.17.10 (2026-09-07)
 
 ### Bug Fixes
