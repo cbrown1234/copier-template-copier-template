@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  template:update:
+    desc: Update from upstream <<template_name>> template
+    cmds:
+      - uv run copier update -a <<_copier_conf.answers_file>> {{.CLI_ARGS}}
+
+  template:auto-update:
+    desc: Update from upstream <<template_name>> template with existing answers
+    cmds:
+      - uv run copier update -a <<_copier_conf.answers_file>> -A {{.CLI_ARGS}}
