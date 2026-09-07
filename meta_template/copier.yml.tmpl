@@ -24,10 +24,10 @@ _jinja_extensions:
 <% endif %>
 <% endif %>
 
-template_name:
+template_name:  # Useful for namespacing
   type: str
   default: '<<output_template_name>>'
-  when: false
+  when: false  # hidden question: reusable variable with default value
 <% if include_pydantic_validation %>
 
 example_answer_pydanic_validated:
