@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  template:update:
+    desc: Update from upstream copier-template template
+    cmds:
+      - uv run copier update -a .copier-answers.copier-template.yml {{.CLI_ARGS}}
+
+  template:auto-update:
+    desc: Update from upstream copier-template template with existing answers
+    cmds:
+      - uv run copier update -a .copier-answers.copier-template.yml -A {{.CLI_ARGS}}

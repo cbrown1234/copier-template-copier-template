@@ -47,4 +47,6 @@ To pull in upstream improvements from the meta-template:
 
 ```bash
 copier update --answers-file .copier-answers.copier-template.yml
+# or
+task copier-template:template:update
 ```
