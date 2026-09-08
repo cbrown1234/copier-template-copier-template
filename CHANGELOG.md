@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v0.18.1 (2026-09-08)
+
+### Bug Fixes
+
+- **deps**: Update dependency copier to v9.18.2
+  ([#111](https://github.com/cbrown1234/copier-template-copier-template/pull/111),
+  [`ee63ce4`](https://github.com/cbrown1234/copier-template-copier-template/commit/ee63ce4a27d62cec9a4d73600e887fe2c5698132))
+
+
 ## v0.18.0 (2026-09-07)
 
 ### Features
