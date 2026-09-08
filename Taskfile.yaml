@@ -3,11 +3,8 @@ version: '3'
 set: [pipefail]
 
 includes:
-<<<<<<< before updating
   cog: ./taskfile/copier-template/cog
-=======
   copier-template: ./taskfile/copier-template/copier-template
->>>>>>> after updating
   demo: ./taskfile/copier-template/demo
   dev-setup: ./taskfile/copier-template/dev-setup
   lint: ./taskfile/copier-template/lint
