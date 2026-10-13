@@ -1,4 +1,4 @@
-_min_copier_version: "9.19.0"
+_min_copier_version: "9.19.1"
 
 _subdirectory: meta_template
 _answers_file: .copier-answers.<< template_name >>.yml
