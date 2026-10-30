@@ -20,7 +20,7 @@ tasks:
   maintenance:
     desc: Project maintenance automation
     cmds:
-      - uv run prek auto-update
+      - uv run prek autoupdate
       - task: maintenance:requirements
 
   maintenance:requirements:
