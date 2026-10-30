@@ -4,6 +4,7 @@ _src_path: git@github.com:cbrown1234/copier-template-copier-template.git
 copyright_name: Christopher Brown
 copyright_year: '2026'
 include_pydantic_validation: false
+include_semantic_release: true
 include_template_extensions: false
 license_type: mit
 min_python_version: '3.10'

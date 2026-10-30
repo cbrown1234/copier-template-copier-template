@@ -38,6 +38,7 @@ tests:
     - key: tests-prek-py$PYTHON_VERSION
       paths:
         - ${PREK_HOME}
+<% if include_semantic_release %>
 
 release:
   stage: release
@@ -65,3 +66,4 @@ release:
     - key: release-uv
       paths:
         - ${UV_CACHE_DIR}
+<% endif %>

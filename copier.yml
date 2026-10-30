@@ -65,6 +65,11 @@ include_template_extensions:
   help: Include support for local extensions
   default: false
 
+include_semantic_release:
+  type: bool
+  help: Include automated releases with python-semantic-release
+  default: true
+
 all_python_versions:
   type: yaml
   default: |
