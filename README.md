@@ -9,7 +9,7 @@ A [Copier](https://copier.readthedocs.io/) meta-template — a template that sca
 
 - **Best Practices:** template in subdirectory, [multiple (composable) template compatibility](https://copier.readthedocs.io/en/stable/configuring/#applying-multiple-templates-to-the-same-subproject)
 - **Test harness included** pytest setup with examples and helpers, ready to test your template, and it's usage
-- **Modern Batteries included** uv, semantic release, Renovate, and [go-task](https://taskfile.dev/) automation all preconfigured
+- **Modern Batteries included** uv, [semantic release](https://python-semantic-release.readthedocs.io/), Renovate, and [go-task](https://taskfile.dev/) automation all preconfigured
 - **CI/CD out of the box** Supports GitLab CI or GitHub Actions, with matrix testing across Python versions
 - **Optional Copier extensions**
     - [Pydantic validation](https://pypi.org/project/copier-pydantic/) for answers
