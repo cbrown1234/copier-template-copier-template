@@ -5,7 +5,7 @@ tasks:
     desc: Bootstrap dev setup
     cmds:
       - task: venv
-      - uv run prek install
+      - uv run << pre_commit_tool >> install
 
   venv:
     desc: Install dev requirements
@@ -20,7 +20,7 @@ tasks:
   maintenance:
     desc: Project maintenance automation
     cmds:
-      - uv run prek auto-update
+      - uv run << pre_commit_tool >> autoupdate
       - task: maintenance:requirements
 
   maintenance:requirements:

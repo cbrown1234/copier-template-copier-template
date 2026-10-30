@@ -55,6 +55,27 @@ var_end:
   default: "<< '}}' if template_style == 'jinja' else ']]' >>"
   when: false
 
+# Beta: hidden unless opted in with `-d pre_commit_tool=pre-commit`, see the
+# `include_actions_lockfile` notes above for how this works. Only the
+# non-default choice is recorded, so `-d pre_commit_tool=prek` opts out.
+# Not default yet: only the dev-setup/lint tasks and the tests job's hook cache
+# switch tool. The pre-commit CI job from pre-commit-copier-template still runs
+# prek, so generated templates use both until that template offers the choice.
+# To graduate: remove the `when` and keep `prek` as the default.
+pre_commit_tool:
+  type: str
+  help: Which tool should run the pre-commit hooks?
+  choices:
+    prek: prek
+    pre-commit: pre-commit
+  default: prek
+  when: "<< pre_commit_tool | default('prek') != 'prek' >>"
+
+pre_commit_home_var:
+  type: str
+  default: "<< 'PREK_HOME' if pre_commit_tool == 'prek' else 'PRE_COMMIT_HOME' >>"
+  when: false
+
 include_pydantic_validation:
   type: bool
   help: Include support for validation with Pydantic models (and multiline errors)

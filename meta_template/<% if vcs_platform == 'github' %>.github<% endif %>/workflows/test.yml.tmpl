@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 env:
-  PREK_HOME: .cache/prek
+  << pre_commit_home_var >>: .cache/<< pre_commit_tool >>
   # renovate: datasource=github-releases depName=astral-sh/uv
   UV_VERSION: "0.13.6"
   # renovate: datasource=github-releases depName=go-task/task
@@ -46,13 +46,13 @@ jobs:
         with:
           version: ${{ env.GO_TASK_VERSION }}
 
-      - name: Cache prek
+      - name: Cache << pre_commit_tool >>
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: ${{ env.PREK_HOME }}
-          key: prek-${{ runner.os }}-py${{ matrix.python-version }}-${{ hashFiles('.pre-commit-config.yaml') }}
+          path: ${{ env.<< pre_commit_home_var >> }}
+          key: << pre_commit_tool >>-${{ runner.os }}-py${{ matrix.python-version }}-${{ hashFiles('.pre-commit-config.yaml') }}
           restore-keys: |
-            prek-${{ runner.os }}-py${{ matrix.python-version }}-
+            << pre_commit_tool >>-${{ runner.os }}-py${{ matrix.python-version }}-
 
       - name: Setup environment
         run: task dev-setup:venv:ci

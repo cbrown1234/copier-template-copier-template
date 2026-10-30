@@ -4,15 +4,24 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
 from plumbum import local
 from plumbum.cmd import task, uv
 
 from tests.helpers import git_save
 
 
-def test_dev_setup(sub_project: Path) -> None:
+@pytest.mark.parametrize(
+    ('sub_project', 'pre_commit_tool'),
+    [
+        ({'pre_commit_tool': 'prek'}, 'prek'),
+        ({'pre_commit_tool': 'pre-commit'}, 'pre-commit'),
+    ],
+    indirect=['sub_project'],
+)
+def test_dev_setup(sub_project: Path, pre_commit_tool: str) -> None:
     with local.cwd(sub_project):
-        (uv['run', 'prek', 'sample-config'] > '.pre-commit-config.yaml')()
+        (uv['run', pre_commit_tool, 'sample-config'] > '.pre-commit-config.yaml')()
         git_save(sub_project)
         task('dev-setup')
 

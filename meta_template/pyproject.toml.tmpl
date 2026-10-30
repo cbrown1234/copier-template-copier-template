@@ -27,7 +27,12 @@ requires-python = ">= << min_python_version >>"
 [dependency-groups]
 dev = [
     "plumbum>=1.10.0",
+<% if pre_commit_tool == 'pre-commit' %>
+    "pre-commit>=4.7.0",
+<% endif %>
+<% if pre_commit_tool == 'prek' %>
     "prek>=0.3.8",
+<% endif %>
     "pytest>=9.0.2",
     "pytest-gitconfig>=0.9.0",
     "pytest-randomly>=5.0.0",

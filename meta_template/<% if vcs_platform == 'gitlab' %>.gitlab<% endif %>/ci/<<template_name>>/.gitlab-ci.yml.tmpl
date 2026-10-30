@@ -15,7 +15,7 @@ tests:
     # renovate: datasource=github-releases depName=go-task/task
     GO_TASK_VERSION: "v3.54.0"
     UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
-    PREK_HOME: "$CI_PROJECT_DIR/.cache/prek"
+    << pre_commit_home_var >>: "$CI_PROJECT_DIR/.cache/<< pre_commit_tool >>"
     UV_PYTHON: "$PYTHON_VERSION"
     GIT_DEPTH: "0"  # All git tags needed for copier
 <% if gitlab_non_root_tests %>
@@ -61,9 +61,9 @@ tests:
     - key: tests-uv-py$PYTHON_VERSION
       paths:
         - ${UV_CACHE_DIR}
-    - key: tests-prek-py$PYTHON_VERSION
+    - key: tests-<< pre_commit_tool >>-py$PYTHON_VERSION
       paths:
-        - ${PREK_HOME}
+        - ${<< pre_commit_home_var >>}
 <% if include_semantic_release %>
 
 release:
