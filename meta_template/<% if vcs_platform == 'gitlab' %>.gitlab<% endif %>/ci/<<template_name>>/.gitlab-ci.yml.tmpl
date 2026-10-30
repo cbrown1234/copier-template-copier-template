@@ -18,16 +18,39 @@ tests:
     PREK_HOME: "$CI_PROJECT_DIR/.cache/prek"
     UV_PYTHON: "$PYTHON_VERSION"
     GIT_DEPTH: "0"  # All git tags needed for copier
+<% if gitlab_non_root_tests %>
+    # Run tests as a non-root user, like a developer would locally. Root ignores
+    # file permissions, hiding issues like root-owned files written into bind
+    # mounts by docker containers
+    TEST_USER: builder
+<% endif %>
     # When using dind service, you must instruct Docker to talk with
     # the daemon started inside of the service
     # These are usually specified by the entrypoint, if using the "docker" image
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_CERTDIR: "/certs"  # should be mounded by the gitlab runner
     DOCKER_TLS_VERIFY: 1
+<% if gitlab_non_root_tests %>
+    # DOCKER_CERT_PATH defaults to ~/.docker, certs are copied there for TEST_USER
+<% else %>
     DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+<% endif %>
   before_script:
     - apt-get update && apt-get install -y git curl
     - apt-get install --no-install-recommends -y docker-cli
+<% if gitlab_non_root_tests %>
+    - useradd --create-home "$TEST_USER"
+    - chown -R "$TEST_USER:" "$CI_PROJECT_DIR"
+    - cp -r "$DOCKER_TLS_CERTDIR/client" "/home/$TEST_USER/.docker"
+    - chown -R "$TEST_USER:" "/home/$TEST_USER/.docker"
+    - export PATH="/home/$TEST_USER/.local/bin:$PATH"
+    - runuser -u "$TEST_USER" -- sh -c 'curl -LsSf "https://astral.sh/uv/${UV_VERSION}/install.sh" | sh'
+    - runuser -u "$TEST_USER" -- uv python install $PYTHON_VERSION
+    - runuser -u "$TEST_USER" -- sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b "/home/$TEST_USER/.local/bin" "$GO_TASK_VERSION"
+    - runuser -u "$TEST_USER" -- task dev-setup:venv:ci
+  script:
+    - runuser -u "$TEST_USER" -- task test
+<% else %>
     - curl -LsSf https://astral.sh/uv/${UV_VERSION}/install.sh | sh
     - source $HOME/.local/bin/env
     - uv python install $PYTHON_VERSION
@@ -35,6 +58,7 @@ tests:
     - task dev-setup:venv:ci
   script:
     - task test
+<% endif %>
   cache:
     - key: tests-uv-py$PYTHON_VERSION
       paths:
