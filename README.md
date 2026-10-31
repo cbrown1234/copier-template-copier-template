@@ -72,6 +72,7 @@ Beta features are hidden: Copier doesn't ask about them, and they're off unless 
 | Flag | Description |
 |---|---|
 | `include_actions_lockfile` | GitHub only. Verify the [GitHub Actions workflow lockfile](https://docs.github.com/en/actions/concepts/security/workflow-dependency-lockfiles) in CI, and configure Renovate to keep it up to date |
+| `gitlab_non_root_tests` | GitLab only. Run the generated CI tests as a non-root user, so permission issues (e.g. root-owned files from docker bind mounts) show up in CI as they would locally |
 
 ### Usage
 
@@ -87,4 +88,4 @@ Or add it to an existing project:
 copier update -d include_actions_lockfile=true --answers-file .copier-answers.copier-template.yml
 ```
 
-To opt out, run `copier update` with `-d include_actions_lockfile=false`.
+Pass `-d <flag>=true` for each flag you want. To opt out, run `copier update` with `-d <flag>=false`.
