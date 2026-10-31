@@ -39,7 +39,7 @@ jobs:
           version: "0.13.6"
 
       - name: Install dependencies
-        run: uv sync --group dev
+        run: uv sync --locked --group dev
 
       # PSR writes released/tag/version to $GITHUB_OUTPUT automatically.
       - name: Semantic Release
@@ -47,7 +47,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_COMMIT_AUTHOR: "github-actions <actions@users.noreply.github.com>"
-        run: uv run python-semantic-release version
+        run: uv run --locked python-semantic-release version
 
       - name: Publish to GitHub Releases
         uses: python-semantic-release/publish-action@v10.5.3

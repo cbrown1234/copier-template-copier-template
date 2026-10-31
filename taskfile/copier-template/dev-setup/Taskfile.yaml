@@ -5,12 +5,14 @@ tasks:
     desc: Bootstrap dev setup
     cmds:
       - task: venv
+        vars:
+          CLI_ARGS: ""  # Avoid passthrough
       - uv run prek install
 
   venv:
-    desc: Install dev requirements
+    desc: Install dev requirements e.g. (task dev-setup:venv -- --locked)
     cmds:
-      - uv sync
+      - uv sync {{.CLI_ARGS}}
 
   maintenance:
     desc: Project maintenance automation
@@ -23,4 +25,6 @@ tasks:
       CLI_ARGS: '{{.CLI_ARGS | default "--upgrade" }}'
     cmds:
       - task: venv
+        vars:
+          CLI_ARGS: ""  # Avoid passthrough
       - uv lock {{.CLI_ARGS}}

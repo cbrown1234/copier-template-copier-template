@@ -28,7 +28,7 @@ tests:
     - source $HOME/.local/bin/env
     - uv python install $PYTHON_VERSION
     - sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin v3.54.0
-    - task dev-setup:venv
+    - task dev-setup:venv -- --locked
   script:
     - task test
   cache:
@@ -56,10 +56,10 @@ release:
     - apt-get update && apt-get install -y git curl
     - curl -LsSf https://astral.sh/uv/0.13.6/install.sh | sh
     - source $HOME/.local/bin/env
-    - uv sync --group dev
+    - uv sync --locked --group dev
   script:
     - git checkout -B "$CI_COMMIT_BRANCH" "$CI_COMMIT_SHA"
-    - uv run python-semantic-release version
+    - uv run --locked python-semantic-release version
   resource_group: release
   interruptible: false
   cache:
