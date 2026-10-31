@@ -2,6 +2,23 @@
 
 <!-- version list -->
 
+## v0.21.0 (2026-10-31)
+
+### Features
+
+- **deps**: Update actions/cache action to v6
+  ([`7dc42c4`](https://github.com/cbrown1234/copier-template-copier-template/commit/7dc42c4de18e4f9c414c06a5a14f54e70c2492d5))
+
+- **deps**: Update actions/checkout action to v7
+  ([`db06ea4`](https://github.com/cbrown1234/copier-template-copier-template/commit/db06ea42f55a15a0136bb9fbdc66c3490c1381c3))
+
+- **deps**: Update astral-sh/setup-uv action to v10
+  ([`434945a`](https://github.com/cbrown1234/copier-template-copier-template/commit/434945a404a4c02a24e67b57561e33aa28c23f13))
+
+- **deps**: Update go-task/setup-task action to v2
+  ([`9c81601`](https://github.com/cbrown1234/copier-template-copier-template/commit/9c816017711b3d24a51d1bc2dd22c242e53499fc))
+
+
 ## v0.20.0 (2026-10-31)
 
 ### Continuous Integration
