@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.22.0 (2026-10-31)
+
+### Features
+
+- Use --locked for uv in CI
+  ([`4b446ec`](https://github.com/cbrown1234/copier-template-copier-template/commit/4b446ecabf7c60e824dc5067e8a42aaf8e00a9f2))
+
+
 ## v0.21.0 (2026-10-31)
 
 ### Features
