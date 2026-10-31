@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v0.23.0 (2026-10-31)
+
+### Features
+
+- Add beta GitHub Actions workflow lockfile support
+  ([`1eefc52`](https://github.com/cbrown1234/copier-template-copier-template/commit/1eefc5265236bb99644b2b6bdc3f3ccb31b730c7))
+
+### Testing
+
+- Validate the generated renovate.json against Renovate's schema
+  ([`abd5b69`](https://github.com/cbrown1234/copier-template-copier-template/commit/abd5b69de7efeb5a0605c30895208ba66d445f8b))
+
+
 ## v0.22.0 (2026-10-31)
 
 ### Features
