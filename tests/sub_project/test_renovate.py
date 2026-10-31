@@ -62,7 +62,12 @@ def test_no_ci_preset_without_vcs_platform(sub_project: Path) -> None:
 
 @pytest.mark.parametrize(
     'sub_project',
-    [{'vcs_platform': 'github'}, {'vcs_platform': 'gitlab'}, {'vcs_platform': ''}],
+    [
+        {'vcs_platform': 'github'},
+        {'vcs_platform': 'github', 'include_actions_lockfile': True},
+        {'vcs_platform': 'gitlab'},
+        {'vcs_platform': ''},
+    ],
     indirect=True,
 )
 def test_renovate_config_matches_schema(sub_project: Path) -> None:
