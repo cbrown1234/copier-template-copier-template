@@ -64,3 +64,27 @@ This repo uses itself. See `.copier-answers.copier-template.yml` for the answers
 ### Pre-commit composition
 
 This template does not generate a `.pre-commit-config.yaml`. Pre-commit configuration is expected to be handled by a separate template that composes with this one.
+
+## Beta features
+
+Beta features are hidden: Copier doesn't ask about them, and they're off unless you opt in. Opting in records the answer, so `copier update` keeps the feature. Projects that don't opt in are asked as normal once a feature graduates.
+
+| Flag | Description |
+|---|---|
+| `include_actions_lockfile` | GitHub only. Verify the [GitHub Actions workflow lockfile](https://docs.github.com/en/actions/concepts/security/workflow-dependency-lockfiles) in CI, and configure Renovate to keep it up to date |
+
+### Usage
+
+Opt in when creating a project:
+
+```bash
+copier copy -d include_actions_lockfile=true <template-url> /path/to/new-template
+```
+
+Or add it to an existing project:
+
+```bash
+copier update -d include_actions_lockfile=true --answers-file .copier-answers.copier-template.yml
+```
+
+To opt out, run `copier update` with `-d include_actions_lockfile=false`.

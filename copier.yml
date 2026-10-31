@@ -70,6 +70,32 @@ include_semantic_release:
   help: Include automated releases with python-semantic-release
   default: true
 
+# Beta: hidden unless opted in with `-d include_actions_lockfile=true`. The
+# self-referencing `when` records the answer only for projects that opt in, so
+# everyone else is asked fresh when this graduates.
+# Not default yet: Renovate's actions.lock support is experimental, and a new
+# project's verify workflow fails until `gh actions-lock` is run by hand.
+# Revisit when these settle:
+# - https://docs.renovatebot.com/modules/manager/github-actions/ (experimental flag)
+# - https://github.com/renovatebot/renovate/issues/47052 (lockfile schema sync)
+# - https://github.com/github/gh-actions-lock/releases (pre-1.0)
+# Known gap: `gh actions-lock` rewrites the template's digest-pinned refs
+# (`@<sha> # v7.0.1`) to tags (`@v7.0.1`), so lockfile projects conflict on
+# every template change to a `uses:` line.
+# To try during the beta: with the "Require actions to be pinned to a
+# full-length commit SHA" repo/org policy enabled, Renovate's docs say
+# `gh actions-lock` keeps digest refs. If that holds, lockfile projects match
+# the template, the policy belongs in the CONTRIBUTING setup steps, and the
+# `pinDigests: false` rule in renovate.json.tmpl can go. If not, graduating
+# (lockfile by default) is the point to switch the template to tags.
+# To graduate: set `when` to `vcs_platform == 'github'` and pick the default.
+include_actions_lockfile:
+  type: bool
+  help: Include a GitHub Actions workflow lockfile check (actions.lock, kept up to date by Renovate)
+  default: false
+  when: "<< vcs_platform == 'github' and include_actions_lockfile | default(false) >>"
+  validator: "<% if include_actions_lockfile and vcs_platform != 'github' %>only supported with GitHub<% endif %>"
+
 all_python_versions:
   type: yaml
   default: |

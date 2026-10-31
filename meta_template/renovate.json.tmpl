@@ -13,6 +13,15 @@
     }
   ],
   "packageRules": [
+<% if include_actions_lockfile %>
+    {
+      "description": "actions.lock pins actions to commits, and gh actions-lock rewrites digest refs back to tags. Possibly unnecessary with the 'Require actions to be pinned to a full-length commit SHA' policy enabled, under which gh actions-lock is documented to keep digest refs (untested).",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "pinDigests": false
+    },
+<% endif %>
     {
       "matchDatasources": [
         "docker"
