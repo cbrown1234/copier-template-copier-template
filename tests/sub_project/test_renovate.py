@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 import pytest
+from plumbum import local
 
 # The match string shared by Renovate's customManagers:githubActionsVersions and
 # customManagers:gitlabPipelineVersions presets
@@ -56,3 +58,28 @@ def test_ci_tool_versions_renovate_managed(
 def test_no_ci_preset_without_vcs_platform(sub_project: Path) -> None:
     renovate = json.loads((sub_project / 'renovate.json').read_text())
     assert renovate['extends'] == ['config:best-practices']
+
+
+@pytest.mark.parametrize(
+    'sub_project',
+    [{'vcs_platform': 'github'}, {'vcs_platform': 'gitlab'}, {'vcs_platform': ''}],
+    indirect=True,
+)
+def test_renovate_config_matches_schema(sub_project: Path) -> None:
+    """Validate the generated renovate.json against Renovate's schema.
+
+    Same check as the check-renovate pre-commit hook, which only sees this repo's
+    own renovate.json, not the one generated from renovate.json.tmpl.
+    """
+    check_jsonschema = local[sys.executable]['-m', 'check_jsonschema']
+    retcode, stdout, stderr = check_jsonschema.run(
+        [
+            '--builtin-schema',
+            'vendor.renovate',
+            '--regex-variant',
+            'nonunicode',
+            str(sub_project / 'renovate.json'),
+        ],
+        retcode=None,
+    )
+    assert retcode == 0, stdout + stderr
