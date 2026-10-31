@@ -84,6 +84,17 @@
         "go-task/task"
       ],
       "automerge": true
+    },
+    {
+      "description": "Majors in the template can change what generated projects get on copier update, so release them as a minor version listed under Features, after review. Must stay after the automerge rules above.",
+      "matchFileNames": [
+        "meta_template/**"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "semanticCommitType": "feat",
+      "automerge": false
     }
   ],
   "lockFileMaintenance": {
