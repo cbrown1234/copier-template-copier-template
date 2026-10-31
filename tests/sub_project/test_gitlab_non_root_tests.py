@@ -30,6 +30,9 @@ def test_gitlab_non_root_tests_job(sub_project: Path, expected: bool) -> None:
     assert ('TEST_USER' in job['variables']) == expected
     assert 'DOCKER_CERT_PATH' in job['variables']
     assert job['script'][0].startswith('runuser') == expected
+    assert (
+        job.get('after_script') == ['chown -R "$(id -u):$(id -g)" "$CI_PROJECT_DIR"']
+    ) == expected
     assert any(cmd.endswith('task dev-setup:venv:ci') for cmd in job['before_script'])
     assert (
         all(
