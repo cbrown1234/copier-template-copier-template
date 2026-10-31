@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v0.20.0 (2026-10-31)
+
+### Continuous Integration
+
+- Let Renovate update actions in the template's workflows
+  ([`2c70c64`](https://github.com/cbrown1234/copier-template-copier-template/commit/2c70c6443452bba393895cb1a1fb3c7b4fb79a55))
+
+- Manage CI tool versions with Renovate annotation presets
+  ([`209713a`](https://github.com/cbrown1234/copier-template-copier-template/commit/209713af51efc68c312427d8fb0c51208d627b1d))
+
+### Features
+
+- Give automerged Renovate updates their own PR headroom
+  ([`8a7a320`](https://github.com/cbrown1234/copier-template-copier-template/commit/8a7a320b6c8bc2965d708331f5502a0940ea68c4))
+
+- Track and release the versions pinned in the template
+  ([`960c3ed`](https://github.com/cbrown1234/copier-template-copier-template/commit/960c3eded7b779816ae6f839495ec38de2c7724c))
+
+
 ## v0.19.0 (2026-10-31)
 
 ### Features
