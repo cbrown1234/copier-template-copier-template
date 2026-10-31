@@ -34,11 +34,13 @@
       "datasourceTemplate": "pypi"
     }
   ],
+  "github-actions": {
+    "managerFilePatterns": [
+      "/^meta_template/.+/workflows/.+\\.tmpl$/"
+    ]
+  },
   "packageRules": [
     {
-      "matchDatasources": [
-        "docker"
-      ],
       "matchFileNames": [
         "meta_template/**"
       ],
