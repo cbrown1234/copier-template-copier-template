@@ -13,6 +13,10 @@ permissions:
 
 env:
   PREK_HOME: .cache/prek
+  # renovate: datasource=github-releases depName=astral-sh/uv
+  UV_VERSION: "0.13.6"
+  # renovate: datasource=github-releases depName=go-task/task
+  GO_TASK_VERSION: "3.54.0"
 
 jobs:
   tests:
@@ -31,7 +35,7 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
         with:
-          version: "0.13.6"
+          version: ${{ env.UV_VERSION }}
           enable-cache: true
 
       - name: Install Python ${{ matrix.python-version }}
@@ -40,7 +44,7 @@ jobs:
       - name: Install Task
         uses: go-task/setup-task@v1
         with:
-          version: "3.54.0"
+          version: ${{ env.GO_TASK_VERSION }}
 
       - name: Cache prek
         uses: actions/cache@v4

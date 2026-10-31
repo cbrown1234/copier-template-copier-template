@@ -1,26 +1,14 @@
 {
   "customManagers": [
     {
+      "description": "matchStrings copied verbatim from the customManagers:githubActionsVersions/gitlabPipelineVersions presets (which only scan .github/workflows and .gitlab-ci.yml), so annotations behave the same in the template's .tmpl files. Update together.",
       "customType": "regex",
       "managerFilePatterns": [
-        "/\\.gitlab-ci\\.ya?ml(\\.tmpl)?$/"
+        "/\\.tmpl$/"
       ],
       "matchStrings": [
-        "https://astral\\.sh/uv/(?<currentValue>[^/]+)/install\\.sh"
-      ],
-      "depNameTemplate": "astral-sh/uv",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/workflows/[^/]+\\.ya?ml$/"
-      ],
-      "matchStrings": [
-        "setup-uv@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
-      ],
-      "depNameTemplate": "astral-sh/uv",
-      "datasourceTemplate": "github-releases"
+        "# renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: (?:lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s+[A-Za-z0-9_]+?_VERSION\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
+      ]
     },
     {
       "customType": "regex",
@@ -33,50 +21,6 @@
       ],
       "depNameTemplate": "copier",
       "datasourceTemplate": "pypi"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/\\.gitlab-ci\\.ya?ml(\\.tmpl)?$/"
-      ],
-      "matchStrings": [
-        "https://taskfile\\.dev/install\\.sh.*?(?<currentValue>v[\\d.]+)"
-      ],
-      "depNameTemplate": "go-task/task",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/workflows/[^/]+\\.ya?ml$/"
-      ],
-      "matchStrings": [
-        "setup-task@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
-      ],
-      "depNameTemplate": "go-task/task",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/workflows/[^/]+\\.ya?ml(\\.tmpl)?$/"
-      ],
-      "matchStrings": [
-        "setup-uv@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
-      ],
-      "depNameTemplate": "astral-sh/uv",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/workflows/[^/]+\\.ya?ml(\\.tmpl)?$/"
-      ],
-      "matchStrings": [
-        "setup-task@[^\\n]+\\n\\s+with:\\n\\s+version:\\s*\"(?<currentValue>[^\"]+)\""
-      ],
-      "depNameTemplate": "go-task/task",
-      "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
@@ -147,6 +91,7 @@
     "automerge": true
   },
   "extends": [
+    "customManagers:githubActionsVersions",
     "config:best-practices"
   ],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json"
