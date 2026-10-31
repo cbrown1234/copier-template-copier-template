@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.24.0 (2026-10-31)
+
+### Features
+
+- Add beta flag to run generated GitLab tests as a non-root user
+  ([`7aae225`](https://github.com/cbrown1234/copier-template-copier-template/commit/7aae225070c66cf8a0d31d5e76a8f07cd14b3597))
+
+
 ## v0.23.0 (2026-10-31)
 
 ### Features
