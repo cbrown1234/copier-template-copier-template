@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.24.1 (2026-10-31)
+
+### Bug Fixes
+
+- Give the checkout back to root after non-root GitLab tests
+  ([`66c02cb`](https://github.com/cbrown1234/copier-template-copier-template/commit/66c02cb6fe2623bd79b6f8e52ca28552079ef59c))
+
+
 ## v0.24.0 (2026-10-31)
 
 ### Features
