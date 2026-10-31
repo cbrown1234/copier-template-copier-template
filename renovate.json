@@ -91,16 +91,26 @@
       "prConcurrentLimit": 10
     },
     {
-      "description": "Majors in the template can change what generated projects get on copier update, so release them as a minor version listed under Features, after review. Must stay after the automerge rules above.",
+      "description": "Template updates that need review: majors can change what generated projects get on copier update, and a digest change on a full-version tag means the tag was moved upstream. Must stay after the automerge rules above, to override their automerge and prConcurrentLimit.",
+      "matchFileNames": [
+        "meta_template/**"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "digest"
+      ],
+      "automerge": false,
+      "prConcurrentLimit": 7
+    },
+    {
+      "description": "Release template majors as a minor version, listed under Features.",
       "matchFileNames": [
         "meta_template/**"
       ],
       "matchUpdateTypes": [
         "major"
       ],
-      "semanticCommitType": "feat",
-      "automerge": false,
-      "prConcurrentLimit": 7
+      "semanticCommitType": "feat"
     }
   ],
   "lockFileMaintenance": {
