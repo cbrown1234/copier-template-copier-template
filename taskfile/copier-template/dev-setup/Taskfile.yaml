@@ -12,6 +12,11 @@ tasks:
     cmds:
       - uv sync
 
+  venv:ci:
+    desc: Install dev requirements, failing if uv.lock is out of date
+    cmds:
+      - uv sync --locked
+
   maintenance:
     desc: Project maintenance automation
     cmds:

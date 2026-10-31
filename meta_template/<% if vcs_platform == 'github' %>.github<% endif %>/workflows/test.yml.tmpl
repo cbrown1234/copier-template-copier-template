@@ -55,7 +55,7 @@ jobs:
             prek-${{ runner.os }}-py${{ matrix.python-version }}-
 
       - name: Setup environment
-        run: task dev-setup:venv
+        run: task dev-setup:venv:ci
         env:
           UV_PYTHON: ${{ matrix.python-version }}
 
