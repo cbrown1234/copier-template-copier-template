@@ -1,6 +1,9 @@
 tmp/
 .vscode/
 
+# Task (go-task) checksums and temp files
+.task/
+
 # Docker Sandbox
 .sbx
 
