@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.19.0 (2026-10-31)
+
+### Features
+
+- Make python-semantic-release optional
+  ([`c5f2b2d`](https://github.com/cbrown1234/copier-template-copier-template/commit/c5f2b2d8371f3db9cb09e43f400f8c5eaf9a6af5))
+
+
 ## v0.18.3 (2026-10-13)
 
 ### Bug Fixes
