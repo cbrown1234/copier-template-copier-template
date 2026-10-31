@@ -32,7 +32,8 @@
       "matchUpdateTypes": [
         "digest"
       ],
-      "automerge": true
+      "automerge": true,
+      "prConcurrentLimit": 10
     },
     {
       "matchManagers": [
@@ -41,13 +42,15 @@
       "matchUpdateTypes": [
         "digest"
       ],
-      "automerge": true
+      "automerge": true,
+      "prConcurrentLimit": 10
     },
     {
       "matchPackageNames": [
         "astral-sh/uv"
       ],
-      "automerge": true
+      "automerge": true,
+      "prConcurrentLimit": 10
     },
     {
       "matchPackageNames": [
@@ -55,19 +58,23 @@
       ],
       "automerge": true,
       "groupName": "copier",
-      "rangeStrategy": "bump"
+      "rangeStrategy": "bump",
+      "prConcurrentLimit": 10
     },
     {
       "matchPackageNames": [
         "go-task/task"
       ],
-      "automerge": true
+      "automerge": true,
+      "prConcurrentLimit": 10
     }
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": true
+    "automerge": true,
+    "prConcurrentLimit": 10
   },
+  "prConcurrentLimit": 7,
   "extends": [
 <% if vcs_platform == 'github' %>
     "customManagers:githubActionsVersions",
