@@ -44,6 +44,10 @@ tests:
     - runuser -u "$TEST_USER" -- task dev-setup:venv:ci
   script:
     - runuser -u "$TEST_USER" -- task test
+  after_script:
+    # Runners that reuse the checkout (git fetch strategy) would otherwise leave
+    # it owned by TEST_USER, failing git's ownership check in later root jobs
+    - chown -R "$(id -u):$(id -g)" "$CI_PROJECT_DIR"
 <% else %>
     - curl -LsSf https://astral.sh/uv/${UV_VERSION}/install.sh | sh
     - source $HOME/.local/bin/env
