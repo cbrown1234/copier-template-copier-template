@@ -41,11 +41,11 @@
   },
   "packageRules": [
     {
-      "description": "Template files keep readable tags, as generated projects pin digests themselves. Digests here would give every user a diff on each digest bump, conflicting with their own Renovate's.",
+      "description": "Template updates use build commits, which trigger a patch release (see tool.semantic_release in pyproject.toml) so users get them on copier update.",
       "matchFileNames": [
         "meta_template/**"
       ],
-      "pinDigests": false
+      "semanticCommitType": "build"
     },
     {
       "matchDatasources": [

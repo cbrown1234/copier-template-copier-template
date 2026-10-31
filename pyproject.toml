@@ -84,8 +84,11 @@ default = "semantic-release <semantic-release>"
 
 [tool.semantic_release.commit_parser_options]
 minor_tags = ["feat"]
-patch_tags = ["fix", "perf"]
-other_allowed_tags = ["build", "chore", "ci", "docs", "style", "refactor", "test"]
+# build: Renovate's updates to versions shipped in the template, released so
+# users get them on `copier update`. They're listed under "Build System" in
+# the changelog, as semantic-release never excludes commits that bump.
+patch_tags = ["fix", "perf", "build"]
+other_allowed_tags = ["chore", "ci", "docs", "style", "refactor", "test"]
 allowed_tags = ["feat", "fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "test"]
 default_bump_level = 0
 parse_squash_commits = true
