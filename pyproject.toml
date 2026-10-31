@@ -12,6 +12,7 @@ requires-python = ">= 3.10"
 
 [dependency-groups]
 dev = [
+    "check-jsonschema>=0.38.2",
     "plumbum>=1.10.0",
     "prek>=0.3.8",
     "pytest>=9.0.2",
