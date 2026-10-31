@@ -1,0 +1,9 @@
+---
+schemaVersion: "1"
+name: copier-template-copier-template
+agent: claude
+kits:
+  - "git+ssh://git@github.com/cbrown1234/sbx-kits.git#dir=agent-git"
+  - source: "git+ssh://git@github.com/cbrown1234/sbx-kits.git#dir=clone-repo"
+    args:
+      repo: "https://github.com/BrownianTech/copier-template-copier-template.git"
