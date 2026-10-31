@@ -40,7 +40,11 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
+<<<<<<< before updating
           version: ${{ env.UV_VERSION }}
+=======
+          version: "0.13.6"
+>>>>>>> after updating
 
       - name: Install dependencies
         run: uv sync --locked --group dev

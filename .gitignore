@@ -4,9 +4,12 @@ tmp/
 # Task (go-task) checksums and temp files
 .task/
 
+<<<<<<< before updating
 # Docker Sandbox
 .sbx
 
+=======
+>>>>>>> after updating
 # [[[cog
 # import cog, urllib.request
 # content = urllib.request.urlopen("https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore").read().decode()
