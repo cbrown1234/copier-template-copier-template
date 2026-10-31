@@ -33,3 +33,9 @@ def test_sub_project_tests_dirty_repo(sub_project: Path) -> None:
         task('dev-setup:venv')
         (sub_project / 'dirty_file.txt').write_text('dirty')
         task('test')
+
+
+def test_dev_setup_venv_ci(sub_project: Path) -> None:
+    with local.cwd(sub_project):
+        uv('lock')
+        task('dev-setup:venv:ci')
