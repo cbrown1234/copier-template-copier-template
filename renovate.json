@@ -41,13 +41,11 @@
   },
   "packageRules": [
     {
+      "description": "Template files keep readable tags, as generated projects pin digests themselves. Digests here would give every user a diff on each digest bump, conflicting with their own Renovate's.",
       "matchFileNames": [
         "meta_template/**"
       ],
-      "matchUpdateTypes": [
-        "pinDigest"
-      ],
-      "enabled": false
+      "pinDigests": false
     },
     {
       "matchDatasources": [
