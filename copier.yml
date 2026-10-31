@@ -96,6 +96,19 @@ include_actions_lockfile:
   when: "<< vcs_platform == 'github' and include_actions_lockfile | default(false) >>"
   validator: "<% if include_actions_lockfile and vcs_platform != 'github' %>only supported with GitHub<% endif %>"
 
+# Beta: hidden unless opted in with `-d gitlab_non_root_tests=true`, see the
+# `include_actions_lockfile` notes above for how this works.
+# Not default yet: unproven on real GitLab runners (the test user must be able
+# to read the dind TLS certs at DOCKER_CERT_PATH). Graduate once it has run on
+# GitLab pipelines.
+# To graduate: set `when` to `vcs_platform == 'gitlab'` and pick the default.
+gitlab_non_root_tests:
+  type: bool
+  help: Run the generated GitLab CI tests as a non-root user, like a developer would locally
+  default: false
+  when: "<< vcs_platform == 'gitlab' and gitlab_non_root_tests | default(false) >>"
+  validator: "<% if gitlab_non_root_tests and vcs_platform != 'gitlab' %>only supported with GitLab<% endif %>"
+
 all_python_versions:
   type: yaml
   default: |
