@@ -91,6 +91,12 @@ include_semantic_release:
   help: Include automated releases with python-semantic-release
   default: true
 
+release_approval:
+  type: bool
+  help: Require a manual approval before each release
+  default: false
+  when: "<< include_semantic_release and vcs_platform in ['github', 'gitlab'] >>"
+
 # Beta: hidden unless opted in with `-d include_actions_lockfile=true`. The
 # self-referencing `when` records the answer only for projects that opt in, so
 # everyone else is asked fresh when this graduates.
