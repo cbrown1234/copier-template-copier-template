@@ -43,11 +43,27 @@ python-semantic-release [does not support `CI_JOB_TOKEN`](https://github.com/pyt
 
 1. Create a project access token with Maintainer role and `api` + `write_repository` scopes.
 2. Add it as a CI/CD variable named `GITLAB_TOKEN` (masked, protected).
+<% if release_approval %>
+
+### Release approval
+
+Releases don't run automatically: start the `release` job by hand from a pipeline on the default branch when you're ready. Until then the pipeline shows as blocked. Run it from the newest pipeline, as each job releases its own pipeline's commit.
+
+Anyone who can run pipelines on the default branch can start it. To restrict who can, make the `release` environment a [protected environment](https://docs.gitlab.com/ci/environments/protected_environments/) (GitLab Premium or Ultimate).
+<% endif %>
 <% endif %>
 <% if vcs_platform == 'github' %>
 ### CI setup
 
 The release workflow uses the built-in `GITHUB_TOKEN`. If your default branch restricts pushes via [branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-a-branch-protection-rule/about-branch-protection-rules), use a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) stored as a repository secret named `GH_TOKEN` instead.
+<% if release_approval %>
+
+### Release approval
+
+The release job runs in the `release` [environment](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments), which GitHub creates on the first release run. It only waits for approval once you add reviewers under **Settings › Environments › release › Required reviewers**. On GitHub Free, Pro and Team, required reviewers are only available for public repositories.
+
+While a run waits for approval, later pushes to the default branch queue behind it, and only the newest queued run is kept. To release everything merged so far, reject the waiting run, then approve the queued one once its tests pass.
+<% endif %>
 <% endif %>
 <% endif %>
 

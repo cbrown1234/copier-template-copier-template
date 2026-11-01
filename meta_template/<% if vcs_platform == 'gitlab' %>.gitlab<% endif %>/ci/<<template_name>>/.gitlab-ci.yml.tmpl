@@ -80,6 +80,10 @@ release:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+<% if release_approval %>
+      when: manual
+  environment: release
+<% endif %>
   before_script:
     - apt-get update && apt-get install -y git curl
     - curl -LsSf https://astral.sh/uv/${UV_VERSION}/install.sh | sh
