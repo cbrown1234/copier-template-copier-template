@@ -1,5 +1,5 @@
 # Changes here will be managed by Copier; NEVER EDIT MANUALLY
-_commit: v0.24.1
+_commit: v0.27.0
 _src_path: git@github.com:cbrown1234/copier-template-copier-template.git
 copyright_name: Christopher Brown
 copyright_year: '2026'
@@ -9,6 +9,7 @@ include_template_extensions: false
 license_type: mit
 min_python_version: '3.11'
 output_template_name: copier-template
+release_approval: false
 template_dir: meta_template
 template_style: jinja
 vcs_platform: github
