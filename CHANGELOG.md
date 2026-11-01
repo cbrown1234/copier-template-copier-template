@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v0.26.0 (2026-11-01)
+
+### Features
+
+- Add beta flag to run hooks with pre-commit instead of prek
+  ([`8369b47`](https://github.com/cbrown1234/copier-template-copier-template/commit/8369b473944fa3336ca66960f081d0a7540ec00e))
+
+- Add Python 3.15 support
+  ([`2bbb521`](https://github.com/cbrown1234/copier-template-copier-template/commit/2bbb521efbaf0f09e860ca45a0a58c32075fdfc1))
+
+
 ## v0.25.0 (2026-11-01)
 
 ### Features
