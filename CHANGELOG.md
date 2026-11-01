@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.24.2 (2026-11-01)
+
+### Bug Fixes
+
+- Ignore ruff's copyright rules in generated templates
+  ([`2bc558b`](https://github.com/cbrown1234/copier-template-copier-template/commit/2bc558beeb07c18c0cf0db95b156edbaf1f0c785))
+
+
 ## v0.24.1 (2026-10-31)
 
 ### Bug Fixes
