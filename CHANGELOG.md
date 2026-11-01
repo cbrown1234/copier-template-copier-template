@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.27.0 (2026-11-01)
+
+### Features
+
+- Add option to require manual approval before releases
+  ([`221419a`](https://github.com/cbrown1234/copier-template-copier-template/commit/221419a3333502a8d4abe51427378bd146930202))
+
+
 ## v0.26.0 (2026-11-01)
 
 ### Features
