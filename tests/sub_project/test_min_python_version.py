@@ -38,6 +38,13 @@ import yaml
                 'ruff_target': 'py314',
             },
         ),
+        (
+            {'min_python_version': '3.15'},
+            {
+                'version': '3.15',
+                'ruff_target': 'py315',
+            },
+        ),
     ],
     indirect=['sub_project'],
 )
@@ -69,9 +76,9 @@ def test_min_python_version(sub_project: Path, expected: dict) -> None:
 @pytest.mark.parametrize(
     ('min_python_version', 'expected_versions'),
     [
-        ('3.11', ['3.11', '3.12', '3.13', '3.14']),
-        ('3.12', ['3.12', '3.13', '3.14']),
-        ('3.14', ['3.14']),
+        ('3.11', ['3.11', '3.12', '3.13', '3.14', '3.15']),
+        ('3.12', ['3.12', '3.13', '3.14', '3.15']),
+        ('3.15', ['3.15']),
     ],
 )
 def test_ci_matrix(
