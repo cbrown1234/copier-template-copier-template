@@ -2,6 +2,20 @@
 
 <!-- version list -->
 
+## v0.25.0 (2026-11-01)
+
+### Features
+
+- Drop Python 3.10 support
+  ([`bea40d5`](https://github.com/cbrown1234/copier-template-copier-template/commit/bea40d5d9cdaae3fd9616b1dca5999bf85459b9c))
+
+### Breaking Changes
+
+- Min_python_version no longer offers 3.10. Projects that recorded 3.10 get the new default (3.11)
+  on `copier update --defaults`, raising requires-python and ruff's target-version and dropping 3.10
+  from the CI matrix.
+
+
 ## v0.24.2 (2026-11-01)
 
 ### Bug Fixes
