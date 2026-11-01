@@ -2,12 +2,8 @@
 
 from __future__ import annotations
 
+import tomllib
 from pathlib import Path
-
-try:
-    import tomllib  # stdlib in Python 3.11+
-except ImportError:
-    import tomli as tomllib  # type: ignore[no-redef]  # backport for Python 3.10
 
 import pytest
 import yaml

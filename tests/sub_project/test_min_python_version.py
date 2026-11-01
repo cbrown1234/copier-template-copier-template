@@ -8,10 +8,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-try:
-    import tomllib  # stdlib in Python 3.11+
-except ImportError:
-    import tomli as tomllib  # type: ignore[no-redef]  # backport for Python 3.10
+import tomllib
 
 import pytest
 import yaml
@@ -23,8 +20,8 @@ import yaml
         (
             {},
             {
-                'version': '3.10',
-                'ruff_target': 'py310',
+                'version': '3.11',
+                'ruff_target': 'py311',
             },
         ),
         (
@@ -72,7 +69,7 @@ def test_min_python_version(sub_project: Path, expected: dict) -> None:
 @pytest.mark.parametrize(
     ('min_python_version', 'expected_versions'),
     [
-        ('3.10', ['3.10', '3.11', '3.12', '3.13', '3.14']),
+        ('3.11', ['3.11', '3.12', '3.13', '3.14']),
         ('3.12', ['3.12', '3.13', '3.14']),
         ('3.14', ['3.14']),
     ],

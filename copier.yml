@@ -112,7 +112,6 @@ gitlab_non_root_tests:
 all_python_versions:
   type: yaml
   default: |
-    - '3.10'
     - '3.11'
     - '3.12'
     - '3.13'
