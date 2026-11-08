@@ -53,6 +53,23 @@ def test_jobs_install_uv_from_script(sub_project: Path, jobs: set[str]) -> None:
     assert '.local/bin/env' not in rendered
 
 
+
+@pytest.mark.parametrize(
+    ('sub_project', 'local_bin'),
+    [
+        ({'vcs_platform': 'gitlab'}, '$HOME/.local/bin'),
+        (
+            {'vcs_platform': 'gitlab', 'gitlab_non_root_tests': True},
+            '/home/$TEST_USER/.local/bin',
+        ),
+    ],
+    indirect=['sub_project'],
+)
+def test_tests_job_puts_local_bin_on_path(sub_project: Path, local_bin: str) -> None:
+    """Tools from uv tool install run as root or not, as the uv installer allowed."""
+    before_script = load_gitlab_ci(sub_project)['tests']['before_script']
+    assert f'export PATH="{local_bin}:$PATH"' in before_script
+
 @pytest.mark.parametrize('sub_project', [{'vcs_platform': 'gitlab'}], indirect=True)
 def test_install_uv_script(sub_project: Path) -> None:
     """The script checks the release archive against its checksum file."""

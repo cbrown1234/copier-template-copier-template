@@ -60,6 +60,8 @@ tests:
 <% if gitlab_non_root_tests %>
     - useradd --create-home "$TEST_USER"
     - chown -R "$TEST_USER:" "$CI_PROJECT_DIR"
+    # Where uv python install and uv tool install put executables, as on the
+    # root path
     - export PATH="/home/$TEST_USER/.local/bin:$PATH"
     - runuser -u "$TEST_USER" -- uv python install $PYTHON_VERSION
     - runuser -u "$TEST_USER" -- task dev-setup:venv:ci
@@ -70,6 +72,7 @@ tests:
     # it owned by TEST_USER, failing git's ownership check in later root jobs
     - chown -R "$(id -u):$(id -g)" "$CI_PROJECT_DIR"
 <% else %>
+    - export PATH="$HOME/.local/bin:$PATH"
     - uv python install $PYTHON_VERSION
     - task dev-setup:venv:ci
   script:
