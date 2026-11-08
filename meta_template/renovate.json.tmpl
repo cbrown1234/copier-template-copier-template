@@ -24,7 +24,22 @@
         "docker-buildx-plugin",
         "docker-compose-plugin"
       ],
-      "groupName": "Docker client",
+      "groupName": "Docker client"
+    },
+    {
+      "description": "Majors can drop API versions or change CLI behaviour, so get a reviewed PR",
+      "matchDatasources": [
+        "deb"
+      ],
+      "matchPackageNames": [
+        "docker-ce-cli",
+        "docker-buildx-plugin",
+        "docker-compose-plugin"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true,
       "prConcurrentLimit": 10
     },

@@ -177,6 +177,22 @@ def test_docker_lookups_match_image_release(sub_project: Path) -> None:
     assert suites == {match['release']}
 
 
+@pytest.mark.parametrize('sub_project', [{'vcs_platform': 'gitlab'}], indirect=True)
+def test_docker_client_majors_not_automerged(sub_project: Path) -> None:
+    """Generated projects group every Docker update, but review the majors."""
+    renovate = json.loads((sub_project / 'renovate.json').read_text())
+    rules = [
+        rule
+        for rule in renovate['packageRules']
+        if set(rule.get('matchPackageNames', [])) == set(DOCKER_PACKAGES)
+    ]
+    assert all('matchUpdateTypes' not in rule for rule in rules if 'groupName' in rule)
+    automerged = [rule for rule in rules if rule.get('automerge')]
+    assert automerged
+    for rule in automerged:
+        assert set(rule['matchUpdateTypes']) == {'minor', 'patch'}
+
+
 def test_root_renovate_groups_docker_client() -> None:
     """Renovate here groups the template's Docker lookups too.
 
