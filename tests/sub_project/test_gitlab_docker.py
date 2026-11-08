@@ -175,3 +175,21 @@ def test_docker_lookups_match_image_release(sub_project: Path) -> None:
         if lookup['depName'] in DOCKER_PACKAGES
     }
     assert suites == {match['release']}
+
+
+def test_root_renovate_groups_docker_client() -> None:
+    """Renovate here groups the template's Docker lookups too.
+
+    Its .tmpl manager finds them in meta_template/, and the generated config's
+    rule only applies to generated projects.
+    """
+    root = Path(__file__).parents[2]
+    renovate = json.loads((root / 'renovate.json').read_text())
+    groups = [
+        rule
+        for rule in renovate['packageRules']
+        if rule.get('groupName') == 'Docker client'
+    ]
+    assert len(groups) == 1
+    assert set(groups[0]['matchPackageNames']) == set(DOCKER_PACKAGES)
+    assert groups[0]['matchDatasources'] == ['deb']
