@@ -30,5 +30,7 @@ install -D -m 0644 "$script_dir/task.asc" "$keyring"
 echo "deb [signed-by=$keyring] https://dl.cloudsmith.io/public/task/task/deb/debian any-version main" \
     > /etc/apt/sources.list.d/task.list
 
-apt-get update
+# Without --error-on=any, an unreachable repo is only a warning, and the
+# install below then fails as if the pinned version didn't exist
+apt-get update --error-on=any
 apt-get install --no-install-recommends -y "task=$TASK_VERSION"
