@@ -4,9 +4,13 @@
 #
 # The package comes from the Task team's apt repo on Cloudsmith. apt verifies
 # it against task.asc, the repo's signing key committed next to this script,
-# rather than a key fetched at runtime. Cloudsmith's setup.deb.sh and
-# taskfile.dev/install.sh are avoided as they're scripts fetched and run at
-# job time.
+# rather than a key fetched at runtime. That proves the package came through
+# this repo, not that it's the same build as when TASK_VERSION was pinned:
+# Task publishes with GoReleaser's republish option, which replaces a package
+# of the same version.
+#
+# Cloudsmith's setup.deb.sh and taskfile.dev/install.sh are avoided as they're
+# scripts fetched and run at job time.
 #
 # TASK_VERSION is set in the CI file, where Renovate keeps it up to date.
 set -euo pipefail

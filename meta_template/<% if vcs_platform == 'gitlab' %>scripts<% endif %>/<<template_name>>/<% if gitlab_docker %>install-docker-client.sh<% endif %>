@@ -2,10 +2,11 @@
 # Installs the Docker CLI with the buildx and compose plugins, for the GitLab
 # CI tests job. Client only: the job's docker:dind service runs the daemon.
 #
-# The packages come from Docker's apt repo, which keeps them in step with
-# docker:dind (Debian's own packages lag behind). apt verifies them against
-# docker.asc, Docker's signing key committed next to this script, rather than
-# a key fetched at runtime.
+# The packages come from Docker's apt repo, as Debian's own lag behind. The
+# client can trail docker:dind, which isn't pinned, until Renovate's update
+# merges. That works as long as the daemon still supports the client's API
+# version. apt verifies the packages against docker.asc, Docker's signing key
+# committed next to this script, rather than a key fetched at runtime.
 #
 # The DOCKER_*_VERSION variables are set in the CI file, where Renovate keeps
 # them up to date. They're upstream versions (e.g. 29.9.3), as Docker builds

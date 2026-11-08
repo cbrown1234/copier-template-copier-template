@@ -3,9 +3,10 @@
 # for the GitLab CI jobs.
 #
 # The archive and its .sha256 come from uv's GitHub release, rather than
-# running astral.sh's install script. Astral's releases are immutable, so
-# neither file can be replaced once published, and checking one against the
-# other is enough to trust the download.
+# running astral.sh's install script. Astral's releases are immutable, so a
+# version can't be swapped for different files once published. The checksum
+# comes from the same release, so checking it catches a corrupt download, but
+# doesn't prove who published the release.
 #
 # UV_VERSION is set in the CI file, where Renovate keeps it up to date.
 set -euo pipefail
