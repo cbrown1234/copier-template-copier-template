@@ -3,11 +3,25 @@
 import base64
 import hashlib
 from pathlib import Path
+from typing import Any
 
+import yaml
 from plumbum import local
 from plumbum.cmd import git as _git
 from plumbum.machines import LocalCommand
 from pytest_gitconfig.plugin import DEFAULT_GIT_USER_EMAIL, DEFAULT_GIT_USER_NAME
+
+# The match string shared by Renovate's customManagers:githubActionsVersions and
+# customManagers:gitlabPipelineVersions presets
+RENOVATE_ANNOTATION_REGEX = (
+    r'# renovate: datasource=(?P<datasource>[a-zA-Z0-9-._]+?) '
+    r'depName=(?P<depName>[^\s]+?)'
+    r'(?: (?:lookupName|packageName)=(?P<packageName>[^\s]+?))?'
+    r'(?: versioning=(?P<versioning>[^\s]+?))?'
+    r'(?: extractVersion=(?P<extractVersion>[^\s]+?))?'
+    r'(?: registryUrl=(?P<registryUrl>[^\s]+?))?'
+    r'\s+[A-Za-z0-9_]+?_VERSION\s*:\s*["\']?(?P<currentValue>.+?)["\']?\s'
+)
 
 git: LocalCommand = _git.with_env(
     GIT_AUTHOR_NAME=DEFAULT_GIT_USER_NAME,
@@ -72,3 +86,23 @@ def openpgp_fingerprint(armored: str) -> str:
     # V4 fingerprints are defined as SHA-1, this only compares against a known value
     digest = hashlib.sha1(b'\x99' + length.to_bytes(2) + packet, usedforsecurity=False)
     return digest.hexdigest().upper()
+
+
+def gitlab_ci_path(sub_project: Path) -> Path:
+    """Return the GitLab CI file of a template generated as copier-template."""
+    return sub_project / '.gitlab' / 'ci' / 'copier-template' / '.gitlab-ci.yml'
+
+
+def load_gitlab_ci(sub_project: Path) -> dict[str, Any]:
+    """Return the parsed GitLab CI config of the generated template."""
+    return yaml.safe_load(gitlab_ci_path(sub_project).read_text())
+
+
+def load_tests_job(sub_project: Path) -> dict[str, Any]:
+    """Return the tests job from the generated template's GitLab CI config."""
+    return load_gitlab_ci(sub_project)['tests']
+
+
+def scripts_dir(sub_project: Path) -> Path:
+    """Return the CI scripts directory of a template generated as copier-template."""
+    return sub_project / 'scripts' / 'copier-template'

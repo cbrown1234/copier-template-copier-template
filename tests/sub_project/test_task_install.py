@@ -5,13 +5,16 @@ from __future__ import annotations
 import os
 import re
 from pathlib import Path
-from typing import Any
 
 import pytest
-import yaml
 
-from tests.helpers import openpgp_fingerprint
-from tests.sub_project.test_renovate import RENOVATE_ANNOTATION_REGEX
+from tests.helpers import (
+    RENOVATE_ANNOTATION_REGEX,
+    gitlab_ci_path,
+    load_tests_job,
+    openpgp_fingerprint,
+    scripts_dir,
+)
 
 # Fingerprint of the Task repo's signing key on Cloudsmith, as served from
 # https://dl.cloudsmith.io/public/task/task/gpg.046FD1186CA342F0.key
@@ -21,18 +24,6 @@ TASK_REGISTRY_URL = (
     'https://dl.cloudsmith.io/public/task/task/deb/debian'
     '?suite=any-version&components=main&binaryArch=amd64'
 )
-
-
-def scripts_dir(sub_project: Path) -> Path:
-    return sub_project / 'scripts' / 'copier-template'
-
-
-def gitlab_ci_path(sub_project: Path) -> Path:
-    return sub_project / '.gitlab' / 'ci' / 'copier-template' / '.gitlab-ci.yml'
-
-
-def load_tests_job(sub_project: Path) -> dict[str, Any]:
-    return yaml.safe_load(gitlab_ci_path(sub_project).read_text())['tests']
 
 
 @pytest.mark.parametrize(

@@ -6,14 +6,18 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Any
 from urllib.parse import parse_qs, urlsplit
 
 import pytest
 import yaml
 
-from tests.helpers import openpgp_fingerprint
-from tests.sub_project.test_renovate import RENOVATE_ANNOTATION_REGEX
+from tests.helpers import (
+    RENOVATE_ANNOTATION_REGEX,
+    gitlab_ci_path,
+    load_tests_job,
+    openpgp_fingerprint,
+    scripts_dir,
+)
 
 # Each package with the CI variable that pins its version
 DOCKER_PACKAGES = {
@@ -25,15 +29,6 @@ DOCKER_EXTRACT_VERSION = r'^(?:\d+:)?(?<version>\d+\.\d+\.\d+)-'
 # Docker's published fingerprint for its apt repo signing key, see
 # https://docs.docker.com/engine/install/debian/
 DOCKER_KEY_FINGERPRINT = '9DC858229FC7DD38854AE2D88D81803C0EBFCD88'
-
-
-def scripts_dir(sub_project: Path) -> Path:
-    return sub_project / 'scripts' / 'copier-template'
-
-
-def load_tests_job(sub_project: Path) -> dict[str, Any]:
-    gitlab_ci = sub_project / '.gitlab' / 'ci' / 'copier-template' / '.gitlab-ci.yml'
-    return yaml.safe_load(gitlab_ci.read_text())['tests']
 
 
 @pytest.mark.parametrize(
@@ -124,7 +119,7 @@ def test_docker_client_versions_renovate_managed(
     sub_project: Path, expected: bool
 ) -> None:
     """Each pinned package is looked up in Docker's repo and updated as a group."""
-    gitlab_ci = sub_project / '.gitlab' / 'ci' / 'copier-template' / '.gitlab-ci.yml'
+    gitlab_ci = gitlab_ci_path(sub_project)
     variables = load_tests_job(sub_project)['variables']
     lookups = {
         match['depName']: match.groupdict()
@@ -162,7 +157,7 @@ def test_docker_lookups_match_image_release(sub_project: Path) -> None:
     Docker builds each release separately and has no alias like `stable`, so
     the lookups name it. Changing the image's release means changing these too.
     """
-    gitlab_ci = sub_project / '.gitlab' / 'ci' / 'copier-template' / '.gitlab-ci.yml'
+    gitlab_ci = gitlab_ci_path(sub_project)
     image = load_tests_job(sub_project)['image']['name']
     # Optionally pinned to a digest, as Renovate leaves it
     match = re.fullmatch(

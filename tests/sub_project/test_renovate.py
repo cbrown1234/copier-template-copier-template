@@ -10,18 +10,7 @@ from pathlib import Path
 import pytest
 from plumbum import local
 
-# The match string shared by Renovate's customManagers:githubActionsVersions and
-# customManagers:gitlabPipelineVersions presets
-RENOVATE_ANNOTATION_REGEX = (
-    r'# renovate: datasource=(?P<datasource>[a-zA-Z0-9-._]+?) '
-    r'depName=(?P<depName>[^\s]+?)'
-    r'(?: (?:lookupName|packageName)=(?P<packageName>[^\s]+?))?'
-    r'(?: versioning=(?P<versioning>[^\s]+?))?'
-    r'(?: extractVersion=(?P<extractVersion>[^\s]+?))?'
-    r'(?: registryUrl=(?P<registryUrl>[^\s]+?))?'
-    r'\s+[A-Za-z0-9_]+?_VERSION\s*:\s*["\']?(?P<currentValue>.+?)["\']?\s'
-)
-
+from tests.helpers import RENOVATE_ANNOTATION_REGEX
 
 DOCKER_CLIENT = {'docker-ce-cli', 'docker-buildx-plugin', 'docker-compose-plugin'}
 

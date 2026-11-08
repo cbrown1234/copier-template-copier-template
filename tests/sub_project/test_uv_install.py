@@ -4,17 +4,13 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
-from typing import Any
 
 import pytest
 import yaml
 
+from tests.helpers import load_gitlab_ci, scripts_dir
+
 INSTALL_UV = 'bash "scripts/copier-template/install-uv.sh"'
-
-
-def load_gitlab_ci(sub_project: Path) -> dict[str, Any]:
-    gitlab_ci = sub_project / '.gitlab' / 'ci' / 'copier-template' / '.gitlab-ci.yml'
-    return yaml.safe_load(gitlab_ci.read_text())
 
 
 @pytest.mark.parametrize(
@@ -53,7 +49,6 @@ def test_jobs_install_uv_from_script(sub_project: Path, jobs: set[str]) -> None:
     assert '.local/bin/env' not in rendered
 
 
-
 @pytest.mark.parametrize(
     ('sub_project', 'local_bin'),
     [
@@ -70,10 +65,11 @@ def test_tests_job_puts_local_bin_on_path(sub_project: Path, local_bin: str) -> 
     before_script = load_gitlab_ci(sub_project)['tests']['before_script']
     assert f'export PATH="{local_bin}:$PATH"' in before_script
 
+
 @pytest.mark.parametrize('sub_project', [{'vcs_platform': 'gitlab'}], indirect=True)
 def test_install_uv_script(sub_project: Path) -> None:
     """The script checks the release archive against its checksum file."""
-    script = sub_project / 'scripts' / 'copier-template' / 'install-uv.sh'
+    script = scripts_dir(sub_project) / 'install-uv.sh'
     assert os.access(script, os.X_OK)
     text = script.read_text()
     assert (
