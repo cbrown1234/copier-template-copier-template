@@ -15,7 +15,7 @@
   "packageRules": [
 <% if vcs_platform == 'gitlab' and gitlab_docker %>
     {
-      "description": "The Docker client and its plugins are released together, so are updated together",
+      "description": "Installed together by install-docker-client.sh, so updated together",
       "matchDatasources": [
         "deb"
       ],
@@ -27,7 +27,7 @@
       "groupName": "Docker client"
     },
     {
-      "description": "Majors can drop API versions or change CLI behaviour, so get a reviewed PR",
+      "description": "Automerge minor and patch only: majors can drop API versions or change CLI behaviour, so get a reviewed PR",
       "matchDatasources": [
         "deb"
       ],

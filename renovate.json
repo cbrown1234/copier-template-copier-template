@@ -92,7 +92,7 @@
       "prConcurrentLimit": 10
     },
     {
-      "description": "The Docker client and its plugins are released together, so are updated together. Mirrors the rule in meta_template/renovate.json.tmpl.",
+      "description": "Installed together by install-docker-client.sh, so updated together. Mirrors the rule in meta_template/renovate.json.tmpl.",
       "matchDatasources": [
         "deb"
       ],
