@@ -50,6 +50,11 @@ tests:
     DOCKER_COMPOSE_PLUGIN_VERSION: "5.7.0"
 <% endif %>
   before_script:
+<% if not gitlab_non_root_tests %>
+    # Where uv python install and uv tool install put executables. First, so
+    # the install scripts check the versions on the PATH the job runs with
+    - export PATH="$HOME/.local/bin:$PATH"
+<% endif %>
     # Skipped when the image already has them, e.g. a prebuilt CI image
     - |
       if ! command -v curl > /dev/null || ! command -v git > /dev/null \
@@ -77,7 +82,6 @@ tests:
     # it owned by TEST_USER, failing git's ownership check in later root jobs
     - chown -R "$(id -u):$(id -g)" "$CI_PROJECT_DIR"
 <% else %>
-    - export PATH="$HOME/.local/bin:$PATH"
     - uv python install $PYTHON_VERSION
     - task dev-setup:venv:ci
   script:

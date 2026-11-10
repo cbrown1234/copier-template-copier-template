@@ -18,6 +18,22 @@ installed_version() {
     "$@" 2> /dev/null | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1 || true
 }
 
+# Fails unless the command that runs now reports the version just installed.
+# The install can succeed and still not be what runs, when another install
+# comes first, e.g. earlier on PATH
+check_installed() {
+    local name=$1 want=$2 got
+    shift 2
+    hash -r
+    got="$(installed_version "$@")"
+    if [[ "$got" != "$want" ]]; then
+        echo "Installed $name $want, but '$*' reports ${got:-no version}" \
+            "($(command -v "$1" || echo "$1 isn't on PATH")), so another" \
+            "install comes first" >&2
+        exit 1
+    fi
+}
+
 # Nothing to do when the image already has it, e.g. a prebuilt CI image
 if [[ "$(installed_version uv --version)" == "$UV_VERSION" ]] \
     && [[ "$(installed_version uvx --version)" == "$UV_VERSION" ]]; then
@@ -52,3 +68,8 @@ curl --fail --silent --show-error --location --retry 3 -o "$tmp/$archive.sha256"
 
 tar -xzf "$tmp/$archive" -C "$tmp"
 install -m 0755 "$tmp/uv-$target/uv" "$tmp/uv-$target/uvx" /usr/local/bin/
+
+# Only sees the PATH this script is run with, so the CI file puts
+# ~/.local/bin, where Astral's installer puts uv, on PATH first
+check_installed uv "$UV_VERSION" uv --version
+check_installed uvx "$UV_VERSION" uvx --version

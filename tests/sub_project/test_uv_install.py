@@ -34,10 +34,11 @@ def test_jobs_install_uv_from_script(sub_project: Path, jobs: set[str]) -> None:
         before_script = job['before_script']
         # Recommends would add packages the job doesn't use, so the ones it
         # needs, ca-certificates included, are named
-        assert (
+        assert any(
             'apt-get update && apt-get install --no-install-recommends -y '
-            'ca-certificates curl git'
-        ) in before_script[0]
+            'ca-certificates curl git' in cmd
+            for cmd in before_script
+        )
         assert INSTALL_UV in before_script
         switch_user = [i for i, cmd in enumerate(before_script) if 'runuser' in cmd]
         assert before_script.index(INSTALL_UV) < min(
@@ -64,6 +65,20 @@ def test_tests_job_puts_local_bin_on_path(sub_project: Path, local_bin: str) -> 
     """Tools from uv tool install run as root or not, as the uv installer allowed."""
     before_script = load_gitlab_ci(sub_project)['tests']['before_script']
     assert f'export PATH="{local_bin}:$PATH"' in before_script
+
+
+@pytest.mark.parametrize('sub_project', [{'vcs_platform': 'gitlab'}], indirect=True)
+def test_root_tests_job_puts_local_bin_on_path_before_installs(
+    sub_project: Path,
+) -> None:
+    """The install scripts check versions on the PATH the job runs with.
+
+    Astral's installer puts uv in ~/.local/bin, so an image built with it
+    would otherwise shadow the pinned uv after the scripts had checked.
+    """
+    before_script = load_gitlab_ci(sub_project)['tests']['before_script']
+    export = 'export PATH="$HOME/.local/bin:$PATH"'
+    assert before_script.index(export) < before_script.index(INSTALL_UV)
 
 
 @pytest.mark.parametrize('sub_project', [{'vcs_platform': 'gitlab'}], indirect=True)
