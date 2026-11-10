@@ -64,15 +64,35 @@ esac""",
         }
 
 
+def has_debian_codename() -> bool:
+    """Return whether the host's os-release names a Debian-style codename.
+
+    install-docker-client.sh reads it from /etc/os-release, which the sandbox
+    can't stub. macOS has no such file, and e.g. Arch and Alpine don't set it.
+    """
+    os_release = Path('/etc/os-release')
+    return os_release.is_file() and any(
+        line.startswith('VERSION_CODENAME=') and line.split('=', 1)[1].strip('"\'')
+        for line in os_release.read_text().splitlines()
+    )
+
+
 SCRIPTS = [
-    Script('install-task.sh', ('TASK_VERSION',)),
-    Script('install-uv.sh', ('UV_VERSION',)),
-    Script(
-        'install-docker-client.sh',
-        (
-            'DOCKER_CE_CLI_VERSION',
-            'DOCKER_BUILDX_PLUGIN_VERSION',
-            'DOCKER_COMPOSE_PLUGIN_VERSION',
+    pytest.param(Script('install-task.sh', ('TASK_VERSION',)), id='install-task.sh'),
+    pytest.param(Script('install-uv.sh', ('UV_VERSION',)), id='install-uv.sh'),
+    pytest.param(
+        Script(
+            'install-docker-client.sh',
+            (
+                'DOCKER_CE_CLI_VERSION',
+                'DOCKER_BUILDX_PLUGIN_VERSION',
+                'DOCKER_COMPOSE_PLUGIN_VERSION',
+            ),
+        ),
+        id='install-docker-client.sh',
+        marks=pytest.mark.skipif(
+            not has_debian_codename(),
+            reason='needs VERSION_CODENAME in /etc/os-release, as on Debian or Ubuntu',
         ),
     ),
 ]
@@ -207,7 +227,7 @@ def installer_calls(sandbox: Sandbox) -> list[str]:
     return sandbox.log.read_text().splitlines()
 
 
-@pytest.mark.parametrize('script', SCRIPTS, ids=lambda s: s.name)
+@pytest.mark.parametrize('script', SCRIPTS)
 @pytest.mark.parametrize('sub_project', [{'vcs_platform': 'gitlab'}], indirect=True)
 def test_skips_when_pinned_version_installed(
     sub_project: Path, sandbox: Sandbox, script: Script
@@ -225,7 +245,7 @@ def test_skips_when_pinned_version_installed(
 
 
 @pytest.mark.parametrize('installed', ['missing', 'other version'])
-@pytest.mark.parametrize('script', SCRIPTS, ids=lambda s: s.name)
+@pytest.mark.parametrize('script', SCRIPTS)
 @pytest.mark.parametrize('sub_project', [{'vcs_platform': 'gitlab'}], indirect=True)
 def test_installs_pinned_version(
     sub_project: Path, sandbox: Sandbox, script: Script, installed: str
@@ -244,7 +264,7 @@ def test_installs_pinned_version(
     assert installer_calls(sandbox)
 
 
-@pytest.mark.parametrize('script', SCRIPTS, ids=lambda s: s.name)
+@pytest.mark.parametrize('script', SCRIPTS)
 @pytest.mark.parametrize('sub_project', [{'vcs_platform': 'gitlab'}], indirect=True)
 def test_fails_when_another_install_comes_first(
     sub_project: Path, sandbox: Sandbox, script: Script
