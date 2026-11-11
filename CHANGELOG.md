@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v0.30.1 (2026-11-11)
+
+### Build System
+
+- **deps**: Update dependency docker-compose-plugin to v5.7.1
+  ([#187](https://github.com/cbrown1234/copier-template-copier-template/pull/187),
+  [`364547e`](https://github.com/cbrown1234/copier-template-copier-template/commit/364547ea18aa035462b99c8b95cd51c151f3ab27))
+
+
 ## v0.30.0 (2026-11-10)
 
 ### Features
