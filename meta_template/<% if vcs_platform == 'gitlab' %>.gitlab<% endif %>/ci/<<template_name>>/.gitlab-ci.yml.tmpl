@@ -13,7 +13,7 @@ tests:
       - PYTHON_VERSION: ["<< python_versions | join('", "') >>"]
   variables:
     # renovate: datasource=github-releases depName=astral-sh/uv
-    UV_VERSION: "0.13.7"
+    UV_VERSION: "0.13.8"
     # Looked up in the apt repo install-task.sh installs from, so Renovate only
     # proposes versions that install
     # renovate: datasource=deb depName=go-task/task packageName=task registryUrl=https://dl.cloudsmith.io/public/task/task/deb/debian?suite=any-version&components=main&binaryArch=amd64
@@ -101,7 +101,7 @@ release:
   image: debian:trixie-slim
   variables:
     # renovate: datasource=github-releases depName=astral-sh/uv
-    UV_VERSION: "0.13.7"
+    UV_VERSION: "0.13.8"
     UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
     GIT_DEPTH: "0"
   rules:
