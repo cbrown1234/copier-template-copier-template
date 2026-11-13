@@ -84,7 +84,11 @@
       "prConcurrentLimit": 10
     },
     {
+<<<<<<< before updating
       "description": "Matched by depName, as the GitLab CI template looks Task up in its apt repo under packageName task",
+=======
+      "description": "Matched by depName, as GitLab CI looks Task up in its apt repo under packageName task",
+>>>>>>> after updating
       "matchDepNames": [
         "go-task/task"
       ],
