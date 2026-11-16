@@ -57,7 +57,7 @@ repos:
   # Checks every config file Renovate reads (check-renovate skips .jsonc),
   # including RE2 regexes and global-only options. Slow first run.
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 44.239.1
+    rev: 44.240.0
     hooks:
       - id: renovate-config-validator
         # Validate as repo config, not self-hosted global config
