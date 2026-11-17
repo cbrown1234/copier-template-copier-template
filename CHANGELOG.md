@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v0.31.2 (2026-11-17)
+
+### Build System
+
+- **deps**: Update dependency astral-sh/uv to v0.13.9
+  ([#197](https://github.com/cbrown1234/copier-template-copier-template/pull/197),
+  [`30829d7`](https://github.com/cbrown1234/copier-template-copier-template/commit/30829d7d5397ad46d011b1290f9e52389022c46b))
+
+
 ## v0.31.1 (2026-11-17)
 
 ### Build System
