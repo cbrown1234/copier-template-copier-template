@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v0.31.4 (2026-11-20)
+
+### Build System
+
+- **deps**: Update dependency docker-buildx-plugin to v0.39.1
+  ([#199](https://github.com/cbrown1234/copier-template-copier-template/pull/199),
+  [`6bd9515`](https://github.com/cbrown1234/copier-template-copier-template/commit/6bd9515b4625dccf2f424c39466ec32d581fa6ce))
+
+
 ## v0.31.3 (2026-11-18)
 
 ### Build System
