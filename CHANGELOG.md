@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v0.31.6 (2026-11-25)
+
+### Build System
+
+- **deps**: Update dependency docker-ce-cli to v29.10.1
+  ([#203](https://github.com/cbrown1234/copier-template-copier-template/pull/203),
+  [`8e04535`](https://github.com/cbrown1234/copier-template-copier-template/commit/8e045352d0e2ce3de9ac29aec6543cf2666fd3db))
+
+
 ## v0.31.5 (2026-11-25)
 
 ### Build System
